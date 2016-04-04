@@ -4,17 +4,27 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Archives | Doctor nu</title>
+  <title>Error- Permission denied (publickey).错误详解 | Doctor nu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Doctor nu">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="欢迎大家入坑 mac上对hexo的坑如果你在 mac 中配置好了hexo，deploy的时候却一直显示：
+Error: Permission denied (publickey). fatal: Could not read from remote repository.
+哈哈 ，经过本nunu的大量排除错误，找到了是公钥配置的问题引起的。
+这个问题的特征是.    ssh -T idealife">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Error- Permission denied (publickey).错误详解">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/Error-Permission-denied-publickey-错误详解/index.html">
 <meta property="og:site_name" content="Doctor nu">
-<meta property="og:description">
+<meta property="og:description" content="欢迎大家入坑 mac上对hexo的坑如果你在 mac 中配置好了hexo，deploy的时候却一直显示：
+Error: Permission denied (publickey). fatal: Could not read from remote repository.
+哈哈 ，经过本nunu的大量排除错误，找到了是公钥配置的问题引起的。
+这个问题的特征是.    ssh -T idealife">
+<meta property="og:updated_time" content="2016-04-04T08:43:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Doctor nu">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Error- Permission denied (publickey).错误详解">
+<meta name="twitter:description" content="欢迎大家入坑 mac上对hexo的坑如果你在 mac 中配置好了hexo，deploy的时候却一直显示：
+Error: Permission denied (publickey). fatal: Could not read from remote repository.
+哈哈 ，经过本nunu的大量排除错误，找到了是公钥配置的问题引起的。
+这个问题的特征是.    ssh -T idealife">
   
     <link rel="alternative" href="/atom.xml" title="Doctor nu" type="application/atom+xml">
   
@@ -208,184 +218,121 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Error-Permission-denied-publickey-错误详解" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2016/04/04/Error-Permission-denied-publickey-错误详解/" class="article-date">
+  	<time datetime="2016-04-04T08:10:04.000Z" itemprop="datePublished">2016-04-04</time>
+</a>
+    </div>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Error- Permission denied (publickey).错误详解
+    </h1>
+  
+
+      </header>
       
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/04/如果让我再学一次iOS/" class="archive-article-date">
-  	<time datetime="2016-04-04T08:14:00.000Z" itemprop="datePublished">4月 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/如果让我再学一次iOS/">如果让我再学一次iOS</a>
-    </h1>
-  
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="欢迎大家入坑-mac上对hexo的坑"><a href="#欢迎大家入坑-mac上对hexo的坑" class="headerlink" title="欢迎大家入坑 mac上对hexo的坑"></a>欢迎大家入坑 mac上对hexo的坑</h1><p>如果你在 mac 中配置好了hexo，deploy的时候却一直显示：</p>
+<p>Error: Permission denied (publickey). fatal: Could not read from remote repository.</p>
+<p>哈哈 ，经过本nunu的大量排除错误，找到了是公钥配置的问题引起的。</p>
+<p>这个问题的特征是<br>.    ssh -T idealife@github.com可以成功运行，并显示<br>Hi hehedalulu， You’ve successfully authenticated, but GitHub does not provide shell access.<br>.    执行sudo hexo deploy的时候报错。（想死的心都有了吧）</p>
+<p>我们细细的看一下终端里面的报错内容</p>
+<p><code>Unhandled rejection Error: EACCES: permission denied, open &#39;/Users/idealife/Developer/blog/db.json&#39; at Error (native)</code><br>上面提示db.json文件的写权限的错误…<br>我们要提高权限 这个涉及到sudo的问题<br>如果你是在window环境中配置，就会对于权限的认识比较浅。没办法谁让我们是高贵的mac</p>
+<p>github 官方文档对Permission denied (publickey)这个错误的解释是： “你个傻叉没事不要用sudo”<br>而实际上，不用sudo是错误的（你妹的官方文档）</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>原因：生成ssh公钥时，用的命令是 ssh-keygen -t rsa -C “982472770@qq.com”<br>没有加sudo，生成的公钥是当前用户的，路径是 /Users/mac/.ssh。而sudo hexo deploy命令执行的时候应该会去读取的root用户的公钥，很显然root下还没有对应的公钥信息生成。<br>解决方法<br>    .    生成ssh公钥时，用命令 sudo ssh-keygen -t rsa -C “982472770@qq.com”<br>    .    提取公钥信息并配置到github中通过sudo cat /var/root/.ssh/id_rsa.pub先显示公钥，再直接复制。<br>然后就成功啦<br>在mac os环境下一定要注意访问文件权限的问题。（在linux喝unix也要注意哦1）</p>
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/04/化学家之梦/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          化学家之梦
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/04/mac上搭建hexo2016最新攻略/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mac上搭建hexo2016最新攻略</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/" class="archive-article-date">
-  	<time datetime="2016-04-04T08:13:04.000Z" itemprop="datePublished">4月 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/">Learn Objective-C first step(nunu原创翻译)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/04/化学家之梦/" class="archive-article-date">
-  	<time datetime="2016-04-04T08:12:02.000Z" itemprop="datePublished">4月 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/化学家之梦/">化学家之梦</a>
-    </h1>
-  
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/04/Error-Permission-denied-publickey-错误详解/" class="archive-article-date">
-  	<time datetime="2016-04-04T08:10:04.000Z" itemprop="datePublished">4月 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/Error-Permission-denied-publickey-错误详解/">Error- Permission denied (publickey).错误详解</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/04/mac上搭建hexo2016最新攻略/" class="archive-article-date">
-  	<time datetime="2016-04-04T07:59:54.000Z" itemprop="datePublished">4月 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/mac上搭建hexo2016最新攻略/">mac上搭建hexo2016最新攻略</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/04/04/mac下的vpn/" class="archive-article-date">
-  	<time datetime="2016-04-04T07:57:24.000Z" itemprop="datePublished">4月 4</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/04/04/mac下的vpn/">mac下的vpn</a>
-    </h1>
-  
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Error-Permission-denied-publickey-错误详解" data-title="Error- Permission denied (publickey).错误详解" data-url="http://yoursite.com/2016/04/04/Error-Permission-denied-publickey-错误详解/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
 
 </div>
       <footer id="footer">
@@ -411,8 +358,8 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false
