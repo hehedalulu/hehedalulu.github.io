@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac/" style="font-size: 10px;">-mac</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a>
+						<a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac/" style="font-size: 10px;">-mac</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a>
 					</div>
 				</section>
 				
@@ -209,6 +209,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-传递参数到下一个页面（陆续更新）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/06/传递参数到下一个页面（陆续更新）/" class="article-date">
+  	<time datetime="2016-04-06T05:51:34.000Z" itemprop="datePublished">2016-04-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/06/传递参数到下一个页面（陆续更新）/">传递参数到下一个页面（陆续更新）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在iOS开发中，我们有时需要在两个页面中传递参数，这里先介绍一种在ViewController类中实现preparedForSegue:sender：的方法，这个方法是在画面切换前就要调用的，因此可以把数据传送到下一个ViewController类中。</p>
+<p>预备：两个ViewController组件，<br>      ViewController1中有textfield，button1<br>      ViewController2中有一个button2和label</p>
+<p>步骤</p>
+<h3 id="1-打开ViewController1-h，将其中的textfield组件用IBOutlet连线，变量名为textbox-button1连线到ViewController2"><a href="#1-打开ViewController1-h，将其中的textfield组件用IBOutlet连线，变量名为textbox-button1连线到ViewController2" class="headerlink" title="1.打开ViewController1.h，将其中的textfield组件用IBOutlet连线，变量名为textbox.button1连线到ViewController2."></a>1.打开ViewController1.h，将其中的textfield组件用IBOutlet连线，变量名为textbox.button1连线到ViewController2.</h3><h3 id="2-打开ViewController2-h-将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use-input-data，负责接受ViewController1传来的数据。声明一个方法passdata-用来设置use-input-data"><a href="#2-打开ViewController2-h-将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use-input-data，负责接受ViewController1传来的数据。声明一个方法passdata-用来设置use-input-data" class="headerlink" title="2.打开ViewController2.h,将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use_input_data，负责接受ViewController1传来的数据。声明一个方法passdata,用来设置use_input_data."></a>2.打开ViewController2.h,将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use_input_data，负责接受ViewController1传来的数据。声明一个方法passdata,用来设置use_input_data.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">@interface ViewController2 : UIViewController&#123;</span><br><span class="line">    NSString *use_input_data;</span><br><span class="line">&#125;</span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel *label;</span><br><span class="line"></span><br><span class="line">-(void) passdata:(NSString *)argu;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="3-打开ViewController2-m-设置button2的IBAction的方法，将use-input-data赋值给label的text。制作passdata方法，通过这个方法传值。"><a href="#3-打开ViewController2-m-设置button2的IBAction的方法，将use-input-data赋值给label的text。制作passdata方法，通过这个方法传值。" class="headerlink" title="3.打开ViewController2.m,设置button2的IBAction的方法，将use_input_data赋值给label的text。制作passdata方法，通过这个方法传值。"></a>3.打开ViewController2.m,设置button2的IBAction的方法，将use_input_data赋值给label的text。制作passdata方法，通过这个方法传值。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController2.h&quot;</span><br><span class="line">@interface ViewController2 ()</span><br><span class="line">- (IBAction)pressButton:(id)sender;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation myViewController</span><br><span class="line">- (IBAction)pressButton:(id)sender &#123;</span><br><span class="line">    self.label.text = use_input_data;</span><br><span class="line">&#125;</span><br><span class="line">-(void) passdata:(NSString *)argu&#123;</span><br><span class="line">    use_input_data = argu;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="4-打开ViewController1-m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2"><a href="#4-打开ViewController1-m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2" class="headerlink" title="4.打开ViewController1.m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2."></a>4.打开ViewController1.m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender</span><br><span class="line">&#123;</span><br><span class="line">    ViewController2 *view = [segue destinationViewController];</span><br><span class="line">    [view passdata:self.textbox.text];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/storyboard/">storyboard</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-java数据结构作业之中缀计算式（逆波兰表达式）" class="article article-type-post" itemscope itemprop="blogPost">
   

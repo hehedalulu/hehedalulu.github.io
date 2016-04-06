@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>如果让我再学一次iOS | Doctor nu</title>
+  <title>传递参数到下一个页面（陆续更新） | Doctor nu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果让我重新学一次iOS
-之前学习iOS开发的时候因为一开始有点激动，对这个世界充满了好奇。所以订阅了一大堆博客公众号，看各种教程和视频，然后就变的浮躁，不知道从何下手，导致了拖延症。就好像我渴了，给我倒一杯水，这很直接，马上就可以做。但是给我一杯不明液体，又不熟悉，纠结了。不如刷会微博，(像肥球一样玩qq宠物)看看票圈，玩玩游戏。问题的关键就是，空有一番激情但是像无头苍蝇一样，有的时候撞破头收效">
+  <meta name="description" content="在iOS开发中，我们有时需要在两个页面中传递参数，这里先介绍一种在ViewController类中实现preparedForSegue:sender：的方法，这个方法是在画面切换前就要调用的，因此可以把数据传送到下一个ViewController类中。
+预备：两个ViewController组件，      ViewController1中有textfield，button1      ViewC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如果让我再学一次iOS">
-<meta property="og:url" content="http://yoursite.com/2016/04/04/如果让我再学一次iOS/index.html">
+<meta property="og:title" content="传递参数到下一个页面（陆续更新）">
+<meta property="og:url" content="http://yoursite.com/2016/04/06/传递参数到下一个页面（陆续更新）/index.html">
 <meta property="og:site_name" content="Doctor nu">
-<meta property="og:description" content="如果让我重新学一次iOS
-之前学习iOS开发的时候因为一开始有点激动，对这个世界充满了好奇。所以订阅了一大堆博客公众号，看各种教程和视频，然后就变的浮躁，不知道从何下手，导致了拖延症。就好像我渴了，给我倒一杯水，这很直接，马上就可以做。但是给我一杯不明液体，又不熟悉，纠结了。不如刷会微博，(像肥球一样玩qq宠物)看看票圈，玩玩游戏。问题的关键就是，空有一番激情但是像无头苍蝇一样，有的时候撞破头收效">
-<meta property="og:updated_time" content="2016-04-06T04:53:23.000Z">
+<meta property="og:description" content="在iOS开发中，我们有时需要在两个页面中传递参数，这里先介绍一种在ViewController类中实现preparedForSegue:sender：的方法，这个方法是在画面切换前就要调用的，因此可以把数据传送到下一个ViewController类中。
+预备：两个ViewController组件，      ViewController1中有textfield，button1      ViewC">
+<meta property="og:updated_time" content="2016-04-06T06:15:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如果让我再学一次iOS">
-<meta name="twitter:description" content="如果让我重新学一次iOS
-之前学习iOS开发的时候因为一开始有点激动，对这个世界充满了好奇。所以订阅了一大堆博客公众号，看各种教程和视频，然后就变的浮躁，不知道从何下手，导致了拖延症。就好像我渴了，给我倒一杯水，这很直接，马上就可以做。但是给我一杯不明液体，又不熟悉，纠结了。不如刷会微博，(像肥球一样玩qq宠物)看看票圈，玩玩游戏。问题的关键就是，空有一番激情但是像无头苍蝇一样，有的时候撞破头收效">
+<meta name="twitter:title" content="传递参数到下一个页面（陆续更新）">
+<meta name="twitter:description" content="在iOS开发中，我们有时需要在两个页面中传递参数，这里先介绍一种在ViewController类中实现preparedForSegue:sender：的方法，这个方法是在画面切换前就要调用的，因此可以把数据传送到下一个ViewController类中。
+预备：两个ViewController组件，      ViewController1中有textfield，button1      ViewC">
   
     <link rel="alternative" href="/atom.xml" title="Doctor nu" type="application/atom+xml">
   
@@ -212,11 +212,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-如果让我再学一次iOS" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-传递参数到下一个页面（陆续更新）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/04/如果让我再学一次iOS/" class="article-date">
-  	<time datetime="2016-04-04T08:14:00.000Z" itemprop="datePublished">2016-04-04</time>
+      <a href="/2016/04/06/传递参数到下一个页面（陆续更新）/" class="article-date">
+  	<time datetime="2016-04-06T05:51:34.000Z" itemprop="datePublished">2016-04-06</time>
 </a>
     </div>
   
@@ -229,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如果让我再学一次iOS
+      传递参数到下一个页面（陆续更新）
     </h1>
   
 
@@ -238,7 +238,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">-plan</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/storyboard/">storyboard</a></li></ul>
 	</div>
 
         
@@ -249,11 +249,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如果让我重新学一次iOS</p>
-<p>之前学习iOS开发的时候因为一开始有点激动，对这个世界充满了好奇。所以订阅了一大堆博客公众号，看各种教程和视频，然后就变的浮躁，不知道从何下手，导致了拖延症。就好像我渴了，给我倒一杯水，这很直接，马上就可以做。但是给我一杯不明液体，又不熟悉，纠结了。不如刷会微博，(像肥球一样玩qq宠物)看看票圈，玩玩游戏。<br>问题的关键就是，空有一番激情但是像无头苍蝇一样，有的时候撞破头收效却甚微，人也开始不自信，开始质疑自己，怀疑自己就是一个垃圾，什么都做不出来。接着自暴自弃，原先的激情反而没有了。<br>所以现在我决定重新学一次iOS，正好才入门，我要选择一篇好的入门教材来激发我学习的激情，按照前辈们的指示，少固执己见，走一条正确的自学道路。我希望自己能够契合自己的水平，常常有收获，并且不断的增加自己到成就感。我觉得这样才能正确的激励自己走下去。</p>
-<p>之前看过一个小故事</p>
-<p>三只猎狗追一只土拔鼠,土拔鼠逃跑时钻进了一个树洞。这个树洞只有一个出口,不一会儿,忽然从树洞里跑出一只兔子。兔子飞快地向前跑,并爬上另一棵大树。兔子因为慌乱在树上没站稳,掉了下来,砸晕了正仰头看的三只猎狗,最后,兔子终于逃脱。<br>于这个故事可以从不同的角度去解读，很多人会问：兔子为什么会爬树？为什么能砸晕三只猎狗？这不是重点，重点是，之前追赶的土拨鼠哪去了？看书时难免会有延伸阅读。就像学习一样，你看到这个部分，发现那个部分不也不是很熟悉，很多东西是不能够递进的，正所谓一口吃不成一个大胖子。学习一定要知道今天的目标是什么，知道自己的需求是什么，不然宽度很广，深度就会很浅。<br>以后打算跟着下面这份干货学习！</p>
-<p>一个iOS自学开发的干货终结版本<br>非常棒的一个干货<a href="https://github.com/Aufree/trip-to-iOS/blob/master/README.md" target="_blank" rel="external">网址</a></p>
+        <p>在iOS开发中，我们有时需要在两个页面中传递参数，这里先介绍一种在ViewController类中实现preparedForSegue:sender：的方法，这个方法是在画面切换前就要调用的，因此可以把数据传送到下一个ViewController类中。</p>
+<p>预备：两个ViewController组件，<br>      ViewController1中有textfield，button1<br>      ViewController2中有一个button2和label</p>
+<p>步骤</p>
+<h3 id="1-打开ViewController1-h，将其中的textfield组件用IBOutlet连线，变量名为textbox-button1连线到ViewController2"><a href="#1-打开ViewController1-h，将其中的textfield组件用IBOutlet连线，变量名为textbox-button1连线到ViewController2" class="headerlink" title="1.打开ViewController1.h，将其中的textfield组件用IBOutlet连线，变量名为textbox.button1连线到ViewController2."></a>1.打开ViewController1.h，将其中的textfield组件用IBOutlet连线，变量名为textbox.button1连线到ViewController2.</h3><h3 id="2-打开ViewController2-h-将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use-input-data，负责接受ViewController1传来的数据。声明一个方法passdata-用来设置use-input-data"><a href="#2-打开ViewController2-h-将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use-input-data，负责接受ViewController1传来的数据。声明一个方法passdata-用来设置use-input-data" class="headerlink" title="2.打开ViewController2.h,将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use_input_data，负责接受ViewController1传来的数据。声明一个方法passdata,用来设置use_input_data."></a>2.打开ViewController2.h,将其中的label组件用IBOutlet连线，变量名为label。声明一个变量use_input_data，负责接受ViewController1传来的数据。声明一个方法passdata,用来设置use_input_data.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;UIKit/UIKit.h&gt;</span><br><span class="line">@interface ViewController2 : UIViewController&#123;</span><br><span class="line">    NSString *use_input_data;</span><br><span class="line">&#125;</span><br><span class="line">@property (weak, nonatomic) IBOutlet UILabel *label;</span><br><span class="line"></span><br><span class="line">-(void) passdata:(NSString *)argu;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="3-打开ViewController2-m-设置button2的IBAction的方法，将use-input-data赋值给label的text。制作passdata方法，通过这个方法传值。"><a href="#3-打开ViewController2-m-设置button2的IBAction的方法，将use-input-data赋值给label的text。制作passdata方法，通过这个方法传值。" class="headerlink" title="3.打开ViewController2.m,设置button2的IBAction的方法，将use_input_data赋值给label的text。制作passdata方法，通过这个方法传值。"></a>3.打开ViewController2.m,设置button2的IBAction的方法，将use_input_data赋值给label的text。制作passdata方法，通过这个方法传值。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;ViewController2.h&quot;</span><br><span class="line">@interface ViewController2 ()</span><br><span class="line">- (IBAction)pressButton:(id)sender;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation myViewController</span><br><span class="line">- (IBAction)pressButton:(id)sender &#123;</span><br><span class="line">    self.label.text = use_input_data;</span><br><span class="line">&#125;</span><br><span class="line">-(void) passdata:(NSString *)argu&#123;</span><br><span class="line">    use_input_data = argu;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<h3 id="4-打开ViewController1-m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2"><a href="#4-打开ViewController1-m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2" class="headerlink" title="4.打开ViewController1.m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2."></a>4.打开ViewController1.m。导入ViewController2头文件，制作preparedForSegue：sender这个方法，将textfeild里面的参数传给ViewController2.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender</span><br><span class="line">&#123;</span><br><span class="line">    ViewController2 *view = [segue destinationViewController];</span><br><span class="line">    [view passdata:self.textbox.text];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -263,18 +264,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/04/05/java数据结构作业之中缀计算式（逆波兰表达式）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          java数据结构作业之中缀计算式（逆波兰表达式）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Learn Objective-C first step(nunu原创翻译)</div>
+    <a href="/2016/04/05/java数据结构作业之中缀计算式（逆波兰表达式）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java数据结构作业之中缀计算式（逆波兰表达式）</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -309,7 +301,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="如果让我再学一次iOS" data-title="如果让我再学一次iOS" data-url="http://yoursite.com/2016/04/04/如果让我再学一次iOS/"></div>
+	<div class="ds-thread" data-thread-key="传递参数到下一个页面（陆续更新）" data-title="传递参数到下一个页面（陆续更新）" data-url="http://yoursite.com/2016/04/06/传递参数到下一个页面（陆续更新）/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
