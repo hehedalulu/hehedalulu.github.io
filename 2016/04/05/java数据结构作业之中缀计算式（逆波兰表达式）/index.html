@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>java数据结构作业之中缀计算式（逆波兰表达式） | Doctor nu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天java数据结构的作业是写一个中缀计算式，这个就是之前肥球说的逆波兰表达式吧。波兰表达式是中缀表达是 逆波兰表达式就是后缀表达是。这次的作业使用两个栈实现中缀转后缀，这样就能方便对一个式子进行运算。就是让(8+910)-4/2+3变成8910+42/-3+这种形式深入研究了一下，发现这个算法其实不是很难。
+流程是这样的1.遇到操作数：直接输出(添加到后缀表达式中)2.栈为空时，遇到运算符，直接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java数据结构作业之中缀计算式（逆波兰表达式）">
+<meta property="og:url" content="http://yoursite.com/2016/04/05/java数据结构作业之中缀计算式（逆波兰表达式）/index.html">
+<meta property="og:site_name" content="Doctor nu">
+<meta property="og:description" content="今天java数据结构的作业是写一个中缀计算式，这个就是之前肥球说的逆波兰表达式吧。波兰表达式是中缀表达是 逆波兰表达式就是后缀表达是。这次的作业使用两个栈实现中缀转后缀，这样就能方便对一个式子进行运算。就是让(8+910)-4/2+3变成8910+42/-3+这种形式深入研究了一下，发现这个算法其实不是很难。
+流程是这样的1.遇到操作数：直接输出(添加到后缀表达式中)2.栈为空时，遇到运算符，直接">
+<meta property="og:updated_time" content="2016-04-06T04:53:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java数据结构作业之中缀计算式（逆波兰表达式）">
+<meta name="twitter:description" content="今天java数据结构的作业是写一个中缀计算式，这个就是之前肥球说的逆波兰表达式吧。波兰表达式是中缀表达是 逆波兰表达式就是后缀表达是。这次的作业使用两个栈实现中缀转后缀，这样就能方便对一个式子进行运算。就是让(8+910)-4/2+3变成8910+42/-3+这种形式深入研究了一下，发现这个算法其实不是很难。
+流程是这样的1.遇到操作数：直接输出(添加到后缀表达式中)2.栈为空时，遇到运算符，直接">
+  
+    <link rel="alternative" href="/atom.xml" title="Doctor nu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xs3ih.com1.z0.glb.clouddn.com/9f2f070828381f302478ff3aaf014c086f06f0c4.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Doctor nu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我的生命中不曾有光，因为除了黑暗，我什么都看不到……</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/photo">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac/" style="font-size: 10px;">-mac</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Doctor nu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xs3ih.com1.z0.glb.clouddn.com/9f2f070828381f302478ff3aaf014c086f06f0c4.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Doctor nu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我的生命中不曾有光，因为除了黑暗，我什么都看不到……</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/photo">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-java数据结构作业之中缀计算式（逆波兰表达式）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/05/java数据结构作业之中缀计算式（逆波兰表达式）/" class="article-date">
+  	<time datetime="2016-04-05T13:39:42.000Z" itemprop="datePublished">2016-04-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java数据结构作业之中缀计算式（逆波兰表达式）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">-java</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天java数据结构的作业是写一个中缀计算式，这个就是之前肥球说的逆波兰表达式吧。<br>波兰表达式是中缀表达是 逆波兰表达式就是后缀表达是。这次的作业使用两个栈实现中缀转后缀，这样就能方便对一个式子进行运算。<br>就是让<br>(8+9<em>10)-4/2+3<br>变成<br>8910</em>+42/-3+<br>这种形式<br>深入研究了一下，发现这个算法其实不是很难。</p>
+<p>流程是这样的<br>1.遇到操作数：直接输出(添加到后缀表达式中)<br>2.栈为空时，遇到运算符，直接入栈<br>3.遇到左括号：将其入栈<br>4.遇到右括号：执行出栈操作，并将出栈的元素输出，直到弹出栈的是左括号，左括号不输出。<br>5.遇到其他运算符：加减乘除：弹出所有优先级大于或者等于该运算符的栈顶元素，然后将该运算符入栈<br>6.最终将栈中的元素依次出栈，输出</p>
+<p>下面添加代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br></pre></td><td class="code"><pre><span class="line">import java.util.HashMap;  </span><br><span class="line">import java.util.LinkedList;  </span><br><span class="line">import java.util.Map;  </span><br><span class="line">import java.util.Queue;  </span><br><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Calc &#123;</span><br><span class="line"></span><br><span class="line">  private Map&lt;String, Integer&gt; priority;//操作符优先级Map  </span><br><span class="line"></span><br><span class="line">  public Calc() &#123;  </span><br><span class="line">      initPriority();  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  private void initPriority() &#123;  </span><br><span class="line">      this.priority = new HashMap&lt;&gt;();  </span><br><span class="line">      //这里的#号是操作符堆栈中的栈底元素，是为了程序方便处理而添加的  </span><br><span class="line">      this.priority.put(&quot;#&quot;, 0);  </span><br><span class="line">      this.priority.put(&quot;+&quot;, 1);  </span><br><span class="line">      this.priority.put(&quot;-&quot;, 1);  </span><br><span class="line">      this.priority.put(&quot;*&quot;, 2);  </span><br><span class="line">      this.priority.put(&quot;/&quot;, 2);  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  //得到操作符的优先级  </span><br><span class="line">  public int getPriority(String operator) &#123;  </span><br><span class="line">      //这里括号进行特殊处理  </span><br><span class="line">      if (operator.matches(&quot;[()]&quot;)) &#123;  </span><br><span class="line">          return -1;  </span><br><span class="line">      &#125; else &#123;  </span><br><span class="line">          return priority.get(operator);  </span><br><span class="line">      &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  //判断优先级高低  </span><br><span class="line">  private boolean isPrior(String one, String another) &#123;  </span><br><span class="line">      return getPriority(one) &lt;= getPriority(another);  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  //得到栈顶元素  </span><br><span class="line">  private &lt;T&gt; T getTopEle(Stack&lt;T&gt; stack) &#123;  </span><br><span class="line">      if (stack == null) &#123;  </span><br><span class="line">          return null;  </span><br><span class="line">      &#125; else &#123;  </span><br><span class="line">          return stack.get(stack.size() - 1);  </span><br><span class="line">      &#125;  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * @param expression 算数表达式</span><br><span class="line">   * @return</span><br><span class="line">   * 将中缀表达式转换为后缀表达式</span><br><span class="line">   */  </span><br><span class="line">  public Queue&lt;String&gt; toSuffix(String expression) &#123;  </span><br><span class="line">      Queue&lt;String&gt; operandQueue = new LinkedList&lt;&gt;();//操作数队列  </span><br><span class="line">      Stack&lt;String&gt; operatorStack = new Stack&lt;&gt;();//操作符堆栈  </span><br><span class="line">      operatorStack.push(&quot;#&quot;);  </span><br><span class="line"></span><br><span class="line">      String current = &quot;&quot;;  </span><br><span class="line">      String operator = &quot;&quot;;  </span><br><span class="line">      String number = &quot;&quot;;  </span><br><span class="line">      int start = 0;  </span><br><span class="line">      int end = 0;  </span><br><span class="line">      for (int i = 0; i &lt; expression.length(); i++) &#123;  </span><br><span class="line">          current = String.valueOf(expression.charAt(i));  </span><br><span class="line">          // 如果是数字，末尾标记end++  </span><br><span class="line">          if (current.matches(&quot;[\\d\\.]&quot;)) &#123;  </span><br><span class="line">              // 如果数字是最后一个字符，直接将其入队列  </span><br><span class="line">              if (i == expression.length() - 1) &#123;  </span><br><span class="line">                  operandQueue.add(current);  </span><br><span class="line">              &#125; else &#123;  </span><br><span class="line">                  end++;  </span><br><span class="line">              &#125;  </span><br><span class="line">          &#125; else &#123;  </span><br><span class="line">              // 如果是字符  </span><br><span class="line">              // 如果是左括号，将其入栈  </span><br><span class="line">              if (current.equals(&quot;(&quot;)) &#123;  </span><br><span class="line">                  operatorStack.push(current);  </span><br><span class="line">              &#125; else &#123;  </span><br><span class="line">                  // 如果是右括号和其它运算符，先将前面的数字入队列  </span><br><span class="line">                  number = expression.substring(start, end);  </span><br><span class="line">                  if (!number.isEmpty()) &#123;  </span><br><span class="line">                      operandQueue.add(number);  </span><br><span class="line">                  &#125;  </span><br><span class="line">                  // 如果是右括号，执行出栈操作，并将出栈的元素入队列，直到弹出栈的是左括号，左括号直接出栈  </span><br><span class="line">                  if (current.equals(&quot;)&quot;)) &#123;  </span><br><span class="line">                      while (!getTopEle(operatorStack).equals(&quot;(&quot;)) &#123;  </span><br><span class="line">                          operandQueue.add(operatorStack.pop());  </span><br><span class="line">                      &#125;  </span><br><span class="line">                      operatorStack.pop();  </span><br><span class="line">                  &#125; else &#123;  </span><br><span class="line">                      // 如果是其它运算符，弹出所有优先级大于或者等于该运算符的栈顶元素，然后将该运算符入栈  </span><br><span class="line">                      operator = current;  </span><br><span class="line">                      while (isPrior(operator, getTopEle(operatorStack))) &#123;  </span><br><span class="line">                          operandQueue.add(operatorStack.pop());  </span><br><span class="line">                      &#125;  </span><br><span class="line">                      operatorStack.push(operator);  </span><br><span class="line">                  &#125;  </span><br><span class="line">              &#125;  </span><br><span class="line">              // 将指向数字的首尾指针加1  </span><br><span class="line">              start = end = i + 1;  </span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line"></span><br><span class="line">      for (int i = operatorStack.size() - 1; i &gt; 0; i--) &#123;  </span><br><span class="line">          operandQueue.add(operatorStack.pop());  </span><br><span class="line">      &#125;  </span><br><span class="line"></span><br><span class="line">      return operandQueue;  </span><br><span class="line">  &#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * @param expression 算数表达式</span><br><span class="line">   * @return</span><br><span class="line">   * 得到表达式的结果</span><br><span class="line">   */  </span><br><span class="line">  public double getResult(String expression) &#123;  </span><br><span class="line">      Queue&lt;String&gt; suffixQueue = toSuffix(expression);  </span><br><span class="line">      Stack&lt;String&gt; suffixStack = new Stack&lt;String&gt;();  </span><br><span class="line">      String current = &quot;&quot;;  </span><br><span class="line">      double frontOperand;  </span><br><span class="line">      double backOperand;  </span><br><span class="line">      double value = 0;  </span><br><span class="line">      for (int i = suffixQueue.size(); i &gt; 0; i--) &#123;  </span><br><span class="line">          current = suffixQueue.poll();  </span><br><span class="line">          //如果是数字，入栈  </span><br><span class="line">          if (current.matches(&quot;^\\d+(\\.\\d+)*$&quot;)) &#123;  </span><br><span class="line">              suffixStack.push(current);  </span><br><span class="line">          &#125; else &#123;  </span><br><span class="line">              backOperand = Double.valueOf(suffixStack.pop());  </span><br><span class="line">              frontOperand = Double.valueOf(suffixStack.pop());  </span><br><span class="line">              if (current.equals(&quot;+&quot;)) &#123;  </span><br><span class="line">                  value = frontOperand + backOperand;  </span><br><span class="line">              &#125; else if (current.equals(&quot;-&quot;)) &#123;  </span><br><span class="line">                  value = frontOperand - backOperand;  </span><br><span class="line">              &#125; else if (current.equals(&quot;*&quot;)) &#123;  </span><br><span class="line">                  value = frontOperand * backOperand;  </span><br><span class="line">              &#125; else if (current.equals(&quot;/&quot;)) &#123;  </span><br><span class="line">                  try &#123;  </span><br><span class="line">                      value = frontOperand / backOperand;  </span><br><span class="line">                  &#125; catch (Exception e) &#123;  </span><br><span class="line">                      return 0;  </span><br><span class="line">                  &#125;  </span><br><span class="line">              &#125;  </span><br><span class="line">              suffixStack.push(String.valueOf(value));  </span><br><span class="line">          &#125;  </span><br><span class="line">      &#125;  </span><br><span class="line">      String result = suffixStack.get(0);  </span><br><span class="line">      return Double.valueOf(result);  </span><br><span class="line">&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	 String infix = &quot;(8+9*10)-4/2+3&quot;;</span><br><span class="line">		Calc calculator = new Calc();</span><br><span class="line">		Queue&lt;String&gt; suffix = calculator.toSuffix(infix);</span><br><span class="line">		 for (int i = suffix.size(); i &gt; 0; i--) &#123;  </span><br><span class="line">	            System.out.print(suffix.poll());  </span><br><span class="line">	        &#125;</span><br><span class="line">		 double result = calculator.getResult(infix);</span><br><span class="line">		 System.out.println(&quot;\n&quot;+result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/04/04/如果让我再学一次iOS/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如果让我再学一次iOS</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="java数据结构作业之中缀计算式（逆波兰表达式）" data-title="java数据结构作业之中缀计算式（逆波兰表达式）" data-url="http://yoursite.com/2016/04/05/java数据结构作业之中缀计算式（逆波兰表达式）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Doctor nu
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
