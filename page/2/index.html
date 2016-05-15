@@ -210,6 +210,70 @@
 
       <div class="body-wrap">
   
+    <article id="post-Error-Permission-denied-publickey-错误详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/04/Error-Permission-denied-publickey-错误详解/" class="article-date">
+  	<time datetime="2016-04-04T08:10:04.000Z" itemprop="datePublished">2016-04-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/04/Error-Permission-denied-publickey-错误详解/">Error- Permission denied (publickey).错误详解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="欢迎大家入坑-mac上对hexo的坑"><a href="#欢迎大家入坑-mac上对hexo的坑" class="headerlink" title="欢迎大家入坑 mac上对hexo的坑"></a>欢迎大家入坑 mac上对hexo的坑</h1><p>如果你在 mac 中配置好了hexo，deploy的时候却一直显示：</p>
+<p>Error: Permission denied (publickey). fatal: Could not read from remote repository.</p>
+<p>哈哈 ，经过本nunu的大量排除错误，找到了是公钥配置的问题引起的。</p>
+<p>这个问题的特征是<br>.    ssh -T idealife@github.com可以成功运行，并显示<br>Hi hehedalulu， You’ve successfully authenticated, but GitHub does not provide shell access.<br>.    执行sudo hexo deploy的时候报错。（想死的心都有了吧）</p>
+<p>我们细细的看一下终端里面的报错内容</p>
+<p><code>Unhandled rejection Error: EACCES: permission denied, open &#39;/Users/idealife/Developer/blog/db.json&#39; at Error (native)</code><br>上面提示db.json文件的写权限的错误…<br>我们要提高权限 这个涉及到sudo的问题<br>如果你是在window环境中配置，就会对于权限的认识比较浅。没办法谁让我们是高贵的mac</p>
+<p>github 官方文档对Permission denied (publickey)这个错误的解释是： “你个傻叉没事不要用sudo”<br>而实际上，不用sudo是错误的（你妹的官方文档）</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>原因：生成ssh公钥时，用的命令是 ssh-keygen -t rsa -C “982472770@qq.com”<br>没有加sudo，生成的公钥是当前用户的，路径是 /Users/mac/.ssh。而sudo hexo deploy命令执行的时候应该会去读取的root用户的公钥，很显然root下还没有对应的公钥信息生成。<br>解决方法<br>    .    生成ssh公钥时，用命令 sudo ssh-keygen -t rsa -C “982472770@qq.com”<br>    .    提取公钥信息并配置到github中通过sudo cat /var/root/.ssh/id_rsa.pub先显示公钥，再直接复制。<br>然后就成功啦<br>在mac os环境下一定要注意访问文件权限的问题。（在linux喝unix也要注意哦1）</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">-hexo</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-mac上搭建hexo2016最新攻略" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
