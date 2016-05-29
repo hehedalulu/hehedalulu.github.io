@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>随笔 | Doctor nu</title>
+  <title>storyboard使用的一些坑 | Doctor nu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="随笔">
-<meta property="og:url" content="http://yoursite.com/随笔/index.html">
+  <meta name="description" content="最近使用storyboard进行了一系列的操作对于我这种手法不娴熟的人简直痛苦到窒息不过我个人还是主推使用storyboard的，因为大势所趋，虽然只使用纯代码来构建布局的话耦合性会高一点。但是这个没有storyboard这种东西，很难理解一个产品的构架与结构啊下面记述我在storyboard上面遇上的一些小坑，希望以后自己能够警醒，也希望这些能够帮助别人
+设置rootViewController">
+<meta property="og:type" content="article">
+<meta property="og:title" content="storyboard使用的一些坑">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/storyboard使用的一些坑/index.html">
 <meta property="og:site_name" content="Doctor nu">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-04T07:47:07.000Z">
+<meta property="og:description" content="最近使用storyboard进行了一系列的操作对于我这种手法不娴熟的人简直痛苦到窒息不过我个人还是主推使用storyboard的，因为大势所趋，虽然只使用纯代码来构建布局的话耦合性会高一点。但是这个没有storyboard这种东西，很难理解一个产品的构架与结构啊下面记述我在storyboard上面遇上的一些小坑，希望以后自己能够警醒，也希望这些能够帮助别人
+设置rootViewController">
+<meta property="og:updated_time" content="2016-05-29T06:35:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随笔">
-<meta name="twitter:description">
+<meta name="twitter:title" content="storyboard使用的一些坑">
+<meta name="twitter:description" content="最近使用storyboard进行了一系列的操作对于我这种手法不娴熟的人简直痛苦到窒息不过我个人还是主推使用storyboard的，因为大势所趋，虽然只使用纯代码来构建布局的话耦合性会高一点。但是这个没有storyboard这种东西，很难理解一个产品的构架与结构啊下面记述我在storyboard上面遇上的一些小坑，希望以后自己能够警醒，也希望这些能够帮助别人
+设置rootViewController">
   
     <link rel="alternative" href="/atom.xml" title="Doctor nu" type="application/atom+xml">
   
@@ -209,11 +212,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-storyboard使用的一些坑" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/随笔/index.html" class="article-date">
-  	<time datetime="2016-04-04T07:47:07.000Z" itemprop="datePublished">2016-04-04</time>
+      <a href="/2016/05/29/storyboard使用的一些坑/" class="article-date">
+  	<time datetime="2016-05-29T06:11:46.000Z" itemprop="datePublished">2016-05-29</time>
 </a>
     </div>
   
@@ -226,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      随笔
+      storyboard使用的一些坑
     </h1>
   
 
@@ -242,13 +245,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>最近使用storyboard进行了一系列的操作对于我这种手法不娴熟的人简直痛苦到窒息<br>不过我个人还是主推使用storyboard的，因为大势所趋，虽然只使用纯代码来构建布局的话耦合性会高一点。但是这个没有storyboard这种东西，很难理解一个产品的构架与结构啊<br>下面记述我在storyboard上面遇上的一些小坑，希望以后自己能够警醒，也希望这些能够帮助别人</p>
+<h3 id="设置rootViewController的坑"><a href="#设置rootViewController的坑" class="headerlink" title="设置rootViewController的坑"></a>设置rootViewController的坑</h3><p>  有的时候我们用storyboard来实现一些页面的跳转，刚开始的时候想我就不会先去用kvc的模式去creat class所以这个时候会遇到一个问题，你在storyboard里面创建viewcontroller没有对应的实例类，当你需要通过带来来进行交互的时候，就会很困难。<br>说一下我的个人经历<br>  最近我个人做到bmob的注册登录的模块的时候，需要加一条逻辑。<br>  如果不是第一次使用这个app，在此之前已经注册并登录过，就跳过登录注册的界面<br>。。。。。<br>  这个看起来很简单<br>  只需要在appdelegate里面加一条逻辑 取出磁盘中的当前用户，加一个判断</p>
+<pre><code>  `` BmobUser *bUser = [BmobUser getCurrentUser];
+if (bUser) {
+
+}else{
+
+}
+  ``
+</code></pre><p>  我觉得这个时候我直接实例一个类 然后在self.window.rootViewController就可以了对吧<br>  然后我就被自己坑了<br>  你在root tabbar控制器的时候要这样写啊<br>    先把你的tabbar 的子rootviewcontroller里面加一个identifer<br>    然后在appdelegate里面实例化一个storyboard<br>    再把storyboard里面的控制器给取出来<br>    又因为是tabbar<br>    所以你要把tabbar下面每一个子rootviewcontroller实例一下<br>    然后存到一个数组里面<br>    然后显示tabbar加数组</p>
+<pre><code>不废话了
+代码如下
+    ``        
+    //进行操作
+    //取出sb
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@&quot;Main&quot; bundle:[NSBundle mainBundle]];
+    _tabBarController =[[UITabBarController alloc]init];
+
+    UINavigationController *nav =[sb instantiateViewControllerWithIdentifier:@&quot;tabController1&quot;];
+    UIViewController *tabbar2 = [sb instantiateViewControllerWithIdentifier:@&quot;tabController2&quot;];
+    UIViewController *tabbar3 =[sb instantiateViewControllerWithIdentifier:@&quot;tabController3&quot;];
+    UIViewController *tabbar4 = [sb  instantiateViewControllerWithIdentifier:@&quot;tabController4&quot;];
+
+    NSArray *controllers = [NSArray arrayWithObjects:nav, tabbar2,tabbar3,tabbar4, nil];
+    _tabBarController.viewControllers = controllers;
+    self.window.rootViewController = _tabBarController;
+
+    self.window.rootViewController = self.tabBarController;
+    ``
+</code></pre><h3 id="页面跳转的坑"><a href="#页面跳转的坑" class="headerlink" title="页面跳转的坑"></a>页面跳转的坑</h3><p>storyboard最好的东西没有只有就是每一个东西都可以加identifer<br>haha<br>尤其是跳转页面的时候<br>你用segue跳转的时候判断一下identifer就好啦</p>
+
       
     </div>
     
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2016/05/13/secret-crush-on-laviexu-十六岁的暗恋/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">a secret crush on laviexu 十六岁的暗恋</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -278,7 +321,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="随笔" data-url="http://yoursite.com/随笔/index.html"></div>
+	<div class="ds-thread" data-thread-key="storyboard使用的一些坑" data-title="storyboard使用的一些坑" data-url="http://yoursite.com/2016/05/29/storyboard使用的一些坑/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -322,7 +365,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
