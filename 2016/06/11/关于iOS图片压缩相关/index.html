@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>关于iOS图片压缩相关 | Doctor nu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="all by CherryWang 转载请声明出处最近有做到用户系统这方面的东西，就遇上了压缩图这个问题，目前处理的问题是用户头像的问题头像直接上传的只保存一份的话。每一次用户使用的时候就回加载原图，烧流量而且会很卡顿。为了解决这个问题，我们通过一个压缩图的算法来实现在本地生成压缩图，然后上传云端的功能。本来是打算直接上传图片到服务器的，可惜的是我用的是bmob的服务器，它在2016年之后的版本都">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于iOS图片压缩相关">
+<meta property="og:url" content="http://yoursite.com/2016/06/11/关于iOS图片压缩相关/index.html">
+<meta property="og:site_name" content="Doctor nu">
+<meta property="og:description" content="all by CherryWang 转载请声明出处最近有做到用户系统这方面的东西，就遇上了压缩图这个问题，目前处理的问题是用户头像的问题头像直接上传的只保存一份的话。每一次用户使用的时候就回加载原图，烧流量而且会很卡顿。为了解决这个问题，我们通过一个压缩图的算法来实现在本地生成压缩图，然后上传云端的功能。本来是打算直接上传图片到服务器的，可惜的是我用的是bmob的服务器，它在2016年之后的版本都">
+<meta property="og:updated_time" content="2016-06-11T02:32:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于iOS图片压缩相关">
+<meta name="twitter:description" content="all by CherryWang 转载请声明出处最近有做到用户系统这方面的东西，就遇上了压缩图这个问题，目前处理的问题是用户头像的问题头像直接上传的只保存一份的话。每一次用户使用的时候就回加载原图，烧流量而且会很卡顿。为了解决这个问题，我们通过一个压缩图的算法来实现在本地生成压缩图，然后上传云端的功能。本来是打算直接上传图片到服务器的，可惜的是我用的是bmob的服务器，它在2016年之后的版本都">
+  
+    <link rel="alternative" href="/atom.xml" title="Doctor nu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xs3ih.com1.z0.glb.clouddn.com/9f2f070828381f302478ff3aaf014c086f06f0c4.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Doctor nu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我的生命中不曾有光，因为除了黑暗，我什么都看不到……</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/photo">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac/" style="font-size: 10px;">-mac</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Doctor nu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xs3ih.com1.z0.glb.clouddn.com/9f2f070828381f302478ff3aaf014c086f06f0c4.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Doctor nu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我的生命中不曾有光，因为除了黑暗，我什么都看不到……</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/photo">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-关于iOS图片压缩相关" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/11/关于iOS图片压缩相关/" class="article-date">
+  	<time datetime="2016-06-11T02:06:37.000Z" itemprop="datePublished">2016-06-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于iOS图片压缩相关
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>all by CherryWang 转载请声明出处<br>最近有做到用户系统这方面的东西，就遇上了压缩图这个问题，目前处理的问题是用户头像的问题<br>头像直接上传的只保存一份的话。每一次用户使用的时候就回加载原图，烧流量而且会很卡顿。为了解决这个问题，我们通过一个压缩图的算法来实现在本地生成压缩图，然后上传云端的功能。<br>本来是打算直接上传图片到服务器的，可惜的是我用的是bmob的服务器，它在2016年之后的版本都不支持请求缩略图这个功能了，心好累。后来打算用javascripe重新写一份云端的逻辑的，结果bug太多，不会的东西还是不要强行装逼的比较好。<br>之后又打算再集成一个七牛sdk，再把所有的图片都放在七牛的服务器上面，后来想一想七牛那迷一般的文档，就放弃了😂。<br>我打算现在客户端先生成两份图 上传的时候上传两份图，后期再做朋友圈或者朋友印象这部分功能的时候在集成一下七牛的环境好了。</p>
+<h2 id="吐槽一下-这真是一个多元化API-and-快速开发的时代啊😂"><a href="#吐槽一下-这真是一个多元化API-and-快速开发的时代啊😂" class="headerlink" title="吐槽一下 这真是一个多元化API and 快速开发的时代啊😂"></a>吐槽一下 这真是一个多元化API and 快速开发的时代啊😂</h2><p>言归正传</p>
+<h3 id="做图片的压缩图的两种方式"><a href="#做图片的压缩图的两种方式" class="headerlink" title="做图片的压缩图的两种方式"></a>做图片的压缩图的两种方式</h3><p>第一种就是压，就是降低清晰度，但是图片的尺寸不变，像素数不变<br>第二种就是缩，把图片的尺寸变小，长宽减少了，像素数也就减少了，同时文件的体积也减小了</p>
+<h4 id="第一种“压”—-压缩图片质量"><a href="#第一种“压”—-压缩图片质量" class="headerlink" title="第一种“压”—-压缩图片质量"></a>第一种“压”—-压缩图片质量</h4><p>压缩图片质量有两种形式（其实是一样的）<br>1.第一种<br>  <code>float kCompressionQuality = 0.3; //这个是压缩的比例
+  NSData *photo = UIImageJPEGRepresentation(UIImage, kCompressionQuality);</code><br>2.第二种</p>
+<p><code>+(UIImage *)reduceImage:(UIImage *)image percent:(float)percent
+    {
+      NSData *imageData = UIImageJPEGRepresentation(image, percent);
+      UIImage *newImage = [UIImage imageWithData:imageData];
+      return newImage;
+    }</code></p>
+<h4 id="第二种“缩”—-减小图片尺寸"><a href="#第二种“缩”—-减小图片尺寸" class="headerlink" title="第二种“缩”—-减小图片尺寸"></a>第二种“缩”—-减小图片尺寸</h4><p>减小图片尺寸呢 有两种不同的减小 第一种就是给定尺寸来减小 第二种就是等比例减小<br>废话不多少 直接上代码<br>1.给定尺寸减小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-(UIImage *)scaleToSize:(UIImage *)aImage size:(CGSize)size&#123;</span><br><span class="line">    //获取当前图片的尺寸</span><br><span class="line">    UIGraphicsBeginImageContext(size);</span><br><span class="line">    //绘制出新图片(新尺寸)</span><br><span class="line">    [aImage drawInRect:CGRectMake(0, 0, size.width, size.height)];</span><br><span class="line">    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    //结束绘制</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>2.等比例减小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">/等比例压缩</span><br><span class="line">-(UIImage *)oldImage:(UIImage *)oldImage toSize:(CGSize)size&#123;</span><br><span class="line"></span><br><span class="line">    UIImage *newImage = nil;//新照片对象</span><br><span class="line">    CGSize theSize = oldImage.size;//压缩前图片size</span><br><span class="line"></span><br><span class="line">    CGFloat width = theSize.width; //压缩前图片width</span><br><span class="line">    CGFloat height = theSize.height;//压缩前图片height</span><br><span class="line"></span><br><span class="line">    CGFloat newWidth = size.width; //压缩后图片width</span><br><span class="line">    CGFloat newHeight = size.height;//压缩后图片height</span><br><span class="line"></span><br><span class="line">    CGFloat scaleFactor = 0.0;//初值</span><br><span class="line"></span><br><span class="line">    CGFloat toWidth = newWidth;//压缩后图片width</span><br><span class="line">    CGFloat toHeight = newHeight;//压缩后图片height</span><br><span class="line"></span><br><span class="line">    CGPoint thumnailPoint = CGPointMake(0.0, 0.0);//给初值</span><br><span class="line"></span><br><span class="line">    if (CGSizeEqualToSize(theSize, size) == NO) &#123;</span><br><span class="line">        //判断是不是已经满足 theSize = size 要求</span><br><span class="line"></span><br><span class="line">        CGFloat widthFac = newWidth/width;</span><br><span class="line">        CGFloat heithrFac = newHeight/height;</span><br><span class="line">        if (widthFac &gt; heithrFac) &#123;</span><br><span class="line">            scaleFactor = widthFac;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            scaleFactor = heithrFac;</span><br><span class="line">        &#125;</span><br><span class="line">        //不满足做等比例缩小处理</span><br><span class="line">        toWidth = width *scaleFactor;</span><br><span class="line">        toHeight = height *scaleFactor;</span><br><span class="line"></span><br><span class="line">        if (widthFac &gt; heithrFac) &#123;</span><br><span class="line">            thumnailPoint.y = (newHeight - toHeight)* 0.5;</span><br><span class="line">        &#125;else if (widthFac &lt; heithrFac)&#123;</span><br><span class="line">            thumnailPoint.x = (newWidth - toWidth)* 0.5;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //创建context,并将其设置为正在使用的context</span><br><span class="line">    UIGraphicsBeginImageContext(size);</span><br><span class="line">    CGRect thumbnailRect  = CGRectZero;</span><br><span class="line">    thumbnailRect.origin = thumnailPoint;</span><br><span class="line">    thumbnailRect.size.width = toWidth;</span><br><span class="line">    thumbnailRect.size.height = toHeight;</span><br><span class="line"></span><br><span class="line">    //绘制出图片(大小已经改变)</span><br><span class="line">    [oldImage drawInRect:thumbnailRect];</span><br><span class="line"></span><br><span class="line">    newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line"></span><br><span class="line">    //结果判断</span><br><span class="line">    if (newImage == nil) &#123;</span><br><span class="line">        [NSException exceptionWithName:@&quot;提示&quot; reason:@&quot;Error:image scale fail&quot; userInfo:nil];</span><br><span class="line">    &#125;</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth&#123;</span><br><span class="line"></span><br><span class="line">    UIImage *newImage = nil;</span><br><span class="line"></span><br><span class="line">    CGSize imageSize = sourceImage.size;</span><br><span class="line"></span><br><span class="line">    CGFloat width = imageSize.width;</span><br><span class="line">    CGFloat height = imageSize.height;</span><br><span class="line"></span><br><span class="line">    CGFloat targetWidth = defineWidth;</span><br><span class="line">    CGFloat targetHeight = height / (width / targetWidth);</span><br><span class="line">    CGSize size = CGSizeMake(targetWidth, targetHeight);</span><br><span class="line">    CGFloat scaleFactor = 0.0;</span><br><span class="line"></span><br><span class="line">    CGFloat scaledWidth = targetWidth;</span><br><span class="line">    CGFloat scaledHeight = targetHeight;</span><br><span class="line"></span><br><span class="line">    CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);</span><br><span class="line"></span><br><span class="line">    if(CGSizeEqualToSize(imageSize, size) == NO)&#123;</span><br><span class="line">        CGFloat widthFactor = targetWidth / width;</span><br><span class="line">        CGFloat heightFactor = targetHeight / height;</span><br><span class="line">        if(widthFactor &gt; heightFactor)&#123;</span><br><span class="line">            scaleFactor = widthFactor;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            scaleFactor = heightFactor;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        scaledWidth = width * scaleFactor;</span><br><span class="line">        scaledHeight = height * scaleFactor;</span><br><span class="line">        if(widthFactor &gt; heightFactor)&#123;</span><br><span class="line">            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;</span><br><span class="line">        &#125;else if(widthFactor &lt; heightFactor)&#123;</span><br><span class="line">            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    UIGraphicsBeginImageContext(size);</span><br><span class="line">    CGRect thumbnailRect = CGRectZero;</span><br><span class="line">    thumbnailRect.origin = thumbnailPoint;</span><br><span class="line">    thumbnailRect.size.width = scaledWidth;</span><br><span class="line">    thumbnailRect.size.height = scaledHeight;</span><br><span class="line"></span><br><span class="line">    [sourceImage drawInRect:thumbnailRect];</span><br><span class="line"></span><br><span class="line">    newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    if(newImage == nil)&#123;</span><br><span class="line">        NSLog(@&quot;scale image fail&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就先介绍到这里 有什么问题可以问我</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/02/iOS中BitCode的介绍和配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS中BitCode的介绍和配置</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="关于iOS图片压缩相关" data-title="关于iOS图片压缩相关" data-url="http://yoursite.com/2016/06/11/关于iOS图片压缩相关/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Doctor nu
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

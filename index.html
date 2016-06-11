@@ -210,6 +210,74 @@
 
       <div class="body-wrap">
   
+    <article id="post-关于iOS图片压缩相关" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/11/关于iOS图片压缩相关/" class="article-date">
+  	<time datetime="2016-06-11T02:06:37.000Z" itemprop="datePublished">2016-06-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/11/关于iOS图片压缩相关/">关于iOS图片压缩相关</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>all by CherryWang 转载请声明出处<br>最近有做到用户系统这方面的东西，就遇上了压缩图这个问题，目前处理的问题是用户头像的问题<br>头像直接上传的只保存一份的话。每一次用户使用的时候就回加载原图，烧流量而且会很卡顿。为了解决这个问题，我们通过一个压缩图的算法来实现在本地生成压缩图，然后上传云端的功能。<br>本来是打算直接上传图片到服务器的，可惜的是我用的是bmob的服务器，它在2016年之后的版本都不支持请求缩略图这个功能了，心好累。后来打算用javascripe重新写一份云端的逻辑的，结果bug太多，不会的东西还是不要强行装逼的比较好。<br>之后又打算再集成一个七牛sdk，再把所有的图片都放在七牛的服务器上面，后来想一想七牛那迷一般的文档，就放弃了😂。<br>我打算现在客户端先生成两份图 上传的时候上传两份图，后期再做朋友圈或者朋友印象这部分功能的时候在集成一下七牛的环境好了。</p>
+<h2 id="吐槽一下-这真是一个多元化API-and-快速开发的时代啊😂"><a href="#吐槽一下-这真是一个多元化API-and-快速开发的时代啊😂" class="headerlink" title="吐槽一下 这真是一个多元化API and 快速开发的时代啊😂"></a>吐槽一下 这真是一个多元化API and 快速开发的时代啊😂</h2><p>言归正传</p>
+<h3 id="做图片的压缩图的两种方式"><a href="#做图片的压缩图的两种方式" class="headerlink" title="做图片的压缩图的两种方式"></a>做图片的压缩图的两种方式</h3><p>第一种就是压，就是降低清晰度，但是图片的尺寸不变，像素数不变<br>第二种就是缩，把图片的尺寸变小，长宽减少了，像素数也就减少了，同时文件的体积也减小了</p>
+<h4 id="第一种“压”—-压缩图片质量"><a href="#第一种“压”—-压缩图片质量" class="headerlink" title="第一种“压”—-压缩图片质量"></a>第一种“压”—-压缩图片质量</h4><p>压缩图片质量有两种形式（其实是一样的）<br>1.第一种<br>  <code>float kCompressionQuality = 0.3; //这个是压缩的比例
+  NSData *photo = UIImageJPEGRepresentation(UIImage, kCompressionQuality);</code><br>2.第二种</p>
+<p><code>+(UIImage *)reduceImage:(UIImage *)image percent:(float)percent
+    {
+      NSData *imageData = UIImageJPEGRepresentation(image, percent);
+      UIImage *newImage = [UIImage imageWithData:imageData];
+      return newImage;
+    }</code></p>
+<h4 id="第二种“缩”—-减小图片尺寸"><a href="#第二种“缩”—-减小图片尺寸" class="headerlink" title="第二种“缩”—-减小图片尺寸"></a>第二种“缩”—-减小图片尺寸</h4><p>减小图片尺寸呢 有两种不同的减小 第一种就是给定尺寸来减小 第二种就是等比例减小<br>废话不多少 直接上代码<br>1.给定尺寸减小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-(UIImage *)scaleToSize:(UIImage *)aImage size:(CGSize)size&#123;</span><br><span class="line">    //获取当前图片的尺寸</span><br><span class="line">    UIGraphicsBeginImageContext(size);</span><br><span class="line">    //绘制出新图片(新尺寸)</span><br><span class="line">    [aImage drawInRect:CGRectMake(0, 0, size.width, size.height)];</span><br><span class="line">    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    //结束绘制</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>2.等比例减小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">/等比例压缩</span><br><span class="line">-(UIImage *)oldImage:(UIImage *)oldImage toSize:(CGSize)size&#123;</span><br><span class="line"></span><br><span class="line">    UIImage *newImage = nil;//新照片对象</span><br><span class="line">    CGSize theSize = oldImage.size;//压缩前图片size</span><br><span class="line"></span><br><span class="line">    CGFloat width = theSize.width; //压缩前图片width</span><br><span class="line">    CGFloat height = theSize.height;//压缩前图片height</span><br><span class="line"></span><br><span class="line">    CGFloat newWidth = size.width; //压缩后图片width</span><br><span class="line">    CGFloat newHeight = size.height;//压缩后图片height</span><br><span class="line"></span><br><span class="line">    CGFloat scaleFactor = 0.0;//初值</span><br><span class="line"></span><br><span class="line">    CGFloat toWidth = newWidth;//压缩后图片width</span><br><span class="line">    CGFloat toHeight = newHeight;//压缩后图片height</span><br><span class="line"></span><br><span class="line">    CGPoint thumnailPoint = CGPointMake(0.0, 0.0);//给初值</span><br><span class="line"></span><br><span class="line">    if (CGSizeEqualToSize(theSize, size) == NO) &#123;</span><br><span class="line">        //判断是不是已经满足 theSize = size 要求</span><br><span class="line"></span><br><span class="line">        CGFloat widthFac = newWidth/width;</span><br><span class="line">        CGFloat heithrFac = newHeight/height;</span><br><span class="line">        if (widthFac &gt; heithrFac) &#123;</span><br><span class="line">            scaleFactor = widthFac;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            scaleFactor = heithrFac;</span><br><span class="line">        &#125;</span><br><span class="line">        //不满足做等比例缩小处理</span><br><span class="line">        toWidth = width *scaleFactor;</span><br><span class="line">        toHeight = height *scaleFactor;</span><br><span class="line"></span><br><span class="line">        if (widthFac &gt; heithrFac) &#123;</span><br><span class="line">            thumnailPoint.y = (newHeight - toHeight)* 0.5;</span><br><span class="line">        &#125;else if (widthFac &lt; heithrFac)&#123;</span><br><span class="line">            thumnailPoint.x = (newWidth - toWidth)* 0.5;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //创建context,并将其设置为正在使用的context</span><br><span class="line">    UIGraphicsBeginImageContext(size);</span><br><span class="line">    CGRect thumbnailRect  = CGRectZero;</span><br><span class="line">    thumbnailRect.origin = thumnailPoint;</span><br><span class="line">    thumbnailRect.size.width = toWidth;</span><br><span class="line">    thumbnailRect.size.height = toHeight;</span><br><span class="line"></span><br><span class="line">    //绘制出图片(大小已经改变)</span><br><span class="line">    [oldImage drawInRect:thumbnailRect];</span><br><span class="line"></span><br><span class="line">    newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line"></span><br><span class="line">    //结果判断</span><br><span class="line">    if (newImage == nil) &#123;</span><br><span class="line">        [NSException exceptionWithName:@&quot;提示&quot; reason:@&quot;Error:image scale fail&quot; userInfo:nil];</span><br><span class="line">    &#125;</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-(UIImage *) imageCompressForWidth:(UIImage *)sourceImage targetWidth:(CGFloat)defineWidth&#123;</span><br><span class="line"></span><br><span class="line">    UIImage *newImage = nil;</span><br><span class="line"></span><br><span class="line">    CGSize imageSize = sourceImage.size;</span><br><span class="line"></span><br><span class="line">    CGFloat width = imageSize.width;</span><br><span class="line">    CGFloat height = imageSize.height;</span><br><span class="line"></span><br><span class="line">    CGFloat targetWidth = defineWidth;</span><br><span class="line">    CGFloat targetHeight = height / (width / targetWidth);</span><br><span class="line">    CGSize size = CGSizeMake(targetWidth, targetHeight);</span><br><span class="line">    CGFloat scaleFactor = 0.0;</span><br><span class="line"></span><br><span class="line">    CGFloat scaledWidth = targetWidth;</span><br><span class="line">    CGFloat scaledHeight = targetHeight;</span><br><span class="line"></span><br><span class="line">    CGPoint thumbnailPoint = CGPointMake(0.0, 0.0);</span><br><span class="line"></span><br><span class="line">    if(CGSizeEqualToSize(imageSize, size) == NO)&#123;</span><br><span class="line">        CGFloat widthFactor = targetWidth / width;</span><br><span class="line">        CGFloat heightFactor = targetHeight / height;</span><br><span class="line">        if(widthFactor &gt; heightFactor)&#123;</span><br><span class="line">            scaleFactor = widthFactor;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            scaleFactor = heightFactor;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        scaledWidth = width * scaleFactor;</span><br><span class="line">        scaledHeight = height * scaleFactor;</span><br><span class="line">        if(widthFactor &gt; heightFactor)&#123;</span><br><span class="line">            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;</span><br><span class="line">        &#125;else if(widthFactor &lt; heightFactor)&#123;</span><br><span class="line">            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    UIGraphicsBeginImageContext(size);</span><br><span class="line">    CGRect thumbnailRect = CGRectZero;</span><br><span class="line">    thumbnailRect.origin = thumbnailPoint;</span><br><span class="line">    thumbnailRect.size.width = scaledWidth;</span><br><span class="line">    thumbnailRect.size.height = scaledHeight;</span><br><span class="line"></span><br><span class="line">    [sourceImage drawInRect:thumbnailRect];</span><br><span class="line"></span><br><span class="line">    newImage = UIGraphicsGetImageFromCurrentImageContext();</span><br><span class="line">    if(newImage == nil)&#123;</span><br><span class="line">        NSLog(@&quot;scale image fail&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    UIGraphicsEndImageContext();</span><br><span class="line">    return newImage;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就先介绍到这里 有什么问题可以问我</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-iOS中BitCode的介绍和配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -795,67 +863,6 @@ if (bUser) {
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">-java</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-如果让我再学一次iOS" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/04/如果让我再学一次iOS/" class="article-date">
-  	<time datetime="2016-04-04T08:14:00.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/如果让我再学一次iOS/">如果让我再学一次iOS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果让我重新学一次iOS</p>
-<p>之前学习iOS开发的时候因为一开始有点激动，对这个世界充满了好奇。所以订阅了一大堆博客公众号，看各种教程和视频，然后就变的浮躁，不知道从何下手，导致了拖延症。就好像我渴了，给我倒一杯水，这很直接，马上就可以做。但是给我一杯不明液体，又不熟悉，纠结了。不如刷会微博，(像肥球一样玩qq宠物)看看票圈，玩玩游戏。<br>问题的关键就是，空有一番激情但是像无头苍蝇一样，有的时候撞破头收效却甚微，人也开始不自信，开始质疑自己，怀疑自己就是一个垃圾，什么都做不出来。接着自暴自弃，原先的激情反而没有了。<br>所以现在我决定重新学一次iOS，正好才入门，我要选择一篇好的入门教材来激发我学习的激情，按照前辈们的指示，少固执己见，走一条正确的自学道路。我希望自己能够契合自己的水平，常常有收获，并且不断的增加自己到成就感。我觉得这样才能正确的激励自己走下去。</p>
-<p>之前看过一个小故事</p>
-<p>三只猎狗追一只土拔鼠,土拔鼠逃跑时钻进了一个树洞。这个树洞只有一个出口,不一会儿,忽然从树洞里跑出一只兔子。兔子飞快地向前跑,并爬上另一棵大树。兔子因为慌乱在树上没站稳,掉了下来,砸晕了正仰头看的三只猎狗,最后,兔子终于逃脱。<br>于这个故事可以从不同的角度去解读，很多人会问：兔子为什么会爬树？为什么能砸晕三只猎狗？这不是重点，重点是，之前追赶的土拨鼠哪去了？看书时难免会有延伸阅读。就像学习一样，你看到这个部分，发现那个部分不也不是很熟悉，很多东西是不能够递进的，正所谓一口吃不成一个大胖子。学习一定要知道今天的目标是什么，知道自己的需求是什么，不然宽度很广，深度就会很浅。<br>以后打算跟着下面这份干货学习！</p>
-<p>一个iOS自学开发的干货终结版本<br>非常棒的一个干货<a href="https://github.com/Aufree/trip-to-iOS/blob/master/README.md" target="_blank" rel="external">网址</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">-plan</a></li></ul>
 	</div>
 
       
