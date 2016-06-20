@@ -210,6 +210,61 @@
 
       <div class="body-wrap">
   
+    <article id="post-仿网易新闻菜单滑动第三方深度定制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/20/仿网易新闻菜单滑动第三方深度定制/" class="article-date">
+  	<time datetime="2016-06-20T13:27:25.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/仿网易新闻菜单滑动第三方深度定制/">仿网易新闻菜单滑动第三方深度定制</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="仿网易新闻优秀第三方库-（后续上图）"><a href="#仿网易新闻优秀第三方库-（后续上图）" class="headerlink" title="仿网易新闻优秀第三方库 （后续上图）"></a>仿网易新闻优秀第三方库 （后续上图）</h3><h4 id="ALL-BY-CherryWang-转载请注明出处"><a href="#ALL-BY-CherryWang-转载请注明出处" class="headerlink" title="ALL BY CherryWang (转载请注明出处)"></a>ALL BY CherryWang (转载请注明出处)</h4><hr>
+<p>  最近做了一个项目，老板要求菜单栏要有朋友印象那种效果，要是那种滑动的菜单，最好是仿照网易新闻首页的那种滑动的菜单。<br>  本来我是自己封装一个菜单栏的，想了一下。上面滑动的菜单用一个scrollview，scrollview上面设置几个固定的按钮，监听页面的滑动，每次换一个页面的时候，按钮的背景颜色，字体大小以及颜色进行改变达到那种显著的切换效果。下面切换的菜单就用一个scrollview上面在覆盖一层三个tableview，scrollview是用来控制横向滑动的，就是用图片轮播器的概念和tableview相结合 用tableview的tag属性来切换按钮和界面 最后实现这种效果。<br>  后来一直就是用的自己封装的这个菜单控件。感觉自己萌萌哒。可是后来遇到一个问题，我写的空间耦合度实在是太低了，封装的太差，导致代码很难重用。最终要的一点是，我只用了一个控制器来实现这所有的内容。啊。。后来我用了Bmob的云数据库，以及李明杰老师的MJRefrsh.操蛋的一件事情发生了。我的tableview卡顿到爆 几个tableview每次reload的时候我向左滑动的效果就变得极差，真是气死我了。</p>
+<p>  后来我发现怎么优化都必须解决这个controller的MVC中的C占的比重过多的问题.一咬牙一跺脚，决定放弃自己封装的菜单空间，改去拥抱大神们封装的空间，看看有没有什么优秀的第三库可以使用或者可以借鉴一下设计模式。果不其然，让我在code4app里面找到一个最近才上传的十分优秀的一个demo，可以说是一个第三方库，简直是太棒了<br>  分享一下网址<br>  <a href="http://code4app.com/thread-8061-1-1.html" target="_blank" rel="external">超级干货仿网易</a>;<br>  稍后会有详细的解析</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-关于iOS图片压缩相关" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -810,67 +865,6 @@ if (bUser) {
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">-java</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-如果让我再学一次iOS" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/04/如果让我再学一次iOS/" class="article-date">
-  	<time datetime="2016-04-04T08:14:00.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/如果让我再学一次iOS/">如果让我再学一次iOS</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果让我重新学一次iOS</p>
-<p>之前学习iOS开发的时候因为一开始有点激动，对这个世界充满了好奇。所以订阅了一大堆博客公众号，看各种教程和视频，然后就变的浮躁，不知道从何下手，导致了拖延症。就好像我渴了，给我倒一杯水，这很直接，马上就可以做。但是给我一杯不明液体，又不熟悉，纠结了。不如刷会微博，(像肥球一样玩qq宠物)看看票圈，玩玩游戏。<br>问题的关键就是，空有一番激情但是像无头苍蝇一样，有的时候撞破头收效却甚微，人也开始不自信，开始质疑自己，怀疑自己就是一个垃圾，什么都做不出来。接着自暴自弃，原先的激情反而没有了。<br>所以现在我决定重新学一次iOS，正好才入门，我要选择一篇好的入门教材来激发我学习的激情，按照前辈们的指示，少固执己见，走一条正确的自学道路。我希望自己能够契合自己的水平，常常有收获，并且不断的增加自己到成就感。我觉得这样才能正确的激励自己走下去。</p>
-<p>之前看过一个小故事</p>
-<p>三只猎狗追一只土拔鼠,土拔鼠逃跑时钻进了一个树洞。这个树洞只有一个出口,不一会儿,忽然从树洞里跑出一只兔子。兔子飞快地向前跑,并爬上另一棵大树。兔子因为慌乱在树上没站稳,掉了下来,砸晕了正仰头看的三只猎狗,最后,兔子终于逃脱。<br>于这个故事可以从不同的角度去解读，很多人会问：兔子为什么会爬树？为什么能砸晕三只猎狗？这不是重点，重点是，之前追赶的土拨鼠哪去了？看书时难免会有延伸阅读。就像学习一样，你看到这个部分，发现那个部分不也不是很熟悉，很多东西是不能够递进的，正所谓一口吃不成一个大胖子。学习一定要知道今天的目标是什么，知道自己的需求是什么，不然宽度很广，深度就会很浅。<br>以后打算跟着下面这份干货学习！</p>
-<p>一个iOS自学开发的干货终结版本<br>非常棒的一个干货<a href="https://github.com/Aufree/trip-to-iOS/blob/master/README.md" target="_blank" rel="external">网址</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">-plan</a></li></ul>
 	</div>
 
       
