@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac/" style="font-size: 10px;">-mac</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
+						<a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac/" style="font-size: 10px;">-mac</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/生活杂记/" style="font-size: 10px;">-生活杂记</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
 					</div>
 				</section>
 				
@@ -210,6 +210,147 @@
 
       <div class="body-wrap">
   
+    <article id="post-（转）shadowsocks使用教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/24/（转）shadowsocks使用教程/" class="article-date">
+  	<time datetime="2016-08-24T09:38:31.000Z" itemprop="datePublished">2016-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/24/（转）shadowsocks使用教程/">（转）shadowsocks图文使用教程 </a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>此文为转载，因原网站被墙，广大亲朋好友为翻墙求助于我，秉着服务大众的心，希望可以给他人一些帮助</p>
+<h5 id="Shadowsocks科学上网图文教程"><a href="#Shadowsocks科学上网图文教程" class="headerlink" title="Shadowsocks科学上网图文教程"></a>Shadowsocks科学上网图文教程</h5><p>SS的全称是Shadowsocks，是一种轻量级的加密的socks5网络代理，经本人测试速度比VPN快很多，观看YouTube视频非常流畅，是迄今为止最快的科学工具。下面分别介绍在Windows, Mac OS X, Linux, iOS, Android等系统下怎样使用Shadowsocks科学上网。</p>
+<h3 id="1-获取SS账号"><a href="#1-获取SS账号" class="headerlink" title="1.获取SS账号"></a>1.获取SS账号</h3><p>首先要有一个Shadowsocks账号（SS账号）。没有SS账号？新浪微博关注 @SS账号 。或者到 <a href="www.ss-link.com/trial">www.ss-link.com/trial</a>  获取免费的试用SS账号。</p>
+<p>另外，在开始配置之前和配置之后，可以用ip111.cn这样验证一下能否科学上网，用什么方式科学上网的。</p>
+<h3 id="2-Windows系统"><a href="#2-Windows系统" class="headerlink" title="2. Windows系统"></a>2. Windows系统</h3><p>到  <a href="https://blog.ss-link.com/dl/Windows/" target="_blank" rel="external">https://blog.ss-link.com/dl/Windows/</a>  下载SS客户端软件，任何一个即可。下载完成后解压缩，建议把可执行文件拷贝到一个固定的目录下，比如D:\SS\ 。</p>
+<p>双击运行程序，在Windows右下角的图标区域就会多一个像纸飞机一样的图标，这个就是客户端程序，如下图：<br><img src="http://7xs3ih.com1.z0.glb.clouddn.com/ss-icon.png" alt="ss-icon"></p>
+<p>鼠标右键点击这个纸飞机图标，会出现客户端的主菜单，如下图：</p>
+<p><img src="http://7xs3ih.com1.z0.glb.clouddn.com/win-ss.png" alt="win-ss"></p>
+<p>把SS账号的二维码图片显示在电脑上，在Windows的SS客户端上（注意：不是手机）点击“服务器选择”，“扫描屏幕上的二维码”， 客户端软件会识别屏幕上的二维码自动配置（电脑不需要有摄像头）</p>
+<p>然后点击“确定”回到主菜单，选择“启用代理”和“开机启动”，让这两项前面都有对号，也就是选择上，这样客户端就配置好了。</p>
+<p>在主菜单里面，点击代理模式，可以选择PAC模式或者全局模式，前者的意思是只有访问被墙的网站才通过SS账号访问，国内网站和国外没有被墙的网站不通过SS账号。全局模式则是所有访问都走SS。</p>
+<p>推荐使用Firefox浏览器，打开选项，高级，网络，设置，如下图配置。注意四个红圈。</p>
+<p><img src="http://7xs3ih.com1.z0.glb.clouddn.com/firefox-ss2.png" alt="firefox-ss"></p>
+<p>现在就可以科学上网了，访问 <a href="http://ip111.cn" target="_blank" rel="external">http://ip111.cn</a>  验证一下吧。</p>
+<ol>
+<li>Mac OS 系统</li>
+</ol>
+<p>到 <a href="https://blog.ss-link.com/dl/MacOS/" target="_blank" rel="external">https://blog.ss-link.com/dl/MacOS/</a> 下载Mac OS的客户端程序ShadowsocksX并安装运行。主界面如下：</p>
+<p><img src="http://7xs3ih.com1.z0.glb.clouddn.com/macselect.png" alt="macselect"></p>
+<p>把二维码显示在屏幕上，点击“从屏幕上扫描二维码…”，即可识别屏幕上的二维码自动配置。</p>
+<p>点击“打开Shadowsocks”开启SS，然后就可以科学上网了，访问<a href="http://ip111.cn" target="_blank" rel="external">http://ip111.cn</a>  测试一下吧。</p>
+<ol>
+<li>iOS系统(苹果手机)</li>
+</ol>
+<p>iOS无需越狱，可以安装ShadowRocket或者Surge，任何一个都可以。ShadowRocket价格便宜并且使用方便，主界面如下，点击左上角的方框可以扫描SS账号的二维码，然后点击”Connected”后面的开关即可科学上网。有时Settings下面的Global Routing需要选择Proxy。Settings下面的On Demand要关闭，Auto Close也不启用，否则会出现Shadowrocket无法断开的情况。</p>
+<p><img src="http://7xs3ih.com1.z0.glb.clouddn.com/shadowrocket-169x300.png" alt="shadowrocket"></p>
+<ol>
+<li>Android系统</li>
+</ol>
+<p>下载并安装 <a href="https://blog.ss-link.com/dl/Android/" target="_blank" rel="external">https://blog.ss-link.com/dl/Android/</a> 这里的两个软件，一个是Android SS客户端，一个是扫描二维码需要的软件。两个软件都要安装。运行SS客户端，主界面如下：</p>
+<p><img src="http://7xs3ih.com1.z0.glb.clouddn.com/android-ss-169x300.jpg" alt="android-ss"></p>
+<p>点击左上角的纸飞机标志，然后分别点击“添加配置文件”，“扫描二维码”，出现扫描界面，用手机扫描一下SS账号对应的二维码图片就配置好了。再点击“路由”选择“绕过局域网及中国大陆地址”，最后点击右上角的“关闭/打开”按钮开启和关闭SS。然后就可以科学上网了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-抑郁与负能量" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/15/抑郁与负能量/" class="article-date">
+  	<time datetime="2016-07-15T12:35:26.000Z" itemprop="datePublished">2016-07-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/15/抑郁与负能量/">抑郁与负能量</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="抑郁？"><a href="#抑郁？" class="headerlink" title="抑郁？"></a>抑郁？</h2><p>  感觉自己抑郁有一阵子了，非常抵触与熟人之间的沟通。很多时候宁可与陌生人交谈都不愿意与熟人进行眼神沟通。生活压力大，对人生感到迷茫，在孤独的时间游身太久了，自己都忘了自己应该是什么样的人了。<br>  是什么会让一个天生活跃的人变的如此抑郁呢？或许冷漠与黑暗是我原来的属性，但这个浮躁的世界太喜欢活跃的人了，也许我应要变得合群变得外向变得开放。有的时候想想这样的人也真是可笑。为什么自己不能是阴郁的是孤独的呢？人生来孤独，我们来到这个世界上的时候是孤身一人的，怎么会有一个人能比你自己还要更加了解你自己呢？别人不能对你所处之境感同身受，不会明白你在想什么，也不会知道你是什么样的。他们只会用他们那般残缺的带着偏见的眼神去打量你。经历了一段失败的感情之后我明白一个道理，一个人绝对不可能完全感受到另一个人的感受。你痛你受伤在别人眼里只是一件既定的客观事实，他们只能在自己的角度来观察。一个人和另一个人之间是两个不同的小宇宙，或许你们会有交集，相处时间久了之后或许会成为并集，但是绝对不会是相等的。如果强行的进行匹配，进行相等的切割，那么剩下的只会是血与泪，而不是幸福的火花。<br>  我把自己关在实验室已经三个多月了，从一开始的不知所措到后来找到可以安身立命的事业，好像一瞬间变老了很多。游荡的久了，人也渐渐的变质了，感觉自己的思想也变得偏执与不堪。是受到黑暗的侵蚀了么？我不知道。<br>  也许每一个人都会在人生的每一个阶段迷失自己，这段时间可能很长，也可能很短，可能是短短的几天，也可能是漫长的一生。但我们曾经都渴望过要以积极的心态活着不是么？就算这个不公的世界给自己带来了多少失意，但是我们还是渴望获得快乐的活着不是么？也许这个世界对我们展现的是不友好，但我们也不应该分裂的排斥自己不是么？<br>  经常的经常，我还是会想起你。但事与愿违，缘分到这里就结束了。曾经那么多次内心的挣扎，现实却打了你一记耳光。不断的做着无用功，却始终相信这些功可能会以另一种光和热的形式展现。多么可笑。<br>  还是继续努力吧，希望能与一群优秀的人并肩。一个人可以走的很快，可以一群人才可以走的很远。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活杂记/">-生活杂记</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-在HealthKit中使用Sleep-Analysis" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -236,8 +377,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="在HealthKit中使用Sleep-Analysis"><a href="#在HealthKit中使用Sleep-Analysis" class="headerlink" title="在HealthKit中使用Sleep Analysis"></a>在HealthKit中使用Sleep Analysis</h1><h2 id="原作者Anushk-Mittal-译CherryWang"><a href="#原作者Anushk-Mittal-译CherryWang" class="headerlink" title="原作者Anushk Mittal    译CherryWang"></a>原作者Anushk Mittal    译CherryWang</h2><p>最近，睡眠记录的改革变成了一种时尚。用户们比以往更关心自己的睡眠质量，他们不仅仅想要知道自己何时入睡，而且想要通过分析收集到的一段睡眠来揭示睡眠的趋势。在硬件上，特别是手机方面的进展，为这个看上去一直在成长的事物带来了全新的光明。<br>Apple提供了一个很酷的方法，以一种安全的方式来进行用户健康信息的交互，并且将数据安全地保存在内置的Health的应用里。你不仅可以用HealthKit来打造</p>
-<p>一个健身的app，你还可以用这个框架来访问睡眠的数据。<br>在这个教程中，我将给你一个关于HealthKit框架的快速简介，并且演示如何打造一个睡眠分析的简单app。</p>
+        <h1 id="在HealthKit中使用Sleep-Analysis"><a href="#在HealthKit中使用Sleep-Analysis" class="headerlink" title="在HealthKit中使用Sleep Analysis"></a>在HealthKit中使用Sleep Analysis</h1><h2 id="原作者Anushk-Mittal-译CherryWang"><a href="#原作者Anushk-Mittal-译CherryWang" class="headerlink" title="原作者Anushk Mittal    译CherryWang"></a>原作者Anushk Mittal    译CherryWang</h2><p>最近，睡眠记录的改革变成了一种时尚。用户们比以往更关心自己的睡眠质量，他们不仅仅想要知道自己何时入睡，而且想要通过分析收集到的一段睡眠来揭示睡眠的趋势。在硬件上，特别是手机方面的进展，为这个看上去一直在成长的事物带来了全新的光明。<br>Apple提供了一个很酷的方法，以一种安全的方式来进行用户健康信息的交互，并且将数据安全地保存在内置的Health的应用里。你不仅可以用HealthKit来打造<br>一个健身的app，你还可以用这个框架来访问睡眠的数据。<br>在这个教程中，我将给你一个关于HealthKit框架的快速简介，并且演示如何打造一个睡眠分析的简单app。</p>
 <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>HealthKit框架提供了一个名为HealthKit Store的加密框架来存储数据。你可以通过HKHealthStore这个类来访问这个数据库。iPhone和Apple Watch都有他们自己的Health Store。健康的数据在iPhone和Apple Watch上是同步的。然而，Apple Watch上定期的删除旧的数据来节省空间。此外，HealthKit和Health app在iPad上不可用。</p>
 <p>如果你想打造一个建立在健康数据上的iOS或者watchOS的应用，HealthKit会是一个强大的工具。HealthKit是专业被设计用于管理广泛来源的数据，并且根据用户偏好自动合并不同来源的数据。应用也可以访问各个来源的原始数据，并且将它们合并。数据不仅仅可以被用于对人体测量、健身或营养，也可以被用于睡眠分析。</p>
 <p>对于本文的其余部分，我将给你展示如何使用HealthKit框架来在iOS上保存和访问睡眠分析数据。同时，这样的方法也适用于watchOS应用。请注意这个教程适用于Swift2.0和Xcode7。所以，学习本教程时请保证你的Xcode版本高于Xcode7。<br>在开始之前，下载<a href="http://www.appcoda.com/sleep-analysis-healthkit/" target="_blank" rel="external">起始项目</a>  并解压缩，我已经为你创建好具有基本功能的用户界面。当你运行这个起始项目的时候，你会看见一个显示计时器的UI；当你按下启动按钮的时候，你会看到计时器中时间在跑动。</p>
@@ -751,143 +891,6 @@ if (bUser) {
 <h3 id="杂想"><a href="#杂想" class="headerlink" title="杂想"></a>杂想</h3><p>人真是一个可悲的动物。有的时候很想抓紧一样东西却适得其反。像手中沙，越攥紧却掉的越多越快，倒不如双手捧住，美好反而会留的更久。有的时候太喜欢一个人真的是一件特别痛苦的事情，自己因为得不到回应而变得焦躁变得神经质，对方也因为逃避越发的反感，越发的不愿被打扰。到底是谁的错呢？谁知道呢……</p>
 <h3 id="我爱的人"><a href="#我爱的人" class="headerlink" title="我爱的人"></a>我爱的人</h3><p>昨天被一挚友开导，说是开导其实也是安慰一下我罢了。突然的，我感到内心有一股愧疚之情。挚友竟然是站在我这一边的，我该说些什么呢？你势利也好不势利也罢，这个世界不是你说什么就是什么样的，你只看到你自己，所以当然不会承认自己的缺点。真是可悲。我只想说，你是一个什么样的人很多时候不需要我多说（然而我并没有说什么）大家都是能看到的。既然你不愿意相信，那我说再多有什么用呢。除了接受，我没有其他的想法了。<br>我不想再说很多煽情的情话了。我记得你曾经很喜欢听我说一遍又一遍软绵绵的情话，听到耳根子都酥软了还要继续听，我很喜欢那个时候的你，也很喜欢那个时候的我。那时候我是多不懂事的孩子啊，唉，突然有一点沧桑的心酸。真羡慕那个时候的自己，什么挫折都没受过，就知道一股劲的向前冲，什么人情冷暖什么世态炎凉都没见过，这个社会的肮脏我都不曾接触过。后来呢，后来就不说了。</p>
 <h3 id="挚友的话"><a href="#挚友的话" class="headerlink" title="挚友的话"></a>挚友的话</h3><p>挚友跟我说：“你要知道你喜欢的这个人不是一个普通人。她是一个很聪明很天才的一个人，她已经把努力当成了一种习惯，并且习惯了优秀。你要是想和她在一起，就只能不断的学习不断的进步，你要追上她前进的脚步才可以”<br>从来没想过，我们直接的差距竟然变得这么大。到底是学校的差距还是心灵上的差距呢？其实我也不清楚。我想回挚友这样一句“我其实一直在努力，只是背负的东西有点多，真的好累”。<br>但是换一个方面想想呢。累又怎么样呢？累难道就要停下来歇一歇了吗？累就是你努力了很久却见不到成果就放弃的理由吗？并不是。就算再累再辛苦还是要继续走下去不是吗？你喜欢的人这么优秀，难道你想做她的拖油瓶吗？我不想再被别人说闲话了。我不想每次别人提到我们都是说徐祎璠有多优秀多优秀，但是为什么看上我的了。我想做一个强者，强者才是我的宿命。我是生来改变世界的，我到现在都相信这一点。我并不差，暂时的没有成果不要着急，这并不是后退，这只是在扎根，是为了后面能够跑的更快，更远的涅槃。<br>不过说到底，我还是爱你的。希望可以与你相伴终身😊</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-结构化数据访问之plist文件-附带懒加载介绍" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/结构化数据访问之plist文件-附带懒加载介绍/" class="article-date">
-  	<time datetime="2016-04-07T17:31:58.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/结构化数据访问之plist文件-附带懒加载介绍/">结构化数据访问之plist文件(附带懒加载介绍)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="plist文件"><a href="#plist文件" class="headerlink" title="plist文件"></a>plist文件</h2><h2 id="CherryWang原创，转载请附上作者"><a href="#CherryWang原创，转载请附上作者" class="headerlink" title="CherryWang原创，转载请附上作者"></a>CherryWang原创，转载请附上作者</h2><p>plist文件是property list的缩写，内容是xml格式，以<string><key>这两个标签构成主要内容。<br>key表示标签名称，string表示标签存储属性值。<br>如果我们想要存储数据，需要数据具有属性与属性值这样的配对关系，那么我们就可以实用plist文件来存储。<br>iOS SDK已经提供了适当的API来访问这个文件，所以我们不需要辛苦的去解析xml的内容。</key></string></p>
-<h3 id="下面介绍一下使用plist文件-以及使用NSArray和NSDictionary进行字典转模型的好处"><a href="#下面介绍一下使用plist文件-以及使用NSArray和NSDictionary进行字典转模型的好处" class="headerlink" title="下面介绍一下使用plist文件 以及使用NSArray和NSDictionary进行字典转模型的好处"></a>下面介绍一下使用plist文件 以及使用NSArray和NSDictionary进行字典转模型的好处</h3><p>当图片内容非常多时，“根据index来设置内容”的代码就不具备扩展性，要经常改动。<br>所以，为了改变现状，可以考虑将图片数据线保存到一个数组中，数组中有序地放着很多字典，一个字典代表一张图片数据，包含了图片名、图片描述。</p>
-<h3 id="下面介绍一下plist文件"><a href="#下面介绍一下plist文件" class="headerlink" title="下面介绍一下plist文件"></a>下面介绍一下plist文件</h3><p> 通过代码来解析Plist文件中的数据 获得Plist文件的全路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">NSBundle *bundle = [NSBundle mainBundle];</span><br><span class="line">NSString *path = [bundle pathForResource:@&quot;images&quot; ofType:@&quot;plist&quot;];</span><br></pre></td></tr></table></figure></p>
-<p>下面贴一段完整代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (NSArray *)appList</span><br><span class="line">  &#123;</span><br><span class="line">      if (!_appList) &#123;</span><br><span class="line">                 // 1. 从mainBundle加载</span><br><span class="line">          NSBundle *bundle = [NSBundle mainBundle];</span><br><span class="line">          NSString *path = [bundle pathForResource:@&quot;app.plist&quot; ofType:nil];</span><br><span class="line">          _appList = [NSArray arrayWithContentsOfFile:path];</span><br><span class="line">        &#125;</span><br><span class="line">  return _appList;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>  如果想查看plist文件的路径可以这样打印一下<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&quot;%@&quot;,NSHomeDirectory());</span><br></pre></td></tr></table></figure></p>
-<h3 id="下面介绍一下字典转模型"><a href="#下面介绍一下字典转模型" class="headerlink" title="下面介绍一下字典转模型"></a>下面介绍一下字典转模型</h3><p>plist文件就像一个字典，里面每一个数据就是一个字，因为每一个数据都有几条属性，每一个数据的类型就是NSDictionary</p>
-<p>将plist文件加载出来，一般用懒加载，每一个数据就变成了一个数组的成员，数组就成了数组模型，简单来说就是模型。</p>
-<h3 id="下面介绍一下懒加载"><a href="#下面介绍一下懒加载" class="headerlink" title="下面介绍一下懒加载"></a>下面介绍一下懒加载</h3><p>懒加载——也称为延迟加载，即在需要的时候才加载（效率低，占用内存小）。所谓懒加载，写的是其get方法。<br>tips：懒加载一定要注意先判断是否已经存在，如果没有那么再去进行实例化</p>
-<p>使用懒加载的好处</p>
-<ol>
-<li><p>不必将创建对象的代码全部写在viewDidLoad方法中，代码的可读性更强</p>
-</li>
-<li><p>每个控件的getter方法中分别负责各自的实例化处理，代码彼此之间的独立性强，松耦合</p>
-</li>
-</ol>
-<p>代码就不贴了。上面的if语句就是懒加载</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS内存管理/">iOS内存管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Daily-report集总" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/06/Daily-report集总/" class="article-date">
-  	<time datetime="2016-04-06T07:03:19.000Z" itemprop="datePublished">2016-04-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/06/Daily-report集总/">Daily report2016年4月</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="2016年4月"><a href="#2016年4月" class="headerlink" title="2016年4月"></a>2016年4月</h3><h4 id="4月5日"><a href="#4月5日" class="headerlink" title="4月5日"></a>4月5日</h4><p>完成了java数据结构中的中缀表达式。对java中栈和队列方面有了一些理解<br>对想要进行的help进行了一次头脑风暴，并对靠我，百度知道，百度经验（网页版）进行了研究。总结成了一份粗略的文档，形成了一份初步的规划。</p>
-<h4 id="4月6日"><a href="#4月6日" class="headerlink" title="4月6日"></a>4月6日</h4><p>学习了用prepareforsegue：sender将一个viewcontroller类的参数传递到另一个viewcontroller类中。<br>在官方文档中查询了uiviewcontroller中关于segue的内容，但是略显生涩，之后会完善。<br>学习了不是用segue进行画面切换，用代码在viewdidapper中加载viewcontroller进行画面切换。<br>学习使用autolayout在storyboard中布局。<br>tableview的重新学习<br>  利用纯代码创建tableview ，<br>  tableview分块<br>  显示单元格指示器<br>  新增或删除一条tableviewcell及数据<br>  获取用户点击哪一块单元格<br>  改变单元格顺序<br>  用xib或者storyboard自定义cell</p>
-<h4 id="4月7日"><a href="#4月7日" class="headerlink" title="4月7日"></a>4月7日</h4><p>对结构化数据访问进行了学习<br>了解了几种处理大量数据的方式1.plist文件 2.SQLite数据库 3.CoreData</p>
-<h4 id="4月8日"><a href="#4月8日" class="headerlink" title="4月8日"></a>4月8日</h4><p>参照官方文档对UITableViewCell进行了学习。<br>学习了在编辑状态中插入和删除单元格，并在插入和删除单元格数据</p>
-<h4 id="4月9日"><a href="#4月9日" class="headerlink" title="4月9日"></a>4月9日</h4><p>完善了help<br>阅读了programming in objective－c</p>
-<h4 id="4月10日"><a href="#4月10日" class="headerlink" title="4月10日"></a>4月10日</h4><p>根据巧神的推荐 观看了斯坦福的iOS相关的课程<br>对mvc的模式进行了深入的了解。并且做了一些笔记<br>对property和nonatomic以及strong和weak理解 弥补了之前对这些概念理解的不清晰的漏洞</p>
-<h4 id="4月11日"><a href="#4月11日" class="headerlink" title="4月11日"></a>4月11日</h4><p>完成了一个小app 纠结选择器</p>
-<h4 id="4月12日"><a href="#4月12日" class="headerlink" title="4月12日"></a>4月12日</h4><p>完成了java关于linkedlist的作业<br>自己写了一个arraylist类（不使用任何java中的包）<br>对java中的栈和队列以及linkednode有了粗浅的理解</p>
-<h4 id="4月13日"><a href="#4月13日" class="headerlink" title="4月13日"></a>4月13日</h4><p>跟着斯坦福的讲座继续对objective-c了解。<br>理解了＋类方法和－对象方法。<br>并且对＋方法使用的两种情况进行了理解。<br>了解了iOS7中的特性instancetype方法 实例方法，返回相同类类型。<br>对self = [super init]调用父类初始化器对self赋值进行了理解<br>😂把上次对创建button并且自动计数做完了<br>stringbyappendingstring是相加字符串的实例方法<br>在一个方法中除非有copy，否则这个方法返回一个已经存在的对象时，它会返回指向那个对象的指针。</p>
-<h4 id="4月14日"><a href="#4月14日" class="headerlink" title="4月14日"></a>4月14日</h4><p>学习了UICollectionView，感觉和UITableView有点相似，给app中添加了collectView<br>学习了在storyboard中使用segue对cell进行切换下一下一视图。collectview视图切换没有问题，但是tableview切换的时候遇到了问题，查阅了官方文档但是对这方面写的真的是相当不全。。看了samplecode，目前还没有解决。打算再把斯坦福老爷爷的看一下</p>
-<h4 id="4月15日"><a href="#4月15日" class="headerlink" title="4月15日"></a>4月15日</h4><p>学习了在storyboard中自定义tabbar，个人觉得以后可以多多使用sb，虽然说用代码创建视图是很基础很必须的事情 但是时代在变化 现在苹果有点开始主推storyboard。<br>试图解决昨天晚上的问题。目前还没有解决<br>学习了视图控制器的生命周期viewdidload之类<br>学习了观察者模式之中的NSNotification类 监听系统的变化<br>之前有在官方文档中看过导航控制器相关的内容，可以第一遍看的时候对segue的几种种类还是有点概念上的不清晰。在斯坦福视频中看到了老爷爷对iOS7中的push和module的讲解，讲的不错可以iOS9之后的show还有很多不一样，有时间整理一下。</p>
-<h4 id="4月16日"><a href="#4月16日" class="headerlink" title="4月16日"></a>4月16日</h4><p>学习了视图列表中的绘制，在笛卡尔系中利用CGPoint CGSize CDRect绘制。<br>用Quartz 2D做了一些小demo<br>接触了手势识别，UIGestureRecognizer这个抽象类。<br>学习了UIPinchGestureRecognizer，UIRotationGestureRecognizer，UISwipeGestureRecognizer还有iOS9中新增的forcetouch相关手势识别</p>
-<h4 id="4月17-21日"><a href="#4月17-21日" class="headerlink" title="4月17-21日"></a>4月17-21日</h4><p>有点疲惫<br>这几天又夯了一遍基础 把block,协议，animation撸了一遍<br>animation主要撸了UIViewAnimation和DynamicAnimation就是视图的动画和动作的变化<br>UIViewAnimation有三个属性 frame transform alpha有一个类方法实现<br>UIViewAnimationOptions的各种属性可以修改这个视图的状态<br>DynamicAnimation创建的三部曲，吸附重力等都是很炫酷的物理动画</p>
 
       
     </div>
