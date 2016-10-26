@@ -1484,13 +1484,13 @@ a {
   border: none;
 }
 .article-entry pre {
-  color: #fff;
+  color: #fcda35;
 }
 .article-entry pre code {
   background: none;
   text-shadow: none;
   padding: 0;
-  color: #fff;
+  color: #fcda35;
 }
 .article-entry .highlight {
   -webkit-border-radius: 4px;
@@ -1596,7 +1596,7 @@ pre .doctype,
 pre .params,
 pre .function,
 pre .css .value {
-  color: #fff;
+  color: #fcda35;
 }
 pre .css ~ * .tag,
 pre .title,
