@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -120,7 +120,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/HealthKit/" style="font-size: 20px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 20px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
+						<a href="/tags/HealthKit/" style="font-size: 20px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 20px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/CoreMotion/" style="font-size: 10px;">CoreMotion</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/iOS系统的SDK/" style="font-size: 10px;">iOS系统的SDK</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
 					</div>
 				</section>
 				
@@ -209,6 +209,101 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-iOS中各种传感器使用的介绍与教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/26/iOS中各种传感器使用的介绍与教程/" class="article-date">
+  	<time datetime="2016-10-26T04:43:42.000Z" itemprop="datePublished">2016-10-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/26/iOS中各种传感器使用的介绍与教程/">iOS中各种传感器使用的介绍与教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="all-by-BadCodeLu-转载请注明出处"><a href="#all-by-BadCodeLu-转载请注明出处" class="headerlink" title="all by BadCodeLu 转载请注明出处"></a>all by BadCodeLu 转载请注明出处</h3><p>最近有做到调用系统底层的一些SDK，在iOS10中，我们已知的传感器有<br>环境光传感器 （调节屏幕的亮度）<br>距离传感器(打电话自动黑屏)<br>磁力计传感器（感应周边的磁场）<br>内部温度传感器（提醒用户降温 防止损伤设备）<br>湿度传感器<br>（上面的都是不常用的 也就是说并没有什么卵用的 下面的比较有用<br>陀螺仪（感应设备的的平衡 或者说是持握方式）（赛车类游戏 重力弹球）<br>加速器 (感受设备的运动 摇一摇 记步器)</p>
+<p>介绍几个吧</p>
+<h3 id="1-距离传感器"><a href="#1-距离传感器" class="headerlink" title="1.距离传感器"></a>1.距离传感器</h3><p>距离传感器是通过添加观察者 监听通知来实现的<br>通知的名称是 UIDeviceProximityStateDidChangeNotification<br>监听的状态是 [UIDevice currentDevice].proximityState<br>使用的代码是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // [UIApplication sharedApplication].proximitySensingEnabled = YES;</span><br><span class="line">    [UIDevice currentDevice].proximityMonitoringEnabled = YES;</span><br><span class="line">    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityStateDidChange) name:UIDeviceProximityStateDidChangeNotification object:nil];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)proximityStateDidChange</span><br><span class="line">&#123;</span><br><span class="line">    if ([UIDevice currentDevice].proximityState) &#123;</span><br><span class="line">        NSLog(@&quot;手机靠近&quot;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        NSLog(@&quot;手机离开&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="加速度传感器和陀螺仪"><a href="#加速度传感器和陀螺仪" class="headerlink" title="加速度传感器和陀螺仪"></a>加速度传感器和陀螺仪</h4><p>要做加速度传感器和陀螺仪相关<br>我们需要了解CoreMotion.Framework这个框架<br>这个框架不仅仅提供给你获得实时的加速度值和旋转速度值，更重要的是，苹果在其中集成了很多算法，可以直接给你输出把重力加速度分量剥离的加速度，省去你的高通滤波操作，以及提供给你一个专门的设备的三维位置信息。<br>CoreMotion框架的使用</p>
+<h2 id="基本数据"><a href="#基本数据" class="headerlink" title="基本数据"></a>基本数据</h2><p>加速度值      CMAccelerometerData<br>陀螺仪值      CMGyroData<br>设备motion值  CMDeviceMotion<br>  设备的motion值是通过加速度和旋转速度进行变换算出来的<br>  CMDeviceMotion的属性<br>      attitude：手机在当前空间的位置和姿势<br>      gravity：重力信息，重力加速度矢量在当前设备的参考坐标系中的表达<br>      userAcceleration：加速度信息<br>      rotationRate：即时的旋转速率，是陀螺仪的输出</p>
+<h2 id="使用的步骤"><a href="#使用的步骤" class="headerlink" title="使用的步骤"></a>使用的步骤</h2><ol>
+<li>初始化CMMotionManager管理对象</li>
+<li>调用管理对象的对象方法获取数据，有2种方式</li>
+<li>处理数据</li>
+<li>当你不需要使用的时候，停止获取数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(void)stopAccelerometerUpdates;//停止获取加速度计数据</span><br><span class="line">-(void)stopGyroUpdates;//停止获取陀螺仪数据</span><br><span class="line">-(void)stopDeviceMotionUpdates;//停止获取设备motion数据</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="获取数据的两种方式"><a href="#获取数据的两种方式" class="headerlink" title="获取数据的两种方式"></a>获取数据的两种方式</h2><p>Push方式：<br>提供一个线程管理器NSOperationQueue和一个回调Block，CoreMotion自动在每一个采样数据到来的时候回调这个Block，进行处理。在这种情况下，Block中的操作会在你自己的主线程内执行。<br>Pull方式：<br>你必须主动去向CMMotionManager要数据，这个数据就是最近一次的采样数据。你不去要，CMMotionManager就不会给你。</p>
+<h3 id="2-加速度传感器"><a href="#2-加速度传感器" class="headerlink" title="2.加速度传感器"></a>2.加速度传感器</h3><p>加速器传感器的读取其实还是蛮酷的 监听的方式是通过设置代理实现的 它能够监测设备在xyz轴上不同的加速度情况<br>具体的实现逻辑是</p>
+<ol>
+<li>获取加速器的单例对象<br><code>UIAccelerometer *accelerometer = [UIAccelerometer sharedAccelerometer];</code></li>
+<li>获取加速器的代理对象<br><code>accelerometer.delegate = self;</code></li>
+<li>设置采样间隔<br><code>accelerometer.updateInterval = 0.3;</code></li>
+<li>实现代理相关的方法 监听数据(分为pull和push两种不同的方法)<br><code>- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration;</code></li>
+</ol>
+<p>使用起来的代码是这样的</p>
+<ol>
+<li><p>加速度使用pull方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (void)useAccelerometerPull&#123;</span><br><span class="line">    //初始化全局管理对象</span><br><span class="line">    CMMotionManager *manager = [[CMMotionManager alloc] init];</span><br><span class="line">    self.motionManager = manager;</span><br><span class="line">    //判断加速度计可不可用，判断加速度计是否开启</span><br><span class="line">    if ([manager isAccelerometerAvailable] &amp;&amp; [manager isAccelerometerActive])&#123;</span><br><span class="line">        //告诉manager，更新频率是100Hz</span><br><span class="line">        manager.accelerometerUpdateInterval = 0.01;</span><br><span class="line">        //开始更新，后台线程开始运行。这是Pull方式。</span><br><span class="line">        [manager startAccelerometerUpdates];</span><br><span class="line">    &#125;</span><br><span class="line">    //获取并处理加速度计数据</span><br><span class="line">    CMAccelerometerData *newestAccel = self.motionManager.accelerometerData;</span><br><span class="line">    NSLog(@&quot;X = %.04f&quot;,newestAccel.acceleration.x);</span><br><span class="line">    NSLog(@&quot;Y = %.04f&quot;,newestAccel.acceleration.y);</span><br><span class="line">    NSLog(@&quot;Z = %.04f&quot;,newestAccel.acceleration.z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加速度使用push方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- (void)useAccelerometerPush&#123;</span><br><span class="line">    //初始化全局管理对象</span><br><span class="line">    CMMotionManager *manager = [[CMMotionManager alloc] init];</span><br><span class="line">    self.motionManager = manager;</span><br><span class="line">    //判断加速度计可不可用，判断加速度计是否开启</span><br><span class="line">    if ([manager isAccelerometerAvailable] &amp;&amp; [manager isAccelerometerActive])&#123;</span><br><span class="line">        //告诉manager，更新频率是100Hz</span><br><span class="line">        manager.accelerometerUpdateInterval = 0.01;</span><br><span class="line">        NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line">        //Push方式获取和处理数据</span><br><span class="line">        [manager startAccelerometerUpdatesToQueue:queue</span><br><span class="line">                 withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)</span><br><span class="line">         &#123;</span><br><span class="line">             NSLog(@&quot;X = %.04f&quot;,accelerometerData.acceleration.x);</span><br><span class="line">             NSLog(@&quot;Y = %.04f&quot;,accelerometerData.acceleration.y);</span><br><span class="line">             NSLog(@&quot;Z = %.04f&quot;,accelerometerData.acceleration.z);</span><br><span class="line">         &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="2-陀螺仪传感器"><a href="#2-陀螺仪传感器" class="headerlink" title="2.陀螺仪传感器"></a>2.陀螺仪传感器</h3><p>陀螺仪传感器使用起来与加速度传感器使用起来是相似的<br>具体代码实现如下</p>
+<ol>
+<li><p>陀螺仪实现用pull方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//pull的方法实现陀螺仪</span><br><span class="line">- (void)useGyroPull&#123;</span><br><span class="line"></span><br><span class="line">    // 1.判断加速计是否可用</span><br><span class="line">    if (!self.Gyromanager.isAccelerometerAvailable) &#123;</span><br><span class="line">        NSLog(@&quot;加速计不可用，请跟换手机&quot;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 2.开始采集数据</span><br><span class="line">    [self.Gyromanager startAccelerometerUpdates];</span><br><span class="line"></span><br><span class="line">    CMRotationRate rotationRate = self.Gyromanager.gyroData.rotationRate;</span><br><span class="line">    NSLog(@&quot;x:%f-y:%f-z:%f&quot;,rotationRate.x, rotationRate.y, rotationRate.z);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>陀螺仪的实现用push方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (void)useGyroPush&#123;</span><br><span class="line">    //初始化全局管理对象</span><br><span class="line">    CMMotionManager *manager = [[CMMotionManager alloc] init];</span><br><span class="line">    self.Gyromanager = manager;</span><br><span class="line">    //判断陀螺仪可不可以，判断陀螺仪是不是开启</span><br><span class="line">    if ([manager isGyroAvailable] &amp;&amp; [manager isGyroActive])&#123;</span><br><span class="line"></span><br><span class="line">        NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line">        //告诉manager，更新频率是100Hz</span><br><span class="line">        manager.gyroUpdateInterval = 0.01;</span><br><span class="line">        //Push方式获取和处理数据</span><br><span class="line">        [manager startGyroUpdatesToQueue:queue</span><br><span class="line">                             withHandler:^(CMGyroData *gyroData, NSError *error)</span><br><span class="line">         &#123;</span><br><span class="line">             NSLog(@&quot;Gyro Rotation x = %.04f&quot;, gyroData.rotationRate.x);</span><br><span class="line">             NSLog(@&quot;Gyro Rotation y = %.04f&quot;, gyroData.rotationRate.y);</span><br><span class="line">             NSLog(@&quot;Gyro Rotation z = %.04f&quot;, gyroData.rotationRate.z);</span><br><span class="line">         &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>push的使用就是利用一个block 不断的回调获取的值 通过isAccelerometerAvailable这个属性来判断能否获取值 但是在官方文档中 isAccelerometerAvailable这个方法只有getter的方法 是没有setter的方法的 所以如果我们想要自己停止获取传感器的值 就要另加一个bool类型的参数自己传进去 当然也可以利用多线程进行时间的的限制 repeats设置成1次就好了 但是还是有这样那样的问题 如果大家有什么好的可以控制传感器进程的方法请给我评论哦 我会认真的看的</p>
+<h5 id="以上的demo已上传到github上面-BadCodeLu的github的demo链接"><a href="#以上的demo已上传到github上面-BadCodeLu的github的demo链接" class="headerlink" title="以上的demo已上传到github上面 BadCodeLu的github的demo链接"></a>以上的demo已上传到github上面 <a href="https://github.com/hehedalulu/SensorIniOS/tree/master" target="_blank" rel="external">BadCodeLu的github的demo链接</a></h5>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreMotion/">CoreMotion</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS系统的SDK/">iOS系统的SDK</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-HealthKit的数据读取" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -870,69 +965,9 @@ if (bUser) {
 
 
   
-    <article id="post-关于我爱的人" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/19/关于我爱的人/" class="article-date">
-  	<time datetime="2016-04-19T14:19:05.000Z" itemprop="datePublished">2016-04-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/19/关于我爱的人/">关于我爱的人</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h3><p>最近很忙，每天忙来忙去不知道做了什么，好像已经习惯了3点钟睡觉，不管是看斯坦福的公开课，还是恶心到去看太阳的后裔。自己好像和睡神一直在做着一些不知名不知所谓的斗争，也不知道自己到底是怎么想的。罢了，就当我这个疯子又在胡言乱语吧。</p>
-<h3 id="杂想"><a href="#杂想" class="headerlink" title="杂想"></a>杂想</h3><p>人真是一个可悲的动物。有的时候很想抓紧一样东西却适得其反。像手中沙，越攥紧却掉的越多越快，倒不如双手捧住，美好反而会留的更久。有的时候太喜欢一个人真的是一件特别痛苦的事情，自己因为得不到回应而变得焦躁变得神经质，对方也因为逃避越发的反感，越发的不愿被打扰。到底是谁的错呢？谁知道呢……</p>
-<h3 id="我爱的人"><a href="#我爱的人" class="headerlink" title="我爱的人"></a>我爱的人</h3><p>昨天被一挚友开导，说是开导其实也是安慰一下我罢了。突然的，我感到内心有一股愧疚之情。挚友竟然是站在我这一边的，我该说些什么呢？你势利也好不势利也罢，这个世界不是你说什么就是什么样的，你只看到你自己，所以当然不会承认自己的缺点。真是可悲。我只想说，你是一个什么样的人很多时候不需要我多说（然而我并没有说什么）大家都是能看到的。既然你不愿意相信，那我说再多有什么用呢。除了接受，我没有其他的想法了。<br>我不想再说很多煽情的情话了。我记得你曾经很喜欢听我说一遍又一遍软绵绵的情话，听到耳根子都酥软了还要继续听，我很喜欢那个时候的你，也很喜欢那个时候的我。那时候我是多不懂事的孩子啊，唉，突然有一点沧桑的心酸。真羡慕那个时候的自己，什么挫折都没受过，就知道一股劲的向前冲，什么人情冷暖什么世态炎凉都没见过，这个社会的肮脏我都不曾接触过。后来呢，后来就不说了。</p>
-<h3 id="挚友的话"><a href="#挚友的话" class="headerlink" title="挚友的话"></a>挚友的话</h3><p>挚友跟我说：“你要知道你喜欢的这个人不是一个普通人。她是一个很聪明很天才的一个人，她已经把努力当成了一种习惯，并且习惯了优秀。你要是想和她在一起，就只能不断的学习不断的进步，你要追上她前进的脚步才可以”<br>从来没想过，我们直接的差距竟然变得这么大。到底是学校的差距还是心灵上的差距呢？其实我也不清楚。我想回挚友这样一句“我其实一直在努力，只是背负的东西有点多，真的好累”。<br>但是换一个方面想想呢。累又怎么样呢？累难道就要停下来歇一歇了吗？累就是你努力了很久却见不到成果就放弃的理由吗？并不是。就算再累再辛苦还是要继续走下去不是吗？你喜欢的人这么优秀，难道你想做她的拖油瓶吗？我不想再被别人说闲话了。我不想每次别人提到我们都是说徐祎璠有多优秀多优秀，但是为什么看上我的了。我想做一个强者，强者才是我的宿命。我是生来改变世界的，我到现在都相信这一点。我并不差，暂时的没有成果不要着急，这并不是后退，这只是在扎根，是为了后面能够跑的更快，更远的涅槃。<br>不过说到底，我还是爱你的。希望可以与你相伴终身😊</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活杂记/">-生活杂记</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>iOS中各种传感器使用的介绍与教程 | BadCodeLu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="all by BadCodeLu 转载请注明出处最近有做到调用系统底层的一些SDK，在iOS10中，我们已知的传感器有环境光传感器 （调节屏幕的亮度）距离传感器(打电话自动黑屏)磁力计传感器（感应周边的磁场）内部温度传感器（提醒用户降温 防止损伤设备）湿度传感器（上面的都是不常用的 也就是说并没有什么卵用的 下面的比较有用陀螺仪（感应设备的的平衡 或者说是持握方式）（赛车类游戏 重力弹球）加速器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS中各种传感器使用的介绍与教程">
+<meta property="og:url" content="http://yoursite.com/2016/10/26/iOS中各种传感器使用的介绍与教程/index.html">
+<meta property="og:site_name" content="BadCodeLu">
+<meta property="og:description" content="all by BadCodeLu 转载请注明出处最近有做到调用系统底层的一些SDK，在iOS10中，我们已知的传感器有环境光传感器 （调节屏幕的亮度）距离传感器(打电话自动黑屏)磁力计传感器（感应周边的磁场）内部温度传感器（提醒用户降温 防止损伤设备）湿度传感器（上面的都是不常用的 也就是说并没有什么卵用的 下面的比较有用陀螺仪（感应设备的的平衡 或者说是持握方式）（赛车类游戏 重力弹球）加速器">
+<meta property="og:updated_time" content="2016-10-26T06:14:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS中各种传感器使用的介绍与教程">
+<meta name="twitter:description" content="all by BadCodeLu 转载请注明出处最近有做到调用系统底层的一些SDK，在iOS10中，我们已知的传感器有环境光传感器 （调节屏幕的亮度）距离传感器(打电话自动黑屏)磁力计传感器（感应周边的磁场）内部温度传感器（提醒用户降温 防止损伤设备）湿度传感器（上面的都是不常用的 也就是说并没有什么卵用的 下面的比较有用陀螺仪（感应设备的的平衡 或者说是持握方式）（赛车类游戏 重力弹球）加速器">
+  
+    <link rel="alternative" href="/atom.xml" title="BadCodeLu" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xs3ih.com1.z0.glb.clouddn.com/WechatIMG5.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">BadCodeLu</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">漫漫长夜，写代码时候有你相伴</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+							<li><a href="/photo">相册</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/hehedalulu" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/1043667310/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/wang-lu-lu-51-41" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/HealthKit/" style="font-size: 20px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 20px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 20px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/CoreMotion/" style="font-size: 10px;">CoreMotion</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/iOS系统的SDK/" style="font-size: 10px;">iOS系统的SDK</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">BadCodeLu</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xs3ih.com1.z0.glb.clouddn.com/WechatIMG5.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">BadCodeLu</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">漫漫长夜，写代码时候有你相伴</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+					<li><a href="/photo">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/hehedalulu" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/1043667310/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/wang-lu-lu-51-41" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-iOS中各种传感器使用的介绍与教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/26/iOS中各种传感器使用的介绍与教程/" class="article-date">
+  	<time datetime="2016-10-26T04:43:42.000Z" itemprop="datePublished">2016-10-26</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS中各种传感器使用的介绍与教程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CoreMotion/">CoreMotion</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS系统的SDK/">iOS系统的SDK</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="all-by-BadCodeLu-转载请注明出处"><a href="#all-by-BadCodeLu-转载请注明出处" class="headerlink" title="all by BadCodeLu 转载请注明出处"></a>all by BadCodeLu 转载请注明出处</h3><p>最近有做到调用系统底层的一些SDK，在iOS10中，我们已知的传感器有<br>环境光传感器 （调节屏幕的亮度）<br>距离传感器(打电话自动黑屏)<br>磁力计传感器（感应周边的磁场）<br>内部温度传感器（提醒用户降温 防止损伤设备）<br>湿度传感器<br>（上面的都是不常用的 也就是说并没有什么卵用的 下面的比较有用<br>陀螺仪（感应设备的的平衡 或者说是持握方式）（赛车类游戏 重力弹球）<br>加速器 (感受设备的运动 摇一摇 记步器)</p>
+<p>介绍几个吧</p>
+<h3 id="1-距离传感器"><a href="#1-距离传感器" class="headerlink" title="1.距离传感器"></a>1.距离传感器</h3><p>距离传感器是通过添加观察者 监听通知来实现的<br>通知的名称是 UIDeviceProximityStateDidChangeNotification<br>监听的状态是 [UIDevice currentDevice].proximityState<br>使用的代码是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad</span><br><span class="line">&#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    // [UIApplication sharedApplication].proximitySensingEnabled = YES;</span><br><span class="line">    [UIDevice currentDevice].proximityMonitoringEnabled = YES;</span><br><span class="line">    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityStateDidChange) name:UIDeviceProximityStateDidChangeNotification object:nil];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)proximityStateDidChange</span><br><span class="line">&#123;</span><br><span class="line">    if ([UIDevice currentDevice].proximityState) &#123;</span><br><span class="line">        NSLog(@&quot;手机靠近&quot;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        NSLog(@&quot;手机离开&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="加速度传感器和陀螺仪"><a href="#加速度传感器和陀螺仪" class="headerlink" title="加速度传感器和陀螺仪"></a>加速度传感器和陀螺仪</h4><p>要做加速度传感器和陀螺仪相关<br>我们需要了解CoreMotion.Framework这个框架<br>这个框架不仅仅提供给你获得实时的加速度值和旋转速度值，更重要的是，苹果在其中集成了很多算法，可以直接给你输出把重力加速度分量剥离的加速度，省去你的高通滤波操作，以及提供给你一个专门的设备的三维位置信息。<br>CoreMotion框架的使用</p>
+<h2 id="基本数据"><a href="#基本数据" class="headerlink" title="基本数据"></a>基本数据</h2><p>加速度值      CMAccelerometerData<br>陀螺仪值      CMGyroData<br>设备motion值  CMDeviceMotion<br>  设备的motion值是通过加速度和旋转速度进行变换算出来的<br>  CMDeviceMotion的属性<br>      attitude：手机在当前空间的位置和姿势<br>      gravity：重力信息，重力加速度矢量在当前设备的参考坐标系中的表达<br>      userAcceleration：加速度信息<br>      rotationRate：即时的旋转速率，是陀螺仪的输出</p>
+<h2 id="使用的步骤"><a href="#使用的步骤" class="headerlink" title="使用的步骤"></a>使用的步骤</h2><ol>
+<li>初始化CMMotionManager管理对象</li>
+<li>调用管理对象的对象方法获取数据，有2种方式</li>
+<li>处理数据</li>
+<li>当你不需要使用的时候，停止获取数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-(void)stopAccelerometerUpdates;//停止获取加速度计数据</span><br><span class="line">-(void)stopGyroUpdates;//停止获取陀螺仪数据</span><br><span class="line">-(void)stopDeviceMotionUpdates;//停止获取设备motion数据</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="获取数据的两种方式"><a href="#获取数据的两种方式" class="headerlink" title="获取数据的两种方式"></a>获取数据的两种方式</h2><p>Push方式：<br>提供一个线程管理器NSOperationQueue和一个回调Block，CoreMotion自动在每一个采样数据到来的时候回调这个Block，进行处理。在这种情况下，Block中的操作会在你自己的主线程内执行。<br>Pull方式：<br>你必须主动去向CMMotionManager要数据，这个数据就是最近一次的采样数据。你不去要，CMMotionManager就不会给你。</p>
+<h3 id="2-加速度传感器"><a href="#2-加速度传感器" class="headerlink" title="2.加速度传感器"></a>2.加速度传感器</h3><p>加速器传感器的读取其实还是蛮酷的 监听的方式是通过设置代理实现的 它能够监测设备在xyz轴上不同的加速度情况<br>具体的实现逻辑是</p>
+<ol>
+<li>获取加速器的单例对象<br><code>UIAccelerometer *accelerometer = [UIAccelerometer sharedAccelerometer];</code></li>
+<li>获取加速器的代理对象<br><code>accelerometer.delegate = self;</code></li>
+<li>设置采样间隔<br><code>accelerometer.updateInterval = 0.3;</code></li>
+<li>实现代理相关的方法 监听数据(分为pull和push两种不同的方法)<br><code>- (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration;</code></li>
+</ol>
+<p>使用起来的代码是这样的</p>
+<ol>
+<li><p>加速度使用pull方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- (void)useAccelerometerPull&#123;</span><br><span class="line">    //初始化全局管理对象</span><br><span class="line">    CMMotionManager *manager = [[CMMotionManager alloc] init];</span><br><span class="line">    self.motionManager = manager;</span><br><span class="line">    //判断加速度计可不可用，判断加速度计是否开启</span><br><span class="line">    if ([manager isAccelerometerAvailable] &amp;&amp; [manager isAccelerometerActive])&#123;</span><br><span class="line">        //告诉manager，更新频率是100Hz</span><br><span class="line">        manager.accelerometerUpdateInterval = 0.01;</span><br><span class="line">        //开始更新，后台线程开始运行。这是Pull方式。</span><br><span class="line">        [manager startAccelerometerUpdates];</span><br><span class="line">    &#125;</span><br><span class="line">    //获取并处理加速度计数据</span><br><span class="line">    CMAccelerometerData *newestAccel = self.motionManager.accelerometerData;</span><br><span class="line">    NSLog(@&quot;X = %.04f&quot;,newestAccel.acceleration.x);</span><br><span class="line">    NSLog(@&quot;Y = %.04f&quot;,newestAccel.acceleration.y);</span><br><span class="line">    NSLog(@&quot;Z = %.04f&quot;,newestAccel.acceleration.z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加速度使用push方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- (void)useAccelerometerPush&#123;</span><br><span class="line">    //初始化全局管理对象</span><br><span class="line">    CMMotionManager *manager = [[CMMotionManager alloc] init];</span><br><span class="line">    self.motionManager = manager;</span><br><span class="line">    //判断加速度计可不可用，判断加速度计是否开启</span><br><span class="line">    if ([manager isAccelerometerAvailable] &amp;&amp; [manager isAccelerometerActive])&#123;</span><br><span class="line">        //告诉manager，更新频率是100Hz</span><br><span class="line">        manager.accelerometerUpdateInterval = 0.01;</span><br><span class="line">        NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line">        //Push方式获取和处理数据</span><br><span class="line">        [manager startAccelerometerUpdatesToQueue:queue</span><br><span class="line">                 withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)</span><br><span class="line">         &#123;</span><br><span class="line">             NSLog(@&quot;X = %.04f&quot;,accelerometerData.acceleration.x);</span><br><span class="line">             NSLog(@&quot;Y = %.04f&quot;,accelerometerData.acceleration.y);</span><br><span class="line">             NSLog(@&quot;Z = %.04f&quot;,accelerometerData.acceleration.z);</span><br><span class="line">         &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="2-陀螺仪传感器"><a href="#2-陀螺仪传感器" class="headerlink" title="2.陀螺仪传感器"></a>2.陀螺仪传感器</h3><p>陀螺仪传感器使用起来与加速度传感器使用起来是相似的<br>具体代码实现如下</p>
+<ol>
+<li><p>陀螺仪实现用pull方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//pull的方法实现陀螺仪</span><br><span class="line">- (void)useGyroPull&#123;</span><br><span class="line"></span><br><span class="line">    // 1.判断加速计是否可用</span><br><span class="line">    if (!self.Gyromanager.isAccelerometerAvailable) &#123;</span><br><span class="line">        NSLog(@&quot;加速计不可用，请跟换手机&quot;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 2.开始采集数据</span><br><span class="line">    [self.Gyromanager startAccelerometerUpdates];</span><br><span class="line"></span><br><span class="line">    CMRotationRate rotationRate = self.Gyromanager.gyroData.rotationRate;</span><br><span class="line">    NSLog(@&quot;x:%f-y:%f-z:%f&quot;,rotationRate.x, rotationRate.y, rotationRate.z);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>陀螺仪的实现用push方法获取的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">- (void)useGyroPush&#123;</span><br><span class="line">    //初始化全局管理对象</span><br><span class="line">    CMMotionManager *manager = [[CMMotionManager alloc] init];</span><br><span class="line">    self.Gyromanager = manager;</span><br><span class="line">    //判断陀螺仪可不可以，判断陀螺仪是不是开启</span><br><span class="line">    if ([manager isGyroAvailable] &amp;&amp; [manager isGyroActive])&#123;</span><br><span class="line"></span><br><span class="line">        NSOperationQueue *queue = [[NSOperationQueue alloc] init];</span><br><span class="line">        //告诉manager，更新频率是100Hz</span><br><span class="line">        manager.gyroUpdateInterval = 0.01;</span><br><span class="line">        //Push方式获取和处理数据</span><br><span class="line">        [manager startGyroUpdatesToQueue:queue</span><br><span class="line">                             withHandler:^(CMGyroData *gyroData, NSError *error)</span><br><span class="line">         &#123;</span><br><span class="line">             NSLog(@&quot;Gyro Rotation x = %.04f&quot;, gyroData.rotationRate.x);</span><br><span class="line">             NSLog(@&quot;Gyro Rotation y = %.04f&quot;, gyroData.rotationRate.y);</span><br><span class="line">             NSLog(@&quot;Gyro Rotation z = %.04f&quot;, gyroData.rotationRate.z);</span><br><span class="line">         &#125;];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><p>push的使用就是利用一个block 不断的回调获取的值 通过isAccelerometerAvailable这个属性来判断能否获取值 但是在官方文档中 isAccelerometerAvailable这个方法只有getter的方法 是没有setter的方法的 所以如果我们想要自己停止获取传感器的值 就要另加一个bool类型的参数自己传进去 当然也可以利用多线程进行时间的的限制 repeats设置成1次就好了 但是还是有这样那样的问题 如果大家有什么好的可以控制传感器进程的方法请给我评论哦 我会认真的看的</p>
+<h5 id="以上的demo已上传到github上面-BadCodeLu的github的demo链接"><a href="#以上的demo已上传到github上面-BadCodeLu的github的demo链接" class="headerlink" title="以上的demo已上传到github上面 BadCodeLu的github的demo链接"></a>以上的demo已上传到github上面 <a href="https://github.com/hehedalulu/SensorIniOS/tree/master" target="_blank" rel="external">BadCodeLu的github的demo链接</a></h5>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/21/HealthKit的数据读取/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HealthKit的数据读取</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="iOS中各种传感器使用的介绍与教程" data-title="iOS中各种传感器使用的介绍与教程" data-url="http://yoursite.com/2016/10/26/iOS中各种传感器使用的介绍与教程/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 BadCodeLu
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
