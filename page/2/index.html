@@ -29,6 +29,14 @@
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
+
+	
+	<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+		<label>Search</label>
+		<input type="text" id="st-search-input" class="st-search-input_my" maxlength="30" placeholder="Search" />
+	</form>
+	
+
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
@@ -56,11 +64,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="3">
 							<div class="user"></div>
@@ -68,15 +71,13 @@
 						</div>
 						
 					</div>
-					
+
 				</div>
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
 						<li>Tags</li>
-						
-						<li>Links</li>
 						
 						
 						<li>About</li>
@@ -92,13 +93,17 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
-				        
 							<li><a href="/archives">所有文章</a></li>
 				        
-							<li><a href="/tags/随笔">随笔</a></li>
+							<li><a href="/categories/DailyReport">Daily Report</a></li>
 				        
-							<li><a href="/photo">相册</a></li>
+							<li><a href="/categories/Life">乱七八糟</a></li>
+				        
+							<li><a href="/categories/iOS">移动端</a></li>
+				        
+							<li><a href="/categories/AR">AR学习</a></li>
+				        
+							<li><a href="/categories/other">其他技术流</a></li>
 				        
 						</ul>
 					</nav>
@@ -116,45 +121,27 @@
 						</div>
 					</nav>
 				</section>
-				
+
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/HealthKit/" style="font-size: 15px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 15px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 15px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/CoreMotion/" style="font-size: 10px;">CoreMotion</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/iOS系统的SDK/" style="font-size: 10px;">iOS系统的SDK</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
+						<a href="/tags/HealthKit/" style="font-size: 15px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/UIImage优化相关/" style="font-size: 10px;">-UIImage优化相关</a> <a href="/tags/hexo/" style="font-size: 15px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 15px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/深沉的暗恋/" style="font-size: 10px;">-深沉的暗恋</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/CoreMotion/" style="font-size: 10px;">CoreMotion</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/iOS系统的SDK/" style="font-size: 10px;">iOS系统的SDK</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
 					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
-			        </div>
 				</section>
 				
 
 				
+
 				
-				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是lulu 一个野路子出身的程序员</div>
 				</section>
 				
 			</div>
 		</div>
-	</header>				
+	</header>
 </div>
 
     </div>
@@ -180,13 +167,17 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
-		        
 					<li><a href="/archives">所有文章</a></li>
 		        
-					<li><a href="/tags/随笔">随笔</a></li>
+					<li><a href="/categories/DailyReport">Daily Report</a></li>
 		        
-					<li><a href="/photo">相册</a></li>
+					<li><a href="/categories/Life">乱七八糟</a></li>
+		        
+					<li><a href="/categories/iOS">移动端</a></li>
+		        
+					<li><a href="/categories/AR">AR学习</a></li>
+		        
+					<li><a href="/categories/other">其他技术流</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -209,6 +200,82 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-仿网易新闻菜单滑动第三方深度定制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/20/仿网易新闻菜单滑动第三方深度定制/" class="article-date">
+  	<time datetime="2016-06-20T13:27:25.000Z" itemprop="datePublished">2016-06-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/20/仿网易新闻菜单滑动第三方深度定制/">仿网易新闻菜单滑动第三方深度定制</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="仿网易新闻优秀第三方库-（后续上图）"><a href="#仿网易新闻优秀第三方库-（后续上图）" class="headerlink" title="仿网易新闻优秀第三方库 （后续上图）"></a>仿网易新闻优秀第三方库 （后续上图）</h3><h4 id="ALL-BY-CherryWang-转载请注明出处"><a href="#ALL-BY-CherryWang-转载请注明出处" class="headerlink" title="ALL BY CherryWang (转载请注明出处)"></a>ALL BY CherryWang (转载请注明出处)</h4><hr>
+<p>  最近做了一个项目，老板要求菜单栏要有朋友印象那种效果，要是那种滑动的菜单，最好是仿照网易新闻首页的那种滑动的菜单。<br>  本来我是自己封装一个菜单栏的，想了一下。上面滑动的菜单用一个scrollview，scrollview上面设置几个固定的按钮，监听页面的滑动，每次换一个页面的时候，按钮的背景颜色，字体大小以及颜色进行改变达到那种显著的切换效果。下面切换的菜单就用一个scrollview上面在覆盖一层三个tableview，scrollview是用来控制横向滑动的，就是用图片轮播器的概念和tableview相结合 用tableview的tag属性来切换按钮和界面 最后实现这种效果。<br>  后来一直就是用的自己封装的这个菜单控件。感觉自己萌萌哒。可是后来遇到一个问题，我写的空间耦合度实在是太低了，封装的太差，导致代码很难重用。最终要的一点是，我只用了一个控制器来实现这所有的内容。啊。。后来我用了Bmob的云数据库，以及李明杰老师的MJRefrsh.操蛋的一件事情发生了。我的tableview卡顿到爆 几个tableview每次reload的时候我向左滑动的效果就变得极差，真是气死我了。</p>
+<p>  后来我发现怎么优化都必须解决这个controller的MVC中的C占的比重过多的问题.一咬牙一跺脚，决定放弃自己封装的菜单空间，改去拥抱大神们封装的空间，看看有没有什么优秀的第三库可以使用或者可以借鉴一下设计模式。果不其然，让我在code4app里面找到一个最近才上传的十分优秀的一个demo，可以说是一个第三方库，简直是太棒了<br>  分享一下网址<br>  <a href="http://code4app.com/thread-8061-1-1.html" target="_blank" rel="external">超级干货仿网易</a>;</p>
+<p>  详细解析<br>  code4app的帖子上已经介绍的很清楚了 但是我现在主要是想纪录一下我修改这个库的过程 鉴于自己的神记忆能力与理解能力<br>  先贴一下文件列表<br>  <img src="http://7xs3ih.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-21%20%E4%B8%8A%E5%8D%889.57.02.png" alt=""></p>
+<h4 id="UIView-ZJFrame"><a href="#UIView-ZJFrame" class="headerlink" title="UIView+ZJFrame"></a>UIView+ZJFrame</h4><p>  这个是用来设置每一个view的长宽高的 倒时候取出来的时候会很方便 这里就不想详细介绍了 作者的思路还是很清楚的</p>
+<h4 id="UIViewController-ZJScrollPageController"><a href="#UIViewController-ZJScrollPageController" class="headerlink" title="UIViewController+ZJScrollPageController"></a>UIViewController+ZJScrollPageController</h4><p>  这个是描写父控制器与子控制器的 如头文件所说 方便每个子控制页面直接获取父控制器的 已经父子控制器进行一些操作 因为菜单下面的view作者是单独封装成一个一个控制器的 这有一个好处 每一个控制器都有自己的生命周期 以至于控制界面的时候我们可以在界面开始之前 开始之后 完全加载之后做一些很多内存啊 还是数据初始化的加载 这也是我选择使用这个第三方空间来优化我自己的menu的主要的一个原因<br>  这里面还使用了iOS界的一个黑模仿runtime哈哈哈<br>  不过这里面 以我现在的水平来说 还是没有办法定制的</p>
+<h4 id="ZJContentView"><a href="#ZJContentView" class="headerlink" title="ZJContentView"></a>ZJContentView</h4><p>  这个主要是对子控制器的页面刷新 还有滚动速度调整 主要还是建立一个父控制器和子控制之间的关系 用了一个CollectionView的布局 使用weak避免页面循环引用 处理重用和内容显示的问题 我的业务暂时还没涉及到这部分 所以可能说寥寥数语带过</p>
+<h4 id="ZJCustomLabel"><a href="#ZJCustomLabel" class="headerlink" title="ZJCustomLabel"></a>ZJCustomLabel</h4><p>  如题 定制了一个特定的label</p>
+<h4 id="ZJSegmentStyle-以及-ZJScrollSegmentView"><a href="#ZJSegmentStyle-以及-ZJScrollSegmentView" class="headerlink" title="ZJSegmentStyle 以及 ZJScrollSegmentView"></a>ZJSegmentStyle 以及 ZJScrollSegmentView</h4><p>  前两个文件就直接带过吧 我主要研读的是接下来两段的代码<br>  <img src="http://7xs3ih.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-21%20%E4%B8%8A%E5%8D%8810.13.27.png" alt=""><br>  <img src="http://7xs3ih.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-21%20%E4%B8%8A%E5%8D%8810.10.58.png" alt=""><br>  我先从style这个文件开始 这个是用来设置菜单来高度的 作者的注释很全 提供了很多借口 很方便 代码的重用以及定制<br>  （我个人觉得封装第三方库的话 真是一个很棒的事情 你把所有的参数都抽出来 然后每次调用的时候 重新定义一下就可以了 @property就是 Obj里面一个很典型的设置公共参数的东西 不想其他别种的语言 Obj有一个特性 就是所有的参数以及变量都是私有的 相当于java里面的private 我们不能够很好的去调用一个参数 只有把它放在外面的 用property来实现接口 设置的时候还要考虑好究竟是strong 还是 weak 是assign还是copy抑或是retain 当然大多数时候我们需要再多加一个设置nonatomic来保证这个参数是线程安全的 （之后很少情况下会遇到atomic来定义 好像是在线程锁这方面会使用到 不过我暂时还没有使用过）</p>
+<p>  这个是来设置覆盖 （下划线）的UI 以及各个动态获取并get到label长度的主要文件</p>
+<p>  作者已经在头文件写的很详细了 我们每次使用的时候只需要直接导入头文件 实例化之后设置就好了</p>
+<p>  但是我要投诉一下 反映一下这个空间的不足与缺点</p>
+<p>  1.我每次想到定制菜单栏的UI的时候 有的时候对每一个title的逻辑像素点左边有固定要求的时候 我是设置不了的<br>  我需要去ZJScrollSegmentView这个文件里面 找到一个<code>setUpLabelsPosition</code>的方法来重新通过用数学计算的方法来定制页面<br>  所以我在ZJSegmentStyle的头文件之中加了一个插座接口<code>XYzuobiao</code> 如果我在一个工程中有多个地方需要调用这个中间的时候 每次调用的时候我的xy坐标以及大小 覆盖范围 颜色是要去不一样的 所以多一个便来来判断是哪一个<br>  我在这里进行自定义的方式通过公式来计算的 第一个坐标是可以固定的 用titlex titley titlew titleh 来进行设置 然后用forin循环来loop对title进行遍历 index＋＋ 接下来的坐标就是更改x的坐标了 延伸一下 这里面我们还可以来设置一下 这样的话 哈哈 还可以进行垂直方向的甚至于斜方向的定义<br>  <img src="http://7xs3ih.com1.z0.glb.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-06-21%20%E4%B8%8A%E5%8D%8810.24.59.png" alt=""><br>  2.当你以为更改结束title的坐标之后就结束了 你就错了 这个控件主要是通过label的长度来进行覆盖或者下划线的长度 所以更改万title的坐标还没完 你还要去更改一下覆盖或者是下滑线的初始坐标<br>  更改覆盖初始坐标的方法<code>setupScrollLineAndCover</code>里面有这么一行<code>coverX = (firstLabel.zj_width - coverW) * 0.5;</code>你可以在这个后面加个数值</p>
+<p>  3.我个人觉得他这个控件根据label的长度来进行移动 渐变 是不错 但是这个空间的宽度是不是有一点太直男癌后期患者了 我觉得不能够仅仅根据label长度来进行封装 于是我找了半天怎么更改阴影的长度<br>  代码太多看起来果然有一种日了🐶的感觉 不过好在还是让我给找到了 在方法<code>setupTitles</code>里面有一句<code>[self.titleWidths addObject:@(bound.size.width)];</code>当你想要使用的时候 你只需更改成这样<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  CGFloat labelwidth =bounds.size.width+30;</span><br><span class="line">[self.titleWidths addObject:@(labelwidth)];</span><br></pre></td></tr></table></figure></p>
+<p>  就可以了</p>
+<p>  4.再说一个很坑的东西吧 我个人觉得作者没有优化好的地方 当我想要修改这个菜单的背景颜色的时候 日🐶的事情出现了 竟然在style里面没有接口 果然不能够愉快的玩耍了啊 不过后来我奇思妙想 然后就在 “setupUI” 这个方法里面直接加拉一条<code>_scrollView.backgroundColor = [UIColor colorWithRed:55.0/255.0 green:67.0/255.0 blue:81.0/255.0 alpha:1];</code><br>  愉快的搞定了 不过好像不是在这边改的 😂 先改了以后再修改吧 老板催的很急啊</p>
+<h3 id="记录一下修改的小细节-希望以后重用的时候能够使用到"><a href="#记录一下修改的小细节-希望以后重用的时候能够使用到" class="headerlink" title="记录一下修改的小细节 希望以后重用的时候能够使用到"></a>记录一下修改的小细节 希望以后重用的时候能够使用到</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/第三方库学习使用/">-第三方库学习使用</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-关于iOS图片压缩相关" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -259,6 +326,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -338,6 +409,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -424,6 +499,101 @@ if (bUser) {
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-secret-crush-on-laviexu-十六岁" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/13/secret-crush-on-laviexu-十六岁/" class="article-date">
+  	<time datetime="2016-05-13T12:49:50.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/13/secret-crush-on-laviexu-十六岁/">a secret crush on laviexu 十六岁的暗恋</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>人的一生走的很快，很害怕等到自己老去的时候忘记自己年少时发生的事情。很多人都是感觉型的生物。他们会记住每一件事情发生时候的感觉，但是会忘记当时发生的事情。我不愿忘记这一段往事，它记录了我的青春，以及我最爱的人。<br>我追到了我爱的人，可是，我还是失去了她。<br>I had a crush on her. I lost myself. Without her ,life become colorless.</p>
+<h4 id="窸窸窣窣的回忆"><a href="#窸窸窣窣的回忆" class="headerlink" title="窸窸窣窣的回忆"></a>窸窸窣窣的回忆</h4><p>这件事情过去快四年了，很多细节已经记不太清楚了。我决定按照时间线来记述这些记忆。</p>
+<h5 id="2012-8-31"><a href="#2012-8-31" class="headerlink" title="2012.8.31"></a>2012.8.31</h5><p>遇见徐祎璠是我这辈子最幸运的事情。</p>
+<h5 id="2012-9"><a href="#2012-9" class="headerlink" title="2012.9"></a>2012.9</h5><p>座位<br>分座位的时候我坐在徐祎璠的右前方，我好像是为数不多知道她名字怎么读的人。但是自己还是喜欢从大流起着哄，徐伟潘徐伟潘的喊。后来她生气了，一脸不屑，那表情好像在嘲讽我们的无知。冷酷🈶️意味深长，从那以后，徐伟潘这个名字我再也说过，那个时候的我觉得这个用冷漠去嘲讽别人的人还挺有意思的。</p>
+<p>我发现徐祎璠长得很像我初中的好朋友曾真。<br>其实一点也不像，只是在性格的某方面有着极高的相似度。</p>
+<p>外卖<br>我当时是班里面的外卖小王子，在高中那个封闭的环境，不吃食堂订外卖是一个很酷的事情。现在想来那个时候的自己真是傻，每次都帮班里面同学定外卖，二三十瓶的coco，我一个人去记去拿去送，没人愿意拿，每次我却乐此不疲的爱跑腿，偶尔还被同学埋怨定错。某一天，徐祎璠和我一起拿奶茶，她和我说，“没有人会愿意去做这么吃力不讨好的事情”。瞬间蒙逼，觉得这个话说的好……直接。。我也很少愿意去帮跑腿了。</p>
+<h5 id="2012-10"><a href="#2012-10" class="headerlink" title="2012.10"></a>2012.10</h5><p>国庆节<br>我还记得第一次与徐祎璠有交集的时候是她问我电脑耳机的事情，那个时候的我还是一个科技宅，喜欢各种新科技也是第一批用iPhone的人。徐祎璠当时好像是要和国外的同学视频聊天（好像是曾亦扬），结果电脑太古旧，前面的插口坏掉了，费劲很大的劲才翻到主机后面插耳机才成功。<br>那个时候我记得自己还暗笑了好久，这个女生怎么这么萌。</p>
+<p>好奇<br>后来渐渐的把目光放在了这个姑娘身上，她一个人五点放学后不去食堂落寞的留在教室，晚自习安安静静的看书，小心翼翼的和周围同学交往，很多时候我能感受到她很努力的想要融进这个新集体，但是好像力都发不到正确的地方，不知道为什么我总是很能深刻的感受到她的孤独。我对这个女生产生了极大的好奇。</p>
+<p>物理<br>我一直记得其实徐祎璠物理一开始不好，高二第一次物理摸底测试的结果她和我们大多数一样，五六十分的水平。不经意的回头看了她一眼，看到了一丝黯淡，一丝坚决。我很好奇事情之后的发展。<br>不知道是不是因为那一次物理考试的结果，徐祎璠变的异常的用功起来，好像也不再刻意的去和周围的同学维护好关系了，她开始一门心思的把精力放在学习上面。我到现在还记得她当时学习有多用功，白天在教室，你看见她的时候大部分时间都在写作业。当时的她与周围环境异常的格格不入，不管周围有多吵，好像她一直处在一个很安静的环境中。晚上回寝室的时候，她每天十二点半从床上爬起来，拿被子遮住光，一直看书到4点半。每一次看到她白天上课拿手挡住脸睡一会，然后很快就做起来学习的样子，我不知道为什么感觉很心疼。</p>
+<p>我每一次看到徐祎璠认真学习的样子都会很入迷，甚至偷偷的拍了很多照片。</p>
+<h5 id="2012-10-22"><a href="#2012-10-22" class="headerlink" title="2012.10.22"></a>2012.10.22</h5><p>运动会<br>第一次见到徐祎璠把前面的头发夹起来的样子。我这个人呆住了好几秒。当时丝毫没有考虑到她的额头大小比例的问题，就是觉得好美好仙气，简直就是女神。我想我应该就是那个时候深深为她着迷的。</p>
+<h5 id="2012-11-11"><a href="#2012-11-11" class="headerlink" title="2012.11.11"></a>2012.11.11</h5><p>期中考试<br>一个星期之后高二第一次期中考试的结果就出来了。徐祎璠考了年级第二，我考了两百多名。。我有点蒙逼，因为高二进班的时候，我们都是一百多名。。。她突然成绩就上去了，后来基本上也没下来过。当时觉得徐祎璠好有毅力，好能学，好能吃苦，独立自强新时代先进的女神。</p>
+<p>认真的样子<br>后来徐祎璠学习越来越刻苦了，后来听说她父亲有个同事的小孩拿了新加坡国立的全奖出国了，她好像也很想去新加坡读书，所以那段时间学习异常刻苦。加上之前暴学得到的显著结果，她变成了别人眼中的学神，可我知道，她私底下有多痛苦的努力。<br>整整一个多月，徐祎璠的暴学模式持续了整整一个多月，后来很多人模仿但终究无果（不是每一个人都有她这么坚定的意志）。徐祎璠暴学的成果就是，稳定在了年级第二。。</p>
+<h5 id="2012-11月-12月"><a href="#2012-11月-12月" class="headerlink" title="2012.11月-12月"></a>2012.11月-12月</h5><p>入迷<br>附一个小插曲，11月底的时候我已经深深的对徐祎璠着迷了。<br>刚开始的想法是对徐祎璠很好奇，后来好奇转变成了着迷。</p>
+<p>交友<br>我很想和徐祎璠做朋友。<br>我不是很会交朋友，我只会疯狂的送东西，我甚至不知道这是一种什么样的感情。<br>我开始送东西给徐祎璠，第一次送的东西应该是一个星巴克万圣节的随行杯，可以diy的随行杯。因为徐祎璠是一个大水桶，她太能喝水了，平均每两节课就要打满满一瓶水，每节下课都要去上厕所。。。<br>可是徐祎璠用了一个多星期，就把杯子弄丢了，我有点生气，但是看到她之前的杯子那么不好用。。于是我又买了一个圣诞款的星巴克送给她。</p>
+<p>Starbuck的杯子<br>星巴克这个圣诞款的杯子的路途也很坎坷啊。。<br>第一次被我摔了，又买了一个新的，第二次被吴磐摔了，又买了一个新的。<br>我怕她又摔了，我又给自己买了一个。。<br>那一个月我在买星巴克这个上面的开销快到600了。。</p>
+<p>叛逆<br>我开始彻彻底底的对徐祎璠着迷了，心疼她孤独的样子，那个时候的她瘦的和纸片一般。我强烈的保护欲莫名汹涌起来。那段时间我逃课，早上跑到办公室偷出门条，就是为了想出门买东西给徐祎璠。我不知道送什么好，受不住她这么瘦，就开始每天买外卖买饭买各种给她吃。其实我也不太明白自己为什么要这么做。我也不太明白为什么她会接受，当时真的什么企图都没有，就想对她好点，让她不要过的这么糟。可是送饭这件事情最后就变得很奇怪，变成了我每天都给她送饭，她并不给我钱😂，而且每次送饭的时候她看都不看我一眼，一句谢谢都没有，有的时候就是一直在打电话也不理我，一点表示都没有，这种关系一直持续了一个半月。直到后来我舍友雍琪和我说‘你们这种关系和畸形’。。我才意识到原来这么奇怪。。<br>我当时很叛逆，什么搓事都做了。那段时间第一次开始发现我这么痴迷的喜欢一个人。在她熬夜学习的同时我彻夜彻夜的失眠，失眠到最后心脏都开始抗议，我记得那阵子我停了好几天的课去看心脏，各种毛病……我还记得看完病我还在同曦给她带小米粥，这是什么鬼。。<br>一直到现在，我都把当时给徐祎璠传的每一个小纸条都保存的好好的，每一次她想要什么想吃什么，虽然每次都只有寥寥几语，但是对于当时的我来说，好像就是大过天的世界。</p>
+<p>不知名的第三者<br>我一直觉得徐祎璠身上有很多秘密，她不经意的回眸，不经意的失落，经常呆滞在一个角落发呆。我不知道她身上有什么秘密，我看不穿。<br>有一阵子我和她传情书，说是情书但是我能很深切的感受到那一封封信纸的对象并不是我，只是她对未来的爱情的幻想，我还记得里面有写’和爱的人携手去看冰岛的世界第一大伤口‘。我一直爱猜测这个人是谁？是王晟吗（她上一段感情）？是宋子昀（她第一段无疾而终的感情，她曾经喜欢着他，但是他喜欢的却是她闺蜜）？我一直觉得她的感情之路很不顺，至少在某种程度上来说应该是受过感情上的创伤。就是这样一个女人，你知道的越多，就越想保护她。可惜我的羽翼不够丰满，我不能够给他想要的。很遗憾我不能一直保护她。她应该是很想和一个盖世英雄这样优秀的人在一起吧。可是无论是过去还是现在我都太平凡了，希望以后的我能够足够强大，强大到可以抵抗全世界。</p>
+<h5 id="2012-12-21"><a href="#2012-12-21" class="headerlink" title="2012.12.21"></a>2012.12.21</h5><p>那个时候玛雅人的预言传的沸沸扬扬的，虽然是伪科学但是我们看过了这么多灾难片的我们还是很期待的，很期待这个世界到底会变成什么样子。日子越迫近，我越不想继续将这份感情沉寂。我第一次和徐祎璠告白了。。（可能她当玩笑了吧）</p>
+<p>插个曲<br>其实我大概知道为什么后来徐祎璠优点不太愿意理我。之前有说到我深深对她着迷了。那个时候的学生能做什么呢。我把她的贴吧，人人，说说所有她出现过痕迹的地方从头到尾看了好几遍，从小学开始她所有的好友，我全都加了一遍。她的小学，她的初中，她的家，我一个人在这些地方转过很久，我想感受她的气息，想经历一遍她的过去，很想知道我遇到她之前她是什么样子的一个人。甚至于我还曾经找过私家侦探去调查她。我知道这样很病态，也是不对的，但是当时的探索欲实在是太强了。。<br>我渴望她的一切</p>
+<h5 id="2013"><a href="#2013" class="headerlink" title="2013"></a>2013</h5><p>我发现自己长高了。讲真上高中长高了几厘米</p>
+<h5 id="2013-1-4"><a href="#2013-1-4" class="headerlink" title="2013.1.4"></a>2013.1.4</h5><p>我那天对徐祎璠疯狂的告白了<br>她好像有点蒙<br>然后就没有然后了</p>
+<p>之前我一直以为自己只是很想交徐祎璠这个朋友，渐渐的好像变味了。那个时候我看了一部泰剧《yes or no》，上下两部，我前前后后看了好几遍，送了剧里面的水母送给徐祎璠。有那么一瞬间，我突然意识到自己是喜欢姑娘的。当我意识到自己是一个同性恋的时候，内心是很抗拒的，抗拒到我拒绝见到徐祎璠，拒绝任何与她相关的事情，但是我无法抗拒自己对她的感情。</p>
+<p>接着就是高二寒假的那个寒假，那个寒假我是在金中培训度过的。一整个寒假都在接触各种南京本地高校化学系的教授，和实验班的同学打成一片，过的很充实。但是好像＝ ＝还是很想她。</p>
+<h5 id="2013-3"><a href="#2013-3" class="headerlink" title="2013.3"></a>2013.3</h5><p>我还记得那一年春节过来的时候雪下的很大，我们延迟了一天开学。徐祎璠那次到校了才临时收到了教育局延迟开学的通知，她在学校住了一天，我到的时候，她坐在我的床上，拿着一个iPhone3。她当时和宰月悦玩的的挺好，这也是我当时特别抗拒她的原因。从初中开始宰月悦就是一个左右逢缘的人，我挺反感这种喜欢讨好老师然后在同学面前装腔作势的人。另一方面，她特别喜欢阴人，她会在别人面前说你坏话诋毁你，而且喜欢搞一些小动作，一直以来都是这样，我是一个光明磊落的人，实在不屑于这种人为伍。<br>回到之前开学，开学之后我们就要进行小高考。那阵子，徐祎璠和王凯的同学感情格外的好，两个人一下课就在一起研究数学题，一下课就互相打水，一起排话剧，一起搞活动，全班同学都很喜欢拿他们起哄。我当时的感觉真的是……真是……天天吐血的状态。因为全班同学都在起哄他们两个，导致我当时基本上对每一个同学都是相当反感的，我把座位搬到了最后一排，每一天用一种杀人的眼光看着他们两个，说真的，my eyes had fixes on her 不管她去哪里，到哪里去，我总是用我炙热的眼光去凝视着她。快疯了。离小高考还有不到一个月的时候，我的成绩是三门不及格，没错学业水平测试有三门我都是60分不到的水平。我很害怕自己会挂科，还有十几天的小高考的时候，我把自己一个人搬到了隔壁教室，最后的结果是3B1A.</p>
+<p>那个时候我真的是，完全不能够理解为什么要和王凯关系这么好 想不明白 why！我家里面条件分分钟甩他几条街 虽然我可能当时成绩没有他那么好 但是我很确定的一点是我IQ高 虽然做题的严谨性因为缺乏训练不达标 可是解题思路我可是很有一套的 (当时真的是盲目的自信 如果现在还有当年那样的自信 我应该也不会沦落至此吧)<br>我不能够理解为什么王凯那个屌丝还能够和他关系那么好 （当时特别嫉妒 有点走火入魔的感觉真是</p>
+<h5 id="2013-5"><a href="#2013-5" class="headerlink" title="2013.5"></a>2013.5</h5><p>我整整看了徐祎璠和王凯这种暧昧的关系看了两个月 一直到现在 我都记得自己当时那种冒火的心情 我对自己承诺过 以后绝对不能让自己再一次处于这种情况 实在是太痛苦了 我一定要消灭掉自己所有的对手</p>
+<p>学农<br>5月份我们经历的社会实践，为期将近一个星期的学农。学农的前几天 我的太姥姥走了（她曾经照顾我很久，而那之前几个月，我外婆也走了，回忆被唤醒）自己处于一种极度悲伤的环境之中 我很不愿意去参加学农 更不想见到徐祎璠 我不想让她看到我这个样子。后来过了一天，我还是去参加社会实践了。<br>呵 徐祎璠带着一顶蓝色的草帽 有点突兀 我一眼就看到她了 看到她的同时 她和王凯站在一排 心又被猛猛的刺了一刀<br>再一次 我很抗拒徐祎璠 我不愿与她说话 不愿意与她照面 甚至反感任何与她相关的事情。我很感谢当时一直陪着我的吴迪，她给我带来很多温暖<br>社会实践有时候要两排牵手 又被刺了一刀<br>不过我发现徐祎璠好像瞧不上王凯 （我就说她那么一个高傲的人 怎么会瞧上一个不如自己的人呢）她开始表现出不愿意接受他人的撮合 与王凯相伴。（来自lu内心的愉悦<br>回去之后，徐祎璠开始慢慢的排斥王凯了 也会对他人恶意的撮合黑脸</p>
+<p>王凯向徐祎璠表白<br>在全班同学（except me 起哄的情况下，王凯向徐祎璠表白了。徐祎璠沉默，没有拒绝也没有同意。我想她是因为不想伤害别人所以才这么做的吧。其实这样也挺好的，一种婉转的拒绝，给对方留个念想也不至于伤害的那么深，有的人 比如我，你如果直接拒绝，我会觉得很没有面子，不仅不可能对你放手，还有可能对你念念不忘穷追不舍。<br>哈哈 徐祎璠把王凯给拒绝了 她当时还给我看了王凯给他的情书和她的回信。（我觉得我和徐祎璠当时关系挺微妙的。<br>然后他们这一段关系也就无疾而终了，深深的输了一口气</p>
+<h5 id="2013-6"><a href="#2013-6" class="headerlink" title="2013.6"></a>2013.6</h5><p>很明显 我开始疯狂的追徐祎璠了 具体细节不记得了<br>反正每天我都在示爱，但其实我在感情这方面一开始不是这么主动的。刚开始的阶段我很懦弱，很害怕被拒绝，每天自己心里面纠结了一万遍我才敢表达出四分之一都不到的话。<br>我好像做了一个很好看的硫酸铜晶体给徐祎璠<br>我被徐祎璠拒绝了好多次……拒绝到后期 我都不敢再表白了 天知道我做了多少事情只是想吸引她的注意 有多少次我都很想直接强吻她0.0</p>
+<h5 id="2013。7"><a href="#2013。7" class="headerlink" title="2013。7"></a>2013。7</h5><p>我记得暑假的时候自己差不多自己已经完全放弃徐祎璠了<br>我删掉了她的所有联系方式 其实自己也是知道不管说什么她都不会理我的吧<br>偶尔还是会想起她 每次想起她的时候就给她发空短信 换着各种人的手机发 我知道她知道是我 但是我不知道说什么好<br>也许这段感情就不应该开始 我从来没想到后来会发生这么多事情 我也不知道该怎么去形容后面发生的事情 是开心吗？还是折磨？但是我不曾后悔，我很高兴自己能够认识你，好像认识你之后我就花光了自己所有的运气，不管做什么事情都要加倍努力才可以。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/深沉的暗恋/">-深沉的暗恋</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Life/">Life</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -484,6 +654,10 @@ if (bUser) {
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Life/">Life</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -556,75 +730,10 @@ if (bUser) {
 	</div>
 
       
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Daily-report集总" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/06/Daily-report集总/" class="article-date">
-  	<time datetime="2016-04-06T07:03:19.000Z" itemprop="datePublished">2016-04-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/06/Daily-report集总/">Daily report2016年4月</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="2016年4月"><a href="#2016年4月" class="headerlink" title="2016年4月"></a>2016年4月</h3><h4 id="4月5日"><a href="#4月5日" class="headerlink" title="4月5日"></a>4月5日</h4><p>完成了java数据结构中的中缀表达式。对java中栈和队列方面有了一些理解<br>对想要进行的help进行了一次头脑风暴，并对靠我，百度知道，百度经验（网页版）进行了研究。总结成了一份粗略的文档，形成了一份初步的规划。</p>
-<h4 id="4月6日"><a href="#4月6日" class="headerlink" title="4月6日"></a>4月6日</h4><p>学习了用prepareforsegue：sender将一个viewcontroller类的参数传递到另一个viewcontroller类中。<br>在官方文档中查询了uiviewcontroller中关于segue的内容，但是略显生涩，之后会完善。<br>学习了不是用segue进行画面切换，用代码在viewdidapper中加载viewcontroller进行画面切换。<br>学习使用autolayout在storyboard中布局。<br>tableview的重新学习<br>  利用纯代码创建tableview ，<br>  tableview分块<br>  显示单元格指示器<br>  新增或删除一条tableviewcell及数据<br>  获取用户点击哪一块单元格<br>  改变单元格顺序<br>  用xib或者storyboard自定义cell</p>
-<h4 id="4月7日"><a href="#4月7日" class="headerlink" title="4月7日"></a>4月7日</h4><p>对结构化数据访问进行了学习<br>了解了几种处理大量数据的方式1.plist文件 2.SQLite数据库 3.CoreData</p>
-<h4 id="4月8日"><a href="#4月8日" class="headerlink" title="4月8日"></a>4月8日</h4><p>参照官方文档对UITableViewCell进行了学习。<br>学习了在编辑状态中插入和删除单元格，并在插入和删除单元格数据</p>
-<h4 id="4月9日"><a href="#4月9日" class="headerlink" title="4月9日"></a>4月9日</h4><p>完善了help<br>阅读了programming in objective－c</p>
-<h4 id="4月10日"><a href="#4月10日" class="headerlink" title="4月10日"></a>4月10日</h4><p>根据巧神的推荐 观看了斯坦福的iOS相关的课程<br>对mvc的模式进行了深入的了解。并且做了一些笔记<br>对property和nonatomic以及strong和weak理解 弥补了之前对这些概念理解的不清晰的漏洞</p>
-<h4 id="4月11日"><a href="#4月11日" class="headerlink" title="4月11日"></a>4月11日</h4><p>完成了一个小app 纠结选择器</p>
-<h4 id="4月12日"><a href="#4月12日" class="headerlink" title="4月12日"></a>4月12日</h4><p>完成了java关于linkedlist的作业<br>自己写了一个arraylist类（不使用任何java中的包）<br>对java中的栈和队列以及linkednode有了粗浅的理解</p>
-<h4 id="4月13日"><a href="#4月13日" class="headerlink" title="4月13日"></a>4月13日</h4><p>跟着斯坦福的讲座继续对objective-c了解。<br>理解了＋类方法和－对象方法。<br>并且对＋方法使用的两种情况进行了理解。<br>了解了iOS7中的特性instancetype方法 实例方法，返回相同类类型。<br>对self = [super init]调用父类初始化器对self赋值进行了理解<br>😂把上次对创建button并且自动计数做完了<br>stringbyappendingstring是相加字符串的实例方法<br>在一个方法中除非有copy，否则这个方法返回一个已经存在的对象时，它会返回指向那个对象的指针。</p>
-<h4 id="4月14日"><a href="#4月14日" class="headerlink" title="4月14日"></a>4月14日</h4><p>学习了UICollectionView，感觉和UITableView有点相似，给app中添加了collectView<br>学习了在storyboard中使用segue对cell进行切换下一下一视图。collectview视图切换没有问题，但是tableview切换的时候遇到了问题，查阅了官方文档但是对这方面写的真的是相当不全。。看了samplecode，目前还没有解决。打算再把斯坦福老爷爷的看一下</p>
-<h4 id="4月15日"><a href="#4月15日" class="headerlink" title="4月15日"></a>4月15日</h4><p>学习了在storyboard中自定义tabbar，个人觉得以后可以多多使用sb，虽然说用代码创建视图是很基础很必须的事情 但是时代在变化 现在苹果有点开始主推storyboard。<br>试图解决昨天晚上的问题。目前还没有解决<br>学习了视图控制器的生命周期viewdidload之类<br>学习了观察者模式之中的NSNotification类 监听系统的变化<br>之前有在官方文档中看过导航控制器相关的内容，可以第一遍看的时候对segue的几种种类还是有点概念上的不清晰。在斯坦福视频中看到了老爷爷对iOS7中的push和module的讲解，讲的不错可以iOS9之后的show还有很多不一样，有时间整理一下。</p>
-<h4 id="4月16日"><a href="#4月16日" class="headerlink" title="4月16日"></a>4月16日</h4><p>学习了视图列表中的绘制，在笛卡尔系中利用CGPoint CGSize CDRect绘制。<br>用Quartz 2D做了一些小demo<br>接触了手势识别，UIGestureRecognizer这个抽象类。<br>学习了UIPinchGestureRecognizer，UIRotationGestureRecognizer，UISwipeGestureRecognizer还有iOS9中新增的forcetouch相关手势识别</p>
-<h4 id="4月17-21日"><a href="#4月17-21日" class="headerlink" title="4月17-21日"></a>4月17-21日</h4><p>有点疲惫<br>这几天又夯了一遍基础 把block,协议，animation撸了一遍<br>animation主要撸了UIViewAnimation和DynamicAnimation就是视图的动画和动作的变化<br>UIViewAnimation有三个属性 frame transform alpha有一个类方法实现<br>UIViewAnimationOptions的各种属性可以修改这个视图的状态<br>DynamicAnimation创建的三部曲，吸附重力等都是很炫酷的物理动画</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">-plan</a></li></ul>
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
 	</div>
 
-      
 
       
       <div class="clearfix"></div>
@@ -691,6 +800,10 @@ if (bUser) {
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -811,91 +924,10 @@ if (bUser) {
 	</div>
 
       
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Learn-Objective-C-first-step-nunu原创翻译" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/" class="article-date">
-  	<time datetime="2016-04-04T08:13:04.000Z" itemprop="datePublished">2016-04-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/">Learn Objective-C first step(BadCodeLu)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Learn-Objective-C-first-step-BadCodeLu原创翻译"><a href="#Learn-Objective-C-first-step-BadCodeLu原创翻译" class="headerlink" title="Learn Objective-C first step(BadCodeLu原创翻译)"></a>Learn Objective-C first step(BadCodeLu原创翻译)</h4><p>总结<br>这两天心情有点阴郁，学习效率不是很高。前段时间的熬测被刷，让我感觉到自己对Objective-C的语法的使用还是很生疏的，基础没抓好，以后肯定会很吃亏。现在的我不应该急着去做一份成品app出来，而是要好好反思一下。<br>Learn Objective-C first step(BadCodeLu原创)</p>
-<h3 id="1-在对象上调用的方法的基本语法"><a href="#1-在对象上调用的方法的基本语法" class="headerlink" title="1.在对象上调用的方法的基本语法"></a>1.在对象上调用的方法的基本语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[object method]</span><br><span class="line">[object methodWithInput:input]</span><br></pre></td></tr></table></figure>
-<h3 id="2-方法返回值"><a href="#2-方法返回值" class="headerlink" title="2.方法返回值"></a>2.方法返回值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output = [object methodWithOutput]</span><br><span class="line">output = [object methodWithInputAndOutput:input]</span><br></pre></td></tr></table></figure>
-<h3 id="3-在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象"><a href="#3-在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象" class="headerlink" title="3.在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象"></a>3.在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象</h3><p><code>id myObject = [NSString string]</code><br>Id 类型意味着 myObject 变量可以引用任何类型的对象，动态类型<br>所有OC中的对象变量都是指针类型<br><code>NSString* myString = [NSString string]</code></p>
-<h3 id="4-方法的嵌套"><a href="#4-方法的嵌套" class="headerlink" title="4.方法的嵌套"></a>4.方法的嵌套</h3><p>在很多语言中方法是这样嵌套的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function1 ( function2())</span><br></pre></td></tr></table></figure></p>
-<p>但是在OC中，方法是这样嵌套的<br><code>[NSString stringWithFormat:[prefs format]]</code><br>warn: OC中避免一行有两层嵌套</p>
-<h3 id="5-多参数的方法"><a href="#5-多参数的方法" class="headerlink" title="5.多参数的方法"></a>5.多参数的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL)writeToFile:(NSString*)path</span><br><span class="line">atomically:(BOOL)useAuxiliaryFile</span><br></pre></td></tr></table></figure>
-<p>一个方法的名称可以分成几段，这里的参数是NSString类型的path和BOOL类型的useAuxiliaryFile<br>这样调用多参数方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BOOL result = [myData writeToFile]:@&quot;/tmp/log.txt&quot; atomically: NO]</span><br><span class="line">writeToFile:atomically: 是实例的方法</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-存取器"><a href="#6-存取器" class="headerlink" title="6.存取器"></a>6.存取器</h3><p>在OC中所有实例变量默认都为私有的，所以一般你应该使用访问器来获取和设置值。有两种语法。这是传统 1.x 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[photo setCaption : @&quot;Day at the Beach&quot;]</span><br><span class="line">output = [photo caption]</span><br></pre></td></tr></table></figure></p>
-<p>第二行代码不直接阅读实例变量，它实际上调用一个方法caption。在大多数情况下，OC中的getter方法不需要加get前缀<br>每当你看到在方括号内的代码，表示正在向一个对象或一类发送一条消息</p>
-<h3 id="7-点语法"><a href="#7-点语法" class="headerlink" title="7.点语法"></a>7.点语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//(这是在Objective-C 2.0和Mac OS X 10.5的老版本)</span><br><span class="line">photo.caption = @&quot;Day at the beach&quot;</span><br><span class="line">output = photo.caption</span><br></pre></td></tr></table></figure>
-<p>点语法只用于set和get方法</p>
-<h3 id="8-创造对象"><a href="#8-创造对象" class="headerlink" title="8.创造对象"></a>8.创造对象</h3><p>第一种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString* myString = [NSString string]</span><br></pre></td></tr></table></figure></p>
-<p>这种是自动创建类型对象<br>第二种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSString *myString[[NSString alloc] init]</span><br><span class="line">//这是一种多重嵌套的方法。第一层的alloc调用的事NSString自己，这是一种相对较低级的调用，能够保存内存并且实例化一个对象</span><br><span class="line">//第二层是对初始化的新对象的调用，Init执行通常没有基本的安装步骤，例如创造实例化变量。</span><br><span class="line">//有的时候你需要不同版本的init</span><br><span class="line">NSNumber* value = [[NSNumber alloc] initWithFloat:1.0]</span><br><span class="line">//创建一个NSNumber类的float型数</span><br></pre></td></tr></table></figure></p>
-<h3 id="9-基本内存管理"><a href="#9-基本内存管理" class="headerlink" title="9.基本内存管理"></a>9.基本内存管理</h3><p>如果你写给 Mac OS X 的应用程序，您可以选择启用垃圾收集装置。一般情况下，这意味着你不需要考虑内存管理，直到你得到到更复杂的情况。<br>然而，你不可能总是使用支持垃圾回收的环境。在这种情况下，你需要知道的几个基本概念。<br>如果你创建使用手动分配样式的对象，之后需要释放的对象。但是，你不应该手动释放 autoreleased 对象，如果你释放了，程序会崩溃<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSString* string1 =[NSString string]//自动释放</span><br><span class="line">NSString* string2 =[[NSString alloc] init]</span><br><span class="line">[string2 release]//完成后释放</span><br></pre></td></tr></table></figure></p>
-<p>还有更多了解内存管理，但它将更有意义以后我们看看更多的几个概念</p>
-<h3 id="10-创建类"><a href="#10-创建类" class="headerlink" title="10.创建类"></a>10.创建类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">.h文件</span><br><span class="line">#import &lt;Cocoa/Cocoa.h&gt;    </span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">NSString* caption;</span><br><span class="line">NSString* photographer;</span><br><span class="line">&#125;  </span><br><span class="line">-(NSString* )caption;</span><br><span class="line">-(NSString* )photographer;</span><br><span class="line">-(void) setCaption: (NSString*)input;</span><br><span class="line">-(void) setPhotographer: (NSString*)input;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line">//@interface是类的声明,类的默认类型是id类型</span><br><span class="line">.m文件</span><br><span class="line">#import &quot;Photo.h&quot;</span><br><span class="line">@implementation Photo    </span><br><span class="line">-(NSString*) caption &#123;</span><br><span class="line">  return caption;</span><br><span class="line">&#125;</span><br><span class="line">-(NSString*) photographer &#123;</span><br><span class="line">  return photographer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void) setCaption: (NSString*)input</span><br><span class="line">&#123;</span><br><span class="line">  [caption autorelease];</span><br><span class="line">  caption = [input retain];</span><br><span class="line">&#125;</span><br><span class="line">-(void) setPhotographer: (NSString*)input</span><br><span class="line">&#123;</span><br><span class="line">  [photographer autorelease];</span><br><span class="line">  photographer = [input retain];</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">//每个set处理两个值，第一是对现有对象的引用，第二个是新的输入的对象</span><br><span class="line">//在垃圾收集环境中，我们只是可以直接设置的新值</span><br><span class="line">我们比对一下两个方法，后面一个set方法可以改成</span><br><span class="line">-(void) setCaption: (NSString*)input &#123;</span><br><span class="line">  caption = input;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是如果你不能使用垃圾回收，你需要释放旧对象，并保留新的对象。<br>实际上有两种方式释放引用对象，release 和 autorelease,release直接释放，autorelease过段时间释放。<br>Autorelease方法是更安全的，因为新的和旧的变量值可以指向相同的对象</p>
-<h3 id="11-我们可以创建-init-方法设置实例变量的初始值"><a href="#11-我们可以创建-init-方法设置实例变量的初始值" class="headerlink" title="11.我们可以创建 init 方法设置实例变量的初始值"></a>11.我们可以创建 init 方法设置实例变量的初始值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-(id) init</span><br><span class="line">&#123;</span><br><span class="line">  if ( self = [super init] )</span><br><span class="line">  &#123;</span><br><span class="line">      [self setCaption:@&quot;Default Caption&quot;];</span><br><span class="line">      [self setPhotographer:@&quot;Default Photographer&quot;];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">  &#125;</span><br><span class="line">//单等号，将超类的self赋给self，让超类做自己的初始化</span><br><span class="line">//if语句验证初始化成功，然后设置默认值</span><br></pre></td></tr></table></figure>
-<h3 id="12-Dealloc"><a href="#12-Dealloc" class="headerlink" title="12.Dealloc"></a>12.Dealloc</h3><p>Dealloc方法是把对象从内存中删除，是删除子类实例化变量的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-(void) dealloc</span><br><span class="line">&#123;</span><br><span class="line">  [caption release];</span><br><span class="line">  [photographer release];</span><br><span class="line">  [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>最后一行非常重要。必须发送消息 [super dealloc]让超类做它的清理，如果我们不这样做，该对象不被删除，这就是内存泄漏</p>
-<h3 id="13-内存管理后续（这部分我不是很能理解，后续在多加练习好了）"><a href="#13-内存管理后续（这部分我不是很能理解，后续在多加练习好了）" class="headerlink" title="13.内存管理后续（这部分我不是很能理解，后续在多加练习好了）"></a>13.内存管理后续（这部分我不是很能理解，后续在多加练习好了）</h3><p>OC的内存管理系统称为引用计数，你要做的就是保持跟踪的引用，并运行时实际释放内存<br>//在简单的术语，你alloc的对象，可能有些地方remain，然后发送一个release每个alloc/remain发送。所以如果你使用alloc一次，然后remain一次，你需要释放两次内存。这是理论的引用计数<br>在实践中，通常是创建对象只有两个原因<br>1.为保持它作为实例变量<br>2.一次性使用函数内部的临时使用<br>还有一个内存释放的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NSNumber* value1 = [[NSNumber alloc] initWithFloat:8.75];</span><br><span class="line">  [self setTotal:value1];</span><br><span class="line"></span><br><span class="line">NSNumber* value2 = [NSNumber numberWithFloat:14.78];</span><br><span class="line">  [self setTotal:value2];</span><br><span class="line"></span><br><span class="line">  [value1 release];</span><br></pre></td></tr></table></figure></p>
-<h3 id="14-log"><a href="#14-log" class="headerlink" title="14.log"></a>14.log</h3><p><code>NSLog ( @&quot;The current date and time is: %@&quot;, [NSDate date] );</code><br>15.property<br>当我们提前写了caption和author的访问器方法,你可能已经注意到的代码非常简单.而前有可能被推广。<br>property时Objective-C的特性，使我们能够自动生成的访问器中的新功能。而也有一些其他的好处。让我们将之前但photo类使用属性转换<br>@property 是声明属性的指示，括号中的@retain指定setter方法保留输入值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Photo.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation Photo</span><br><span class="line"></span><br><span class="line">@synthesize caption;</span><br><span class="line">@synthesize photographer;</span><br><span class="line"></span><br><span class="line">- (void) dealloc</span><br><span class="line">&#123;   </span><br><span class="line">  [caption release];</span><br><span class="line">  [photographer release];</span><br><span class="line">  [super dealloc];</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
-<p>@synthesize 指令自动生成的 setter 和 getter 方法。对我们来说，所以我们必须为此类执行dealloc 方法</p>
-<h3 id="16-调用nil方法"><a href="#16-调用nil方法" class="headerlink" title="16.调用nil方法"></a>16.调用nil方法</h3><p>Objective-C中的nil和其他语言中的null相同，不同的是，你可以调用方法零没有崩溃或引发异常.<br>如果你在nil返回的对象上调用方法，你会得到nil作为返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void) dealloc</span><br><span class="line">&#123;   </span><br><span class="line">  self.caption = nil;</span><br><span class="line">  self.photographer = nil;</span><br><span class="line">  [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="17-Categories"><a href="#17-Categories" class="headerlink" title="17.Categories"></a>17.Categories</h3><p>Categories是Objective-C中最有用的特征之一，从根本上来说，一个category允许你在一个已经存在的类中添加方法而不需要附上子类，或者知道他执行的所有细节。<br>这特别有用，因为您可以将方法添加到内置对象中。如果你想要将方法添加到你程序中的实例化的NSString中，你只需要添加一个category。没有必要获取任何对象的时候用一个自定义的子类<br>for example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line"></span><br><span class="line">  @interface NSString (Utilities)</span><br><span class="line">  - (BOOL) isURL;</span><br><span class="line">  @end</span><br></pre></td></tr></table></figure></p>
-<p>这特别像一个声明对象，不同的是这里没有列出超类，并且在括号中有类别的名称。名称可以是任何你想要的，尽管它需要和里面的方法沟通。<br>下面是一个执行文件，记住这不是很好地落实的 URL 检测，只是介绍类别的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#import “NSString-Utilities.h”</span><br><span class="line">@implementation NSString (Utilities)</span><br><span class="line">		(BOOL) isURL</span><br><span class="line">&#123;</span><br><span class="line">if ( [self hasPrefix:@”http://“] )</span><br><span class="line">  return YES;</span><br><span class="line">		  else</span><br><span class="line">		  return NO;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//现在您可以使用此方法在任何 NSString中，</span><br><span class="line">NSString* string1 = @&quot;http://pixar.com/&quot;;</span><br><span class="line">NSString* string2 = @&quot;Pixar&quot;;</span><br><span class="line"></span><br><span class="line">if ( [string1 isURL] )</span><br><span class="line">NSLog (@&quot;string1 is a URL&quot;);</span><br><span class="line"></span><br><span class="line">if ( [string2 isURL] )</span><br><span class="line">NSLog (@&quot;string2 is a URL&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>与子类不同，类不能添加实例变量。但是，你可以用category去重写类中已经存在的方法。</p>
-<p>记住，当你使用一个category去改变一个类，它会影响这个类里面的所有方法。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">-Objective-C</a></li></ul>
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
 	</div>
 
-      
 
       
       <div class="clearfix"></div>
@@ -924,14 +956,24 @@ if (bUser) {
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 BadCodeLu
+    		&copy; 2017 BadCodeLu
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
+
+    <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','EzNcE44GNzWJujjebRZY','2.0.0');
+</script>
   </div>
 </footer>
+
     </div>
     
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">

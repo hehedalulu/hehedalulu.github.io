@@ -29,6 +29,14 @@
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
+
+	
+	<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+		<label>Search</label>
+		<input type="text" id="st-search-input" class="st-search-input_my" maxlength="30" placeholder="Search" />
+	</form>
+	
+
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
@@ -56,11 +64,6 @@
 							<div class="ribbon"></div>
 						</div>
 						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
 						
 						<div class="icon-wrap icon-me hide" data-idx="3">
 							<div class="user"></div>
@@ -68,15 +71,13 @@
 						</div>
 						
 					</div>
-					
+
 				</div>
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>Menu</li>
 						<li>Tags</li>
-						
-						<li>Links</li>
 						
 						
 						<li>About</li>
@@ -92,13 +93,17 @@
 					<nav class="header-menu">
 						<ul>
 						
-							<li><a href="/">主页</a></li>
-				        
 							<li><a href="/archives">所有文章</a></li>
 				        
-							<li><a href="/tags/随笔">随笔</a></li>
+							<li><a href="/categories/DailyReport">Daily Report</a></li>
 				        
-							<li><a href="/photo">相册</a></li>
+							<li><a href="/categories/Life">乱七八糟</a></li>
+				        
+							<li><a href="/categories/iOS">移动端</a></li>
+				        
+							<li><a href="/categories/AR">AR学习</a></li>
+				        
+							<li><a href="/categories/other">其他技术流</a></li>
 				        
 						</ul>
 					</nav>
@@ -116,45 +121,27 @@
 						</div>
 					</nav>
 				</section>
-				
+
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/HealthKit/" style="font-size: 15px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/hexo/" style="font-size: 15px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 15px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/CoreMotion/" style="font-size: 10px;">CoreMotion</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/iOS系统的SDK/" style="font-size: 10px;">iOS系统的SDK</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
+						<a href="/tags/HealthKit/" style="font-size: 15px;">-HealthKit</a> <a href="/tags/Objective-C/" style="font-size: 10px;">-Objective-C</a> <a href="/tags/UIImage优化相关/" style="font-size: 10px;">-UIImage优化相关</a> <a href="/tags/hexo/" style="font-size: 15px;">-hexo</a> <a href="/tags/iOS小细节/" style="font-size: 10px;">-iOS小细节</a> <a href="/tags/iOS页面优化相关/" style="font-size: 10px;">-iOS页面优化相关</a> <a href="/tags/java/" style="font-size: 10px;">-java</a> <a href="/tags/mac软件/" style="font-size: 15px;">-mac软件</a> <a href="/tags/plan/" style="font-size: 10px;">-plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">-storyboard</a> <a href="/tags/梦想/" style="font-size: 10px;">-梦想</a> <a href="/tags/深沉的暗恋/" style="font-size: 10px;">-深沉的暗恋</a> <a href="/tags/生活杂记/" style="font-size: 20px;">-生活杂记</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">-第三方库学习使用</a> <a href="/tags/CoreMotion/" style="font-size: 10px;">CoreMotion</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/iOS内存管理/" style="font-size: 10px;">iOS内存管理</a> <a href="/tags/iOS学习/" style="font-size: 10px;">iOS学习</a> <a href="/tags/iOS系统的SDK/" style="font-size: 10px;">iOS系统的SDK</a> <a href="/tags/plan/" style="font-size: 10px;">plan</a> <a href="/tags/storyboard/" style="font-size: 10px;">storyboard</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/第三方库学习使用/" style="font-size: 10px;">第三方库学习使用</a>
 					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
-			        </div>
 				</section>
 				
 
 				
+
 				
-				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是lulu 一个野路子出身的程序员</div>
 				</section>
 				
 			</div>
 		</div>
-	</header>				
+	</header>
 </div>
 
     </div>
@@ -180,13 +167,17 @@
 			<nav class="header-menu">
 				<ul>
 				
-					<li><a href="/">主页</a></li>
-		        
 					<li><a href="/archives">所有文章</a></li>
 		        
-					<li><a href="/tags/随笔">随笔</a></li>
+					<li><a href="/categories/DailyReport">Daily Report</a></li>
 		        
-					<li><a href="/photo">相册</a></li>
+					<li><a href="/categories/Life">乱七八糟</a></li>
+		        
+					<li><a href="/categories/iOS">移动端</a></li>
+		        
+					<li><a href="/categories/AR">AR学习</a></li>
+		        
+					<li><a href="/categories/other">其他技术流</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -209,6 +200,95 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-Learn-Objective-C-first-step-nunu原创翻译" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/" class="article-date">
+  	<time datetime="2016-04-04T08:13:04.000Z" itemprop="datePublished">2016-04-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/04/Learn-Objective-C-first-step-nunu原创翻译/">Learn Objective-C first step(BadCodeLu)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Learn-Objective-C-first-step-BadCodeLu原创翻译"><a href="#Learn-Objective-C-first-step-BadCodeLu原创翻译" class="headerlink" title="Learn Objective-C first step(BadCodeLu原创翻译)"></a>Learn Objective-C first step(BadCodeLu原创翻译)</h4><p>总结<br>这两天心情有点阴郁，学习效率不是很高。前段时间的熬测被刷，让我感觉到自己对Objective-C的语法的使用还是很生疏的，基础没抓好，以后肯定会很吃亏。现在的我不应该急着去做一份成品app出来，而是要好好反思一下。<br>Learn Objective-C first step(BadCodeLu原创)</p>
+<h3 id="1-在对象上调用的方法的基本语法"><a href="#1-在对象上调用的方法的基本语法" class="headerlink" title="1.在对象上调用的方法的基本语法"></a>1.在对象上调用的方法的基本语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[object method]</span><br><span class="line">[object methodWithInput:input]</span><br></pre></td></tr></table></figure>
+<h3 id="2-方法返回值"><a href="#2-方法返回值" class="headerlink" title="2.方法返回值"></a>2.方法返回值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output = [object methodWithOutput]</span><br><span class="line">output = [object methodWithInputAndOutput:input]</span><br></pre></td></tr></table></figure>
+<h3 id="3-在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象"><a href="#3-在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象" class="headerlink" title="3.在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象"></a>3.在类中调用方法，创建对象。下例在NSString类中调用了string方法，返回了一个新的NSString对象</h3><p><code>id myObject = [NSString string]</code><br>Id 类型意味着 myObject 变量可以引用任何类型的对象，动态类型<br>所有OC中的对象变量都是指针类型<br><code>NSString* myString = [NSString string]</code></p>
+<h3 id="4-方法的嵌套"><a href="#4-方法的嵌套" class="headerlink" title="4.方法的嵌套"></a>4.方法的嵌套</h3><p>在很多语言中方法是这样嵌套的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function1 ( function2())</span><br></pre></td></tr></table></figure></p>
+<p>但是在OC中，方法是这样嵌套的<br><code>[NSString stringWithFormat:[prefs format]]</code><br>warn: OC中避免一行有两层嵌套</p>
+<h3 id="5-多参数的方法"><a href="#5-多参数的方法" class="headerlink" title="5.多参数的方法"></a>5.多参数的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-(BOOL)writeToFile:(NSString*)path</span><br><span class="line">atomically:(BOOL)useAuxiliaryFile</span><br></pre></td></tr></table></figure>
+<p>一个方法的名称可以分成几段，这里的参数是NSString类型的path和BOOL类型的useAuxiliaryFile<br>这样调用多参数方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BOOL result = [myData writeToFile]:@&quot;/tmp/log.txt&quot; atomically: NO]</span><br><span class="line">writeToFile:atomically: 是实例的方法</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-存取器"><a href="#6-存取器" class="headerlink" title="6.存取器"></a>6.存取器</h3><p>在OC中所有实例变量默认都为私有的，所以一般你应该使用访问器来获取和设置值。有两种语法。这是传统 1.x 语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[photo setCaption : @&quot;Day at the Beach&quot;]</span><br><span class="line">output = [photo caption]</span><br></pre></td></tr></table></figure></p>
+<p>第二行代码不直接阅读实例变量，它实际上调用一个方法caption。在大多数情况下，OC中的getter方法不需要加get前缀<br>每当你看到在方括号内的代码，表示正在向一个对象或一类发送一条消息</p>
+<h3 id="7-点语法"><a href="#7-点语法" class="headerlink" title="7.点语法"></a>7.点语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//(这是在Objective-C 2.0和Mac OS X 10.5的老版本)</span><br><span class="line">photo.caption = @&quot;Day at the beach&quot;</span><br><span class="line">output = photo.caption</span><br></pre></td></tr></table></figure>
+<p>点语法只用于set和get方法</p>
+<h3 id="8-创造对象"><a href="#8-创造对象" class="headerlink" title="8.创造对象"></a>8.创造对象</h3><p>第一种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSString* myString = [NSString string]</span><br></pre></td></tr></table></figure></p>
+<p>这种是自动创建类型对象<br>第二种方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NSString *myString[[NSString alloc] init]</span><br><span class="line">//这是一种多重嵌套的方法。第一层的alloc调用的事NSString自己，这是一种相对较低级的调用，能够保存内存并且实例化一个对象</span><br><span class="line">//第二层是对初始化的新对象的调用，Init执行通常没有基本的安装步骤，例如创造实例化变量。</span><br><span class="line">//有的时候你需要不同版本的init</span><br><span class="line">NSNumber* value = [[NSNumber alloc] initWithFloat:1.0]</span><br><span class="line">//创建一个NSNumber类的float型数</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-基本内存管理"><a href="#9-基本内存管理" class="headerlink" title="9.基本内存管理"></a>9.基本内存管理</h3><p>如果你写给 Mac OS X 的应用程序，您可以选择启用垃圾收集装置。一般情况下，这意味着你不需要考虑内存管理，直到你得到到更复杂的情况。<br>然而，你不可能总是使用支持垃圾回收的环境。在这种情况下，你需要知道的几个基本概念。<br>如果你创建使用手动分配样式的对象，之后需要释放的对象。但是，你不应该手动释放 autoreleased 对象，如果你释放了，程序会崩溃<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSString* string1 =[NSString string]//自动释放</span><br><span class="line">NSString* string2 =[[NSString alloc] init]</span><br><span class="line">[string2 release]//完成后释放</span><br></pre></td></tr></table></figure></p>
+<p>还有更多了解内存管理，但它将更有意义以后我们看看更多的几个概念</p>
+<h3 id="10-创建类"><a href="#10-创建类" class="headerlink" title="10.创建类"></a>10.创建类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">.h文件</span><br><span class="line">#import &lt;Cocoa/Cocoa.h&gt;    </span><br><span class="line">@interface Photo : NSObject &#123;</span><br><span class="line">NSString* caption;</span><br><span class="line">NSString* photographer;</span><br><span class="line">&#125;  </span><br><span class="line">-(NSString* )caption;</span><br><span class="line">-(NSString* )photographer;</span><br><span class="line">-(void) setCaption: (NSString*)input;</span><br><span class="line">-(void) setPhotographer: (NSString*)input;</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line">//@interface是类的声明,类的默认类型是id类型</span><br><span class="line">.m文件</span><br><span class="line">#import &quot;Photo.h&quot;</span><br><span class="line">@implementation Photo    </span><br><span class="line">-(NSString*) caption &#123;</span><br><span class="line">  return caption;</span><br><span class="line">&#125;</span><br><span class="line">-(NSString*) photographer &#123;</span><br><span class="line">  return photographer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(void) setCaption: (NSString*)input</span><br><span class="line">&#123;</span><br><span class="line">  [caption autorelease];</span><br><span class="line">  caption = [input retain];</span><br><span class="line">&#125;</span><br><span class="line">-(void) setPhotographer: (NSString*)input</span><br><span class="line">&#123;</span><br><span class="line">  [photographer autorelease];</span><br><span class="line">  photographer = [input retain];</span><br><span class="line">&#125;</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">//每个set处理两个值，第一是对现有对象的引用，第二个是新的输入的对象</span><br><span class="line">//在垃圾收集环境中，我们只是可以直接设置的新值</span><br><span class="line">我们比对一下两个方法，后面一个set方法可以改成</span><br><span class="line">-(void) setCaption: (NSString*)input &#123;</span><br><span class="line">  caption = input;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是如果你不能使用垃圾回收，你需要释放旧对象，并保留新的对象。<br>实际上有两种方式释放引用对象，release 和 autorelease,release直接释放，autorelease过段时间释放。<br>Autorelease方法是更安全的，因为新的和旧的变量值可以指向相同的对象</p>
+<h3 id="11-我们可以创建-init-方法设置实例变量的初始值"><a href="#11-我们可以创建-init-方法设置实例变量的初始值" class="headerlink" title="11.我们可以创建 init 方法设置实例变量的初始值"></a>11.我们可以创建 init 方法设置实例变量的初始值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">-(id) init</span><br><span class="line">&#123;</span><br><span class="line">  if ( self = [super init] )</span><br><span class="line">  &#123;</span><br><span class="line">      [self setCaption:@&quot;Default Caption&quot;];</span><br><span class="line">      [self setPhotographer:@&quot;Default Photographer&quot;];</span><br><span class="line">    &#125;</span><br><span class="line">    return self;</span><br><span class="line">  &#125;</span><br><span class="line">//单等号，将超类的self赋给self，让超类做自己的初始化</span><br><span class="line">//if语句验证初始化成功，然后设置默认值</span><br></pre></td></tr></table></figure>
+<h3 id="12-Dealloc"><a href="#12-Dealloc" class="headerlink" title="12.Dealloc"></a>12.Dealloc</h3><p>Dealloc方法是把对象从内存中删除，是删除子类实例化变量的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-(void) dealloc</span><br><span class="line">&#123;</span><br><span class="line">  [caption release];</span><br><span class="line">  [photographer release];</span><br><span class="line">  [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后一行非常重要。必须发送消息 [super dealloc]让超类做它的清理，如果我们不这样做，该对象不被删除，这就是内存泄漏</p>
+<h3 id="13-内存管理后续（这部分我不是很能理解，后续在多加练习好了）"><a href="#13-内存管理后续（这部分我不是很能理解，后续在多加练习好了）" class="headerlink" title="13.内存管理后续（这部分我不是很能理解，后续在多加练习好了）"></a>13.内存管理后续（这部分我不是很能理解，后续在多加练习好了）</h3><p>OC的内存管理系统称为引用计数，你要做的就是保持跟踪的引用，并运行时实际释放内存<br>//在简单的术语，你alloc的对象，可能有些地方remain，然后发送一个release每个alloc/remain发送。所以如果你使用alloc一次，然后remain一次，你需要释放两次内存。这是理论的引用计数<br>在实践中，通常是创建对象只有两个原因<br>1.为保持它作为实例变量<br>2.一次性使用函数内部的临时使用<br>还有一个内存释放的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">NSNumber* value1 = [[NSNumber alloc] initWithFloat:8.75];</span><br><span class="line">  [self setTotal:value1];</span><br><span class="line"></span><br><span class="line">NSNumber* value2 = [NSNumber numberWithFloat:14.78];</span><br><span class="line">  [self setTotal:value2];</span><br><span class="line"></span><br><span class="line">  [value1 release];</span><br></pre></td></tr></table></figure></p>
+<h3 id="14-log"><a href="#14-log" class="headerlink" title="14.log"></a>14.log</h3><p><code>NSLog ( @&quot;The current date and time is: %@&quot;, [NSDate date] );</code><br>15.property<br>当我们提前写了caption和author的访问器方法,你可能已经注意到的代码非常简单.而前有可能被推广。<br>property时Objective-C的特性，使我们能够自动生成的访问器中的新功能。而也有一些其他的好处。让我们将之前但photo类使用属性转换<br>@property 是声明属性的指示，括号中的@retain指定setter方法保留输入值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;Photo.h&quot;</span><br><span class="line"></span><br><span class="line">@implementation Photo</span><br><span class="line"></span><br><span class="line">@synthesize caption;</span><br><span class="line">@synthesize photographer;</span><br><span class="line"></span><br><span class="line">- (void) dealloc</span><br><span class="line">&#123;   </span><br><span class="line">  [caption release];</span><br><span class="line">  [photographer release];</span><br><span class="line">  [super dealloc];</span><br><span class="line">&#125;   </span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure></p>
+<p>@synthesize 指令自动生成的 setter 和 getter 方法。对我们来说，所以我们必须为此类执行dealloc 方法</p>
+<h3 id="16-调用nil方法"><a href="#16-调用nil方法" class="headerlink" title="16.调用nil方法"></a>16.调用nil方法</h3><p>Objective-C中的nil和其他语言中的null相同，不同的是，你可以调用方法零没有崩溃或引发异常.<br>如果你在nil返回的对象上调用方法，你会得到nil作为返回值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- (void) dealloc</span><br><span class="line">&#123;   </span><br><span class="line">  self.caption = nil;</span><br><span class="line">  self.photographer = nil;</span><br><span class="line">  [super dealloc];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="17-Categories"><a href="#17-Categories" class="headerlink" title="17.Categories"></a>17.Categories</h3><p>Categories是Objective-C中最有用的特征之一，从根本上来说，一个category允许你在一个已经存在的类中添加方法而不需要附上子类，或者知道他执行的所有细节。<br>这特别有用，因为您可以将方法添加到内置对象中。如果你想要将方法添加到你程序中的实例化的NSString中，你只需要添加一个category。没有必要获取任何对象的时候用一个自定义的子类<br>for example<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;Cocoa/Cocoa.h&gt;</span><br><span class="line"></span><br><span class="line">  @interface NSString (Utilities)</span><br><span class="line">  - (BOOL) isURL;</span><br><span class="line">  @end</span><br></pre></td></tr></table></figure></p>
+<p>这特别像一个声明对象，不同的是这里没有列出超类，并且在括号中有类别的名称。名称可以是任何你想要的，尽管它需要和里面的方法沟通。<br>下面是一个执行文件，记住这不是很好地落实的 URL 检测，只是介绍类别的概念。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#import “NSString-Utilities.h”</span><br><span class="line">@implementation NSString (Utilities)</span><br><span class="line">		(BOOL) isURL</span><br><span class="line">&#123;</span><br><span class="line">if ( [self hasPrefix:@”http://“] )</span><br><span class="line">  return YES;</span><br><span class="line">		  else</span><br><span class="line">		  return NO;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@end</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//现在您可以使用此方法在任何 NSString中，</span><br><span class="line">NSString* string1 = @&quot;http://pixar.com/&quot;;</span><br><span class="line">NSString* string2 = @&quot;Pixar&quot;;</span><br><span class="line"></span><br><span class="line">if ( [string1 isURL] )</span><br><span class="line">NSLog (@&quot;string1 is a URL&quot;);</span><br><span class="line"></span><br><span class="line">if ( [string2 isURL] )</span><br><span class="line">NSLog (@&quot;string2 is a URL&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>与子类不同，类不能添加实例变量。但是，你可以用category去重写类中已经存在的方法。</p>
+<p>记住，当你使用一个category去改变一个类，它会影响这个类里面的所有方法。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Objective-C/">-Objective-C</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-化学家之梦" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -249,6 +329,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Life/">Life</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -313,6 +397,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/other/">other</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -408,6 +496,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/other/">other</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -485,6 +577,83 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/other/">other</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Daily-report集总" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/06/Daily-report集总/" class="article-date">
+  	<time datetime="2016-03-06T07:03:19.000Z" itemprop="datePublished">2016-03-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/06/Daily-report集总/">Daily report2016年3月</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="2016年3月"><a href="#2016年3月" class="headerlink" title="2016年3月"></a>2016年3月</h3><h4 id="3月5日"><a href="#3月5日" class="headerlink" title="3月5日"></a>3月5日</h4><p>完成了java数据结构中的中缀表达式。对java中栈和队列方面有了一些理解<br>对想要进行的help进行了一次头脑风暴，并对靠我，百度知道，百度经验（网页版）进行了研究。总结成了一份粗略的文档，形成了一份初步的规划。</p>
+<h4 id="3月6日"><a href="#3月6日" class="headerlink" title="3月6日"></a>3月6日</h4><p>学习了用prepareforsegue：sender将一个viewcontroller类的参数传递到另一个viewcontroller类中。<br>在官方文档中查询了uiviewcontroller中关于segue的内容，但是略显生涩，之后会完善。<br>学习了不是用segue进行画面切换，用代码在viewdidapper中加载viewcontroller进行画面切换。<br>学习使用autolayout在storyboard中布局。<br>tableview的重新学习<br>  利用纯代码创建tableview ，<br>  tableview分块<br>  显示单元格指示器<br>  新增或删除一条tableviewcell及数据<br>  获取用户点击哪一块单元格<br>  改变单元格顺序<br>  用xib或者storyboard自定义cell</p>
+<h4 id="3月7日"><a href="#3月7日" class="headerlink" title="3月7日"></a>3月7日</h4><p>对结构化数据访问进行了学习<br>了解了几种处理大量数据的方式1.plist文件 2.SQLite数据库 3.CoreData</p>
+<h4 id="3月8日"><a href="#3月8日" class="headerlink" title="3月8日"></a>3月8日</h4><p>参照官方文档对UITableViewCell进行了学习。<br>学习了在编辑状态中插入和删除单元格，并在插入和删除单元格数据</p>
+<h4 id="3月9日"><a href="#3月9日" class="headerlink" title="3月9日"></a>3月9日</h4><p>完善了help<br>阅读了programming in objective－c</p>
+<h4 id="3月10日"><a href="#3月10日" class="headerlink" title="3月10日"></a>3月10日</h4><p>根据巧神的推荐 观看了斯坦福的iOS相关的课程<br>对mvc的模式进行了深入的了解。并且做了一些笔记<br>对property和nonatomic以及strong和weak理解 弥补了之前对这些概念理解的不清晰的漏洞</p>
+<h4 id="3月11日"><a href="#3月11日" class="headerlink" title="3月11日"></a>3月11日</h4><p>完成了一个小app 纠结选择器</p>
+<h4 id="3月12日"><a href="#3月12日" class="headerlink" title="3月12日"></a>3月12日</h4><p>完成了java关于linkedlist的作业<br>自己写了一个arraylist类（不使用任何java中的包）<br>对java中的栈和队列以及linkednode有了粗浅的理解</p>
+<h4 id="3月13日"><a href="#3月13日" class="headerlink" title="3月13日"></a>3月13日</h4><p>跟着斯坦福的讲座继续对objective-c了解。<br>理解了＋类方法和－对象方法。<br>并且对＋方法使用的两种情况进行了理解。<br>了解了iOS7中的特性instancetype方法 实例方法，返回相同类类型。<br>对self = [super init]调用父类初始化器对self赋值进行了理解<br>😂把上次对创建button并且自动计数做完了<br>stringbyappendingstring是相加字符串的实例方法<br>在一个方法中除非有copy，否则这个方法返回一个已经存在的对象时，它会返回指向那个对象的指针。</p>
+<h4 id="3月14日"><a href="#3月14日" class="headerlink" title="3月14日"></a>3月14日</h4><p>学习了UICollectionView，感觉和UITableView有点相似，给app中添加了collectView<br>学习了在storyboard中使用segue对cell进行切换下一下一视图。collectview视图切换没有问题，但是tableview切换的时候遇到了问题，查阅了官方文档但是对这方面写的真的是相当不全。。看了samplecode，目前还没有解决。打算再把斯坦福老爷爷的看一下</p>
+<h4 id="3月15日"><a href="#3月15日" class="headerlink" title="3月15日"></a>3月15日</h4><p>学习了在storyboard中自定义tabbar，个人觉得以后可以多多使用sb，虽然说用代码创建视图是很基础很必须的事情 但是时代在变化 现在苹果有点开始主推storyboard。<br>试图解决昨天晚上的问题。目前还没有解决<br>学习了视图控制器的生命周期viewdidload之类<br>学习了观察者模式之中的NSNotification类 监听系统的变化<br>之前有在官方文档中看过导航控制器相关的内容，可以第一遍看的时候对segue的几种种类还是有点概念上的不清晰。在斯坦福视频中看到了老爷爷对iOS7中的push和module的讲解，讲的不错可以iOS9之后的show还有很多不一样，有时间整理一下。</p>
+<h4 id="3月16日"><a href="#3月16日" class="headerlink" title="3月16日"></a>3月16日</h4><p>学习了视图列表中的绘制，在笛卡尔系中利用CGPoint CGSize CDRect绘制。<br>用Quartz 2D做了一些小demo<br>接触了手势识别，UIGestureRecognizer这个抽象类。<br>学习了UIPinchGestureRecognizer，UIRotationGestureRecognizer，UISwipeGestureRecognizer还有iOS9中新增的forcetouch相关手势识别</p>
+<h4 id="3月17-21日"><a href="#3月17-21日" class="headerlink" title="3月17-21日"></a>3月17-21日</h4><p>有点疲惫<br>这几天又夯了一遍基础 把block,协议，animation撸了一遍<br>animation主要撸了UIViewAnimation和DynamicAnimation就是视图的动画和动作的变化<br>UIViewAnimation有三个属性 frame transform alpha有一个类方法实现<br>UIViewAnimationOptions的各种属性可以修改这个视图的状态<br>DynamicAnimation创建的三部曲，吸附重力等都是很炫酷的物理动画</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">-plan</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/DailyReport/">DailyReport</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -513,14 +682,24 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 BadCodeLu
+    		&copy; 2017 BadCodeLu
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
       	</div>
     </div>
+
+    <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','EzNcE44GNzWJujjebRZY','2.0.0');
+</script>
   </div>
 </footer>
+
     </div>
     
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
