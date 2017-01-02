@@ -18,7 +18,7 @@
 今日学习
 将博客里面的内容全部重新归档
 试图将博客里面的google的字体库换成360的js库 发现360的也不稳定 以后还是直接在Markdown文档中使用直接使用html语法好了研究了两三个小时站内的标准化爬虫 实现一个博客内部的搜索功能 却发现我们">
-<meta property="og:updated_time" content="2017-01-01T18:21:00.000Z">
+<meta property="og:updated_time" content="2017-01-02T05:32:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017.1.1">
 <meta name="twitter:description" content="今日锻炼Keep一组腹肌撕裂        未完成 Keep一组俯卧撑          未完成 Keep一组Hit唤醒         完成 
@@ -262,7 +262,9 @@
 <li><strong>项目的代码逻辑</strong> <font color="#FF0000"> 未完成 </font></li>
 </ol>
 <h3 id="今日iOS的一个坑"><a href="#今日iOS的一个坑" class="headerlink" title="今日iOS的一个坑"></a>今日iOS的一个坑</h3><p>查询当日步数的时候拿到的步数很奇怪<br>获取步数的时候要获取的是当天的步数。<br>在调用Healthkit这个接口的时候，需要一个区间去查询步数。这个区间开始时间是当天的00:00，结束时间是第二天的00：00。<br>要用这个区间的调用步数的函数，先用NSDateComponents拿到当前小时、分钟、秒。当天的00:00就是当前时间减去当前小时、分钟、秒<br>一开始我是用[NSDate date]来拿到获取当前时间的，再用DateFormatter转成NSString再存到内存中，这样是没有问题。但是如果直接将[NSDate date]保存到内存中，保存的时间是GMT标准时间，时间是错误的，是有8小时时差的。<br>[NSDate date]获得的时间是零时区的格林威治时间，在用DateFormatter这个时间戳的过程中，就自动转成了系统的当地时间。<br>Eg: 举个例子，我今天凌晨2点获取一下步数，用 [nsdate date]来算当天的00:00 和第二天的00:00，拿到的步数是昨天的步数。<br>可以看下这篇文章对拿到的系统时间的理解 <a href="http://blog.csdn.net/u012890196/article/details/37759737" target="_blank" rel="external">深入NSDate</a><br>解决办法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NSDate *date = [NSDate date];</span><br><span class="line">NSTimeZone *zone = [NSTimeZone systemTimeZone];</span><br><span class="line">NSInteger interval = [zone secondsFromGMTForDate: date];</span><br><span class="line">NSDate *localeDate = [date  dateByAddingTimeInterval: interval];</span><br><span class="line">NSLog(@&quot;enddate=%@&quot;,localeDate);</span><br></pre></td></tr></table></figure></p>
-<h2 id="明日计划"><a href="#明日计划" class="headerlink" title="明日计划"></a><strong>明日计划</strong></h2><p>马上开始做正事 晚上再更新</p>
+<p>补一个小知识点NSInteger和int的区别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#if __LP64__ || (TARGET_OS_EMBEDDED &amp;&amp; !TARGET_OS_IPHONE) || TARGET_OS_WIN32 || NS_BUILD_32_LIKE_64</span><br><span class="line">typedef long NSInteger;</span><br><span class="line">typedef unsigned long NSUInteger;</span><br><span class="line">#else</span><br><span class="line">typedef int NSInteger;</span><br><span class="line">typedef unsigned int NSUInteger;</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
+<p>官方的定义<br>这是NSInteger的定义<br>对于不同平台32,64位有不同的最大值（int long）。<br>可以直接转化。<br>所以mac os或者ios上的系统api都是使用NSInteger作为参数。</p>
+<h2 id="明日计划"><a href="#明日计划" class="headerlink" title="明日计划"></a><strong>明日计划</strong></h2><p>计划总是赶不上变化 效率底下<br>改完逻辑<br>删掉微博 微信 QQ 不逛V2EX 伯乐在线 不能花费大量时间在im和论坛上<br>把概率论的书从头到尾梳理一遍</p>
 
       
     </div>
