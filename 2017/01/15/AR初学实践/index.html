@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>RESULT | BadCodeLu</title>
+  <title>AR初学实践 | BadCodeLu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RESULT">
-<meta property="og:url" content="http://yoursite.com/search/index.html">
+  <meta name="description" content="AR初学实践  近期一直在解决在iOS原生的系统里面开发AR这块的问题。AR就是增强现实，它带来了一种新型的交互体验。在2016年，AR引起了一阵热潮，以Meta、HoloLens、lumus、Google Glass等主流智能眼镜为代表的AR设备带来了丰富的功能体验和视觉效果，Pokémon、AR卡片所展示的三维动画大火了一把。但是我相信，真正的AR技术不仅仅如此，现在只是受制于软硬件的技术，A">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AR初学实践">
+<meta property="og:url" content="http://yoursite.com/2017/01/15/AR初学实践/index.html">
 <meta property="og:site_name" content="BadCodeLu">
-<meta property="og:description">
-<meta property="og:updated_time" content="2017-01-01T09:32:18.000Z">
+<meta property="og:description" content="AR初学实践  近期一直在解决在iOS原生的系统里面开发AR这块的问题。AR就是增强现实，它带来了一种新型的交互体验。在2016年，AR引起了一阵热潮，以Meta、HoloLens、lumus、Google Glass等主流智能眼镜为代表的AR设备带来了丰富的功能体验和视觉效果，Pokémon、AR卡片所展示的三维动画大火了一把。但是我相信，真正的AR技术不仅仅如此，现在只是受制于软硬件的技术，A">
+<meta property="og:updated_time" content="2017-01-14T17:44:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RESULT">
-<meta name="twitter:description">
+<meta name="twitter:title" content="AR初学实践">
+<meta name="twitter:description" content="AR初学实践  近期一直在解决在iOS原生的系统里面开发AR这块的问题。AR就是增强现实，它带来了一种新型的交互体验。在2016年，AR引起了一阵热潮，以Meta、HoloLens、lumus、Google Glass等主流智能眼镜为代表的AR设备带来了丰富的功能体验和视觉效果，Pokémon、AR卡片所展示的三维动画大火了一把。但是我相信，真正的AR技术不仅仅如此，现在只是受制于软硬件的技术，A">
   
     <link rel="alternative" href="/atom.xml" title="BadCodeLu" type="application/atom+xml">
   
@@ -200,11 +200,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="search-undefined" class="article article-type-search" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-AR初学实践" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/search/index.html" class="article-date">
-  	<time datetime="2017-01-01T09:32:18.000Z" itemprop="datePublished">2017-01-01</time>
+      <a href="/2017/01/15/AR初学实践/" class="article-date">
+  	<time datetime="2017-01-14T17:41:01.000Z" itemprop="datePublished">2017-01-15</time>
 </a>
     </div>
   
@@ -217,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      RESULT
+      AR初学实践
     </h1>
   
 
@@ -233,7 +233,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div id="st-results-container"><br></div>
+        <h1 id="AR初学实践"><a href="#AR初学实践" class="headerlink" title="AR初学实践"></a>AR初学实践</h1><p>  近期一直在解决在iOS原生的系统里面开发AR这块的问题。AR就是增强现实，它带来了一种新型的交互体验。在2016年，AR引起了一阵热潮，以Meta、HoloLens、lumus、Google Glass等主流智能眼镜为代表的AR设备带来了丰富的功能体验和视觉效果，Pokémon、AR卡片所展示的三维动画大火了一把。但是我相信，真正的AR技术不仅仅如此，现在只是受制于软硬件的技术，AR的发展还处于瓶颈期，真正的市场还并没有打开。所以我想在AR这块国人都很少涉及的领域区域去做一个先锋者，去开拓这一部分的领域。</p>
+<p>  现在就开始说一下我在进行开发的进行的学习。正式开发之前我进行了一些准备工作，主要是搜索了AR相关的功能，先看看有什么工具可以用，经过了我的一番对比和调研测验之后刚开始的时候我整理了一下的待选方案。</p>
+<ol>
+<li><p>OpenCV: 计算机视觉库，Open CV的主要功能是对导入的图像生成一些图像的特征数据，load成为一个obj格式的文件。这样我们就可以在系统摄像机渲染的的图层中，当我们匹配到正确的图片的时候，跳出相应的操作。</p>
+</li>
+<li><p>Vuforia：世界上目前最大的一个AR引擎的一个开发第三方，可以方便的实现AR的功能，只要是识别说图片，并在图片上面实现slam相关的技术。slam技术就是同步定位和建图技术。简单来说就是我们都是到我们可以通过AR来展示模型或者展示视频，但是我们怎么养才能够将我们的模型或者视频精准的投射到墙上或者或者指定的实景上面呢？这就是所谓的slam技术。当然目前来说slam技术就像是一个image上面加一个动态的target的追踪。就像我的产经说的一样，在类似于二维码的东西上面展示我们想要展示的东西。</p>
+</li>
+<li><p>Unity3D: 一个3D的引擎，我们可以很方便的展示出我们的3D场景。</p>
+</li>
+<li><p>OpenGL： 如果不用Unity3D的话，我就必须等在iOS的项目中自己去基于Vuforia手写OpenGL去实现AR的功能。</p>
+<p>当我把基础的准备与简单的学习做完之后，我发现如果之间用Unity来写原生的应用交互代码的时候会十分的难，并且用Unity导出的iOS的工程文件显示出来的代码是及其混乱的，并且在此基础上面我还要使用3种语言进行混编，c＃ c＋＋ Objective－C，并且有一个最大的问题就要说进行调试的时候非常麻烦，并且混编build新的工程文件是一个十分耗时的一件事情。所以当即立断的放弃了Unity和iOS进行混编。因为我的代码的业务逻辑还是会比较偏向于APP相关的，如果用Unity的话会造成一系列更多的不必要的麻烦。后期如果要加入一些新的交互的话，我会使用苹果在WWDC2016里面介绍的SceneKit相关的功能。</p>
+<p>接下来就介绍一下我用iOS原生的OpenGl ES来实现AR相关的功能吧，这部分我不会写我详细的业务代码，我只会介绍一下我实现的业务逻辑。</p>
+<p>首先我下载了Vuforia官方的SampleCode，这里面已经有一个固定的一个可以完整运行的项目，配置好相应的环境并且认真阅读了它的源码之后，简单的了解了一下它实现AR功能的代码的业务逻辑。</p>
+<p>它是用一个ARSessiom对象来管理所有和AR相关的事物，里面包括了图像target的追踪，透明流视频的渲染（将视频等比裁切拉伸成为和当前图片相关的大小），当前资源的回收和处理（比如说OpenGLview结束之后的一些释放操作），线程的切换（用c++来实现主线程绘图的操作）等等。然后它用了一个ARViewController对象来主要负责显示具体的View相关的逻辑，这里面包括了大量的基础资源的加载，识别模型的激活与切换，还有一系列的监听回调之类。最后它用了一个ARImageGLVIew来渲染AR的场景，包括buffer的维护，model的加载和shader的渲染等等。总之就是极其复杂，极其崩溃，极其难懂。当然你是用他的时候大可以不需要知道这些实现的过程和原理，只需要copy过来它sample里面的代码就好了，但是你会发现如果你想要进行高度定制的话是一件极其困难的事情，所以我花了一个多星期的时间去学习了OpenGLES底层相关的知识，惭愧的是，OpenGL 这个库实在是太复杂太玄了，我出于对项目进度的追求，也只是粗浅的进行了一些学习和一些简单的demo的实现。</p>
+<p>最后的最后我又研究了国内的几家比较有名的AR引擎相关的官方SampleCode，相互比较之中最后改写了我现在业务之中的AR相关的业务。</p>
+</li>
+</ol>
 
       
     </div>
@@ -241,6 +257,16 @@
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/03/2017-1-3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2017.1.3</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -266,6 +292,26 @@
 
 
 
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="AR初学实践" data-title="AR初学实践" data-url="http://yoursite.com/2017/01/15/AR初学实践/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
@@ -304,7 +350,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
